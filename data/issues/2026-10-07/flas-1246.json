@@ -1,0 +1,134 @@
+{
+ "id": "flas-1246",
+ "type": "flas",
+ "date": "2026-10-07",
+ "time": "12:46",
+ "published_at": "2026-10-10T19:44:09+00:00",
+ "title": "Gün İçi Flaş · Çarşamba 7 Ekim 2026 · 12:45 ET",
+ "subtitle": "Öğle turu · 08:45–12:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.794,44",
+   "chg": "-0,31%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "27.465,42",
+   "chg": "-0,49%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,20",
+   "chg": "+0,06%",
+   "note": "TR sabahı"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1189",
+   "chg": "-0,63%",
+   "note": "öğle"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.102,87",
+   "chg": "-2,19%",
+   "note": "kapanış (11:00 ET)"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "83.567",
+   "chg": "-2,35%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "Altın (ons)",
+   "level": "4.137,80",
+   "chg": "-1,18%",
+   "note": "vadeli, 12:30 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "100,90",
+   "chg": "+0,32%",
+   "note": "öğle"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%5,32",
+   "chg": "+5 bp",
+   "note": "12:30 ET"
+  }
+ ],
+ "market_note": "Piyasayı en çok getiriler hareket ettiriyor: 30 yıllık faiz %5,70 ile 2002'den beri en yüksek seviyede. Dolar güçlü, piyasa 14:00'teki Fed tutanaklarından ek artırım sinyali arıyor. <b>Webull (BULL) -20%:</b> Kongre raporu şirketin Çin bağlantılarını ulusal güvenlik riski olarak işaretledi. <b>Constellation Brands (STZ) -5%:</b> Beklentileri aşmasına rağmen düştü.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Vance İran’da tonu yumuşattı",
+     "text": "Washington artık sıfır zenginleştirme yerine “anlamlı” bir adım istiyor. Rubio Hürmüz’de petrol akışının neredeyse savaş öncesi seviyeye döndüğünü söyledi, İran ise ABD üslerine önleyici saldırı tehdidinde bulundu. Bu da petrol risk primini canlı tutuyor."
+    },
+    {
+     "title": "Türkiye – fon krizi",
+     "text": "Cumhurbaşkanı Yardımcısı Cevdet Yılmaz “finans piyasasında risk yok” mesajı verdi. Fon tasfiyeleri sürerken BIST’te bankacılık ve faktoring sert düştü."
+    },
+    {
+     "title": "AB yeni Rusya yaptırımlarına hazırlanıyor",
+     "text": "Putin cuma günü Türkmenistan’da İran cumhurbaşkanıyla görüşecek. Enerji ve emtia tarafında takip edilmeli."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin",
+   "items": [
+    {
+     "title": "Whitney Rose (RHOSLC) boşanma davası açtı",
+     "text": "Reality yıldızı, ayrılığın ardından resmi başvuruyu yaptı (TMZ)."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "14:00 ET",
+     "text": "Fed Eylül toplantı tutanakları."
+    },
+    {
+     "title": "Kapanış sonrası",
+     "text": "Levi Strauss ve Applied Digital bilançoları."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance canlı",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-7-dow-sp-500-nasdaq-080241833.html"
+  },
+  {
+   "title": "CBS News İran canlı",
+   "url": "https://www.cbsnews.com/live-updates/iran-war-nuclear-donald-trump-vance-rubio-strait-of-hormuz/"
+  },
+  {
+   "title": "TGRT Haber BIST",
+   "url": "https://www.tgrthaber.com/ekonomi/borsa-neden-dusuyor-7-ekim-2026-bist100-neden-dususte-3363892"
+  },
+  {
+   "title": "Gazete Kritik döviz",
+   "url": "https://www.gazetekritik.com/ekonomi/dolartl-bugun-ne-kadar-7-ekim-2026-guncel-doviz-kurlari/415332"
+  },
+  {
+   "title": "Trading Economics Brent",
+   "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+  },
+  {
+   "title": "TMZ",
+   "url": "https://www.tmz.com/"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

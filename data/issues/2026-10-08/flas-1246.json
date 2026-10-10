@@ -1,0 +1,142 @@
+{
+ "id": "flas-1246",
+ "type": "flas",
+ "date": "2026-10-08",
+ "time": "12:46",
+ "published_at": "2026-10-10T19:44:09+00:00",
+ "title": "Gün İçi Flaş · Perşembe 8 Ekim 2026 · 12:45 ET",
+ "subtitle": "Öğle turu · 08:45–12:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.770,91",
+   "chg": "-0,40%",
+   "note": "öğle"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "27.353,53",
+   "chg": "-0,67%",
+   "note": "öğle"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,21",
+   "chg": "+0,05%",
+   "note": "gün içi"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1188",
+   "chg": "-0,08%",
+   "note": "gün içi"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.213,58",
+   "chg": "+0,75%",
+   "note": "kapanış; bankacılık -%1,5"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "80.888",
+   "chg": "-2,88%",
+   "note": "gün içi"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.117 $",
+   "chg": "—",
+   "note": "11:20 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "105,6 $",
+   "chg": "+5,4%",
+   "note": "~11:20 ET"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%5,35",
+   "chg": "+5 bp",
+   "note": "09:41 ET"
+  }
+ ],
+ "market_note": "Piyasayı petrol kaynaklı enflasyon korkusu ve yükselen tahvil faizleri hareket ettiriyor. <b>Chipotle</b> %6,6 yükseldi (FT’ye göre Starbucks satın almayı değerlendirmiş), <b>Starbucks</b> ise %3,3 düştü. <b>Eli Lilly</b> kâr satışıyla %4 geriledi.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Petrol ve tahvil sıkıştırıyor",
+     "text": "Brent %5 üzerinde yükselişle 105 $’ı aştı. Fujairah açığında bir tanker yanıyor, Isaias kasırgası da Körfez’de üretimi durduruyor. ABD 10Y faizi %5,35 ile 2002'den bu yana en yüksek seviyesine yakın; bu da enflasyon ve faiz artırımı endişesini büyütüyor."
+    },
+    {
+     "title": "Haftalık işsizlik başvuruları 197 bin",
+     "text": "Beklenti 200 bindi. İşgücü piyasası sıkı kaldığı için Fed’in faiz artırımı ihtimali masada kalıyor."
+    },
+    {
+     "title": "Isaias kasırgası (güncelleme)",
+     "text": "Rüzgârı 85 mph’ye çıktı ve gece Kat. 2'ye ulaşabilir. Cuma gecesi Florida Panhandle’a ulaşması bekleniyor; Ocean Springs (MS) ile Bay/Gulf (FL) arasında kasırga uyarısı var."
+    },
+    {
+     "title": "Maltepe’de çöken bina (güncelleme)",
+     "text": "2 kişi öldü, 3 kişi aranıyor. Belediye başkanı çöken iki katın kaçak olduğunu söyledi."
+    },
+    {
+     "title": "Tasfiye edilen fonlar",
+     "text": "Şimşek, 43 bin katılımcının parasının bankalara aktarıldığını açıkladı."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "",
+     "text": "PANYNJ sitesinde Lincoln Tunnel, PABT ve XBL için aktif uyarılar var ama ayrıntılarına ulaşamadım. Eve dönüş durumunu 15:45 turunda kontrol edeceğim."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "",
+     "text": "13:00 ET: 22 milyar $’lık 30 yıllık tahvil ihalesi (reopening). Faizler zirveye yakınken talep kritik."
+    },
+    {
+     "title": "",
+     "text": "16:00 ET: ABD kapanışı. Isaias için NHC bültenleri de takipte."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet – Stock Market Today",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-08-2026"
+  },
+  {
+   "title": "Rallies – Wall St slips",
+   "url": "https://rallies.ai/news/wall-st-slips-as-climbing-oil-yields-amplify-inflation-fears-84b1a3fd248e1eb2"
+  },
+  {
+   "title": "AA/En Son Dakika – Piyasalarda gün sonu",
+   "url": "https://www.ensondakika.com.tr/piyasalarda-gun-sonu-8-ekim-2026/714903/"
+  },
+  {
+   "title": "CNBC-e – Borsa günü yükselişle kapadı",
+   "url": "https://www.cnbce.com/borsa/borsa-gunu-yukselisle-kapadi-8-ekim-2026-h38978"
+  },
+  {
+   "title": "Weather.com – Hurricane Isaias",
+   "url": "https://weather.com/2026/10/08/storms/hurricane/hurricane-isaias-forecast-gulf-coast-louisiana-alabama-florida"
+  },
+  {
+   "title": "CNN Türk – 16.30 bülteni",
+   "url": "https://www.cnnturk.com/turkiye/8-ekim-2026-persembe-gununun-son-dakika-onemli-gelismeleri-cnn-turk-16-30-bulteni-3476714"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

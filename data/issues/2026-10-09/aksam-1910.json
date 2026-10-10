@@ -1,0 +1,230 @@
+{
+ "id": "aksam-1910",
+ "type": "aksam",
+ "date": "2026-10-09",
+ "time": "19:10",
+ "published_at": "2026-10-10T19:44:10+00:00",
+ "title": "Akşam Bülteni · Cuma 9 Ekim 2026",
+ "subtitle": "Hazırlanma: 19:10 ET · ABD rakamları kapanış",
+ "markets": [
+  {
+   "name": "USD/TRY",
+   "level": "49,35",
+   "chg": "+0,17%",
+   "note": "Serbest piyasa, 09:00 TSİ; haftalık ~+0,55%"
+  },
+  {
+   "name": "EUR/TRY",
+   "level": "55,41",
+   "chg": "+0,01%",
+   "note": "Serbest piyasa, sabah TSİ"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1196",
+   "chg": "—",
+   "note": "18:15 TSİ (AA)"
+  },
+  {
+   "name": "S&P 500",
+   "level": "7.811,54",
+   "chg": "+0,59%",
+   "note": "Kapanış; haftalık +1,2%, rekorun hemen altında"
+  },
+  {
+   "name": "Nasdaq Comp.",
+   "level": "27.366,17",
+   "chg": "+0,64%",
+   "note": "Kapanış; haftalık +0,6%"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.265,98",
+   "chg": "+0,43%",
+   "note": "Kapanış; hacim 114,1 mlr TL"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "82.420",
+   "chg": "+0,84%",
+   "note": "ABD seansı sırasında"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.220,90",
+   "chg": "+1,54%",
+   "note": "Vadeli; 2 aylık dipten toparlanma"
+  },
+  {
+   "name": "Brent",
+   "level": "~104 $",
+   "chg": "—",
+   "note": "ABD seansında %1'den fazla düştü"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "~5,25%",
+   "chg": "—",
+   "note": "2002'den beri en yüksek bölge"
+  }
+ ],
+ "market_note": "<b>Günün hikâyesi:</b> Trump’ın 3 Kasım ara seçimlerinden önce İran’a saldırmayacağını söylemesi ve Rusya’dan dizel tedariki açıklaması enerji kaygısını azalttı. Perşembe günkü yapay zekâ kaynaklı satıştan sonra teknoloji hisseleri toparlandı. Yine de 10 yıllık faizin ~5,25% ile 24 yılın zirvesine yakın durması ve tüketici güveninin 46,3'e düşmesi, faiz ve enflasyon baskısının sürdüğünü gösteriyor. Kazanç sezonu Salı günü bankalarla başlıyor.",
+ "sections": [
+  {
+   "heading": "Dünya — bilmen gerekenler",
+   "items": [
+    {
+     "title": "İran: seçime kadar saldırı yok, Körfez yine de gergin",
+     "text": "Trump ablukanın sürdüğünü söyledi. Devrim Muhafızları Hürmüz’ün güneyinde bir LPG tankerini vurduğunu açıkladı. Brent 100 doların üzerinde kaldıkça enflasyon beklentileri canlı kalıyor."
+    },
+    {
+     "title": "Faiz baskısı, zayıf tüketici",
+     "text": "10 yıllık getiri hafta içinde 2002'den beri en yüksek seviyeyi gördü. Michigan tüketici güveni Mayıs’tan bu yana en düşük seviyede. Piyasa Ekim’de Fed’in faizi sabit tutmasını, Aralık’ta ise artırım ihtimalini fiyatlıyor."
+    },
+    {
+     "title": "Trump ve Fed Guvernörü Lisa Cook",
+     "text": "Trump, Cook’un görevden alınması için yasal gerekçe olup olmadığını inceleyecek bir komite kurdu. Fed’in bağımsızlığı yeniden risk başlığı oldu."
+    },
+    {
+     "title": "ABD’den UCM’ye yaptırım",
+     "text": "Washington, Uluslararası Ceza Mahkemesi’ne geniş kapsamlı yaptırımlar uyguladı. Mahkeme bunu hukukun üstünlüğüne saldırı olarak niteledi."
+    },
+    {
+     "title": "Kasırga ve şirketler",
+     "text": "Kategori 3 Isaias kasırgası bu gece Florida-Alabama kıyısına ulaşacak. Delta yakıt maliyetleri yüzünden beklentiyi kaçırdı ve tahminini düşürdü. SpaceX’in mobil hamlesi telekom hisselerini %7'den fazla düşürdü."
+    }
+   ]
+  },
+  {
+   "heading": "Türkiye — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Fon tasfiyesi kanun teklifi Meclis’te",
+     "text": "Teklif, SPK’nın 17 Eylül’de tasfiyesine karar verdiği fonları kapsıyor. Yatırımcıya koşullu olarak 1 milyon TL’ye kadar ara ödeme öngörülüyor, varlıklar SPK denetiminde satılacak. Hükümete göre kamu kaynağı kullanılmayacak. Teklif gelecek hafta Plan ve Bütçe Komisyonu’na gelecek. Özgür Özel’in Erdoğan’ı hedef alan iddialarına Ömer Çelik “iftira” diyerek yanıt verdi."
+    },
+    {
+     "title": "Sanayi üretimi daralıyor",
+     "text": "Ağustos’ta yıllık %1,9, aylık %1,0 geriledi. Zayıf iç talep, sıkı para politikasının etkisinin sürdüğünü gösteriyor."
+    },
+    {
+     "title": "TCMB: dezenflasyon yavaşladı, duruş sıkı",
+     "text": "Politika faizi %37. Karahan, enerji fiyatları nedeniyle dezenflasyonun yavaşladığını söyledi. Bir sonraki PPK kararı 22 Ekim’de."
+    },
+    {
+     "title": "Konut",
+     "text": "Konut kredisi ortalama faizi yıllık ~%41,9 (aylık ~%3,5) ve repo ihaleleriyle hafifçe geriliyor. Maltepe’de 4 katı kaçak bir binanın çökmesi (5 ölü), kaçak yapı ve kentsel dönüşüm denetimini yeniden gündeme getirdi."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yerel",
+   "items": [
+    {
+     "title": "Veri merkezleri toplantısı (13 Ekim)",
+     "text": "Başkan Gonnelli, CoreSite, Equinix, PSE&G ve Veolia temsilcilerini sakinlerle bir araya getiriyor. Gündemde elektrik faturaları ile enerji ve su kapasitesi var. Kasabada 9 veri merkezi bulunuyor, 2 yenisi onaylandı (Patch, 7 Ekim)."
+    },
+    {
+     "title": "Belediye takvimi",
+     "text": "12 Ekim Pazartesi Columbus Day nedeniyle belediye kapalı. 13 Ekim’de 17:00'de komite, 19:00'da Belediye Meclisi toplanıyor."
+    },
+    {
+     "title": "İşe gidiş-dönüş",
+     "text": "Lincoln Tunnel, XBL ve PABT için bugün yeni bir otobüs aksaklığı duyurusu yok. 9 Ekim–15 Kasım arasındaki ray çalışması nedeniyle bazı tren yolcuları 126 otobüsüyle PABT’ye yönlendiriliyor, terminal daha kalabalık olabilir."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin & sosyal medya",
+   "items": [
+    {
+     "title": "Minka Kelly ve Dan Reynolds ayrıldı (doğrulanmadı)",
+     "text": "People’a konuşan isimsiz bir kaynağa göre. Taraflar açıklama yapmadı."
+    },
+    {
+     "title": "Eski Prens Andrew’a 302 bin sterlin",
+     "text": "Crown Estate, Royal Lodge kira sözleşmesinden vazgeçmesi karşılığında ödeme yaptı."
+    },
+    {
+     "title": "Güllü davasında karar",
+     "text": "Sanatçının kızı ağırlaştırılmış müebbet hapis cezası aldı."
+    }
+   ]
+  },
+  {
+   "heading": "Yarın ve bu hafta takvimde",
+   "items": [
+    {
+     "title": "Pzt 12",
+     "text": "Columbus Day. ABD tahvil piyasası kapalı, borsalar açık."
+    },
+    {
+     "title": "Sal 13",
+     "text": "JPMorgan, Goldman, Citi ve Wells Fargo bilançoları. Secaucus’ta veri merkezi toplantısı ve Belediye Meclisi. NJ’de seçmen kaydının son günü."
+    },
+    {
+     "title": "Çar 14–Cum 16",
+     "text": "ABD Eylül TÜFE (beklenti yıllık %3,6), Morgan Stanley ve BofA bilançoları, perakende satışlar, ÜFE, sanayi üretimi. Türkiye’de cari denge, bütçe ve konut satışları açıklanacak."
+    },
+    {
+     "title": "22 Ekim",
+     "text": "TCMB faiz kararı (14:00 TSİ)."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance – Stock market today",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-9-dow-sp-500-nasdaq-080148117.html"
+  },
+  {
+   "title": "AA/Canlı Gaste – Piyasalarda gün sonu",
+   "url": "https://www.canligaste.com/piyasalarda-gun-sonu-9-ekim-2026/923524/"
+  },
+  {
+   "title": "CNBC-e – Borsa",
+   "url": "https://www.cnbce.com/borsa/borsa-haftayi-yukselisle-kapadi-9-ekim-2026-h39075"
+  },
+  {
+   "title": "ABC News – Iran",
+   "url": "https://abcnews.com/International/live-updates/iran-live-updates-trump-us-attack-iran-ahead/?id=137063637"
+  },
+  {
+   "title": "AP News Summary",
+   "url": "https://www.union-bulletin.com/news/national/ap-news-summary-at-9-34-a-m-edt/article_ea5e7330-777e-526a-866d-8ce85ae71548.html"
+  },
+  {
+   "title": "Bigpara – Fon teklifi",
+   "url": "https://bigpara.hurriyet.com.tr/haberler/genel-haberler/yatirim-fonlarinin-tasfiye-sureci-icin-kanun-teklifi-tbmmde_ID102264894/"
+  },
+  {
+   "title": "Karar – Sanayi üretimi",
+   "url": "https://www.karar.com/ekonomi-haberleri/tuik-sanayi-uretimi-yillik-yuzde-19-azaldi-2077237"
+  },
+  {
+   "title": "CNN Türk – PPK",
+   "url": "https://www.cnnturk.com/ekonomi/merkez-bankasi-ppk-toplanti-tarihi-ekim-2026-merkez-bankasi-faiz-karari-ne-zaman-aciklanacak-faiz-beklentisi-ne-yonde-3475355"
+  },
+  {
+   "title": "Patch – Secaucus veri merkezleri",
+   "url": "https://patch.com/new-jersey/secaucus/whats-latest-data-centers-secaucus"
+  },
+  {
+   "title": "Town of Secaucus",
+   "url": "https://secaucusnj.gov/"
+  },
+  {
+   "title": "NJ Transit aksaklıkları",
+   "url": "https://thelocalgirl.com/newjersey/nj-transit-disruptions-october-2026/"
+  },
+  {
+   "title": "Hürriyet Kelebek",
+   "url": "https://www.hurriyet.com.tr/kelebek/magazin/buyuk-askin-omru-dort-yilmis-sessizce-ayrildilar-43333437"
+  },
+  {
+   "title": "Newsquawk – Haftanın takvimi",
+   "url": "https://www.newsquawk.com/headlines/week-in-focus-12-16th-october-2026-us-cpi-us-retail-sales-start-of-q3-earnings-china-cpi-uk-jobs-rba-minutes-and-aussie-jobs"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir. “(doğrulanmadı)” etiketli maddeler teyit edilmemiş iddialardır."
+}

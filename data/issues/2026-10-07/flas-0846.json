@@ -1,0 +1,133 @@
+{
+ "id": "flas-0846",
+ "type": "flas",
+ "date": "2026-10-07",
+ "time": "08:46",
+ "published_at": "2026-10-10T19:44:09+00:00",
+ "title": "Gün İçi Flaş · Çarşamba 7 Ekim 2026 · 08:45 ET",
+ "subtitle": "Açılış öncesi · Salı 19:00 – Çarşamba 08:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "—",
+   "chg": "-0,50%",
+   "note": "vadeli, 08:32 ET"
+  },
+  {
+   "name": "Nasdaq 100",
+   "level": "—",
+   "chg": "-0,80%",
+   "note": "vadeli, 08:32 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,20",
+   "chg": "+0,04%",
+   "note": "02:29 ET"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "—",
+   "chg": "—",
+   "note": "doğrulanamadı"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.120,47",
+   "chg": "-2,05%",
+   "note": "ilk yarı kapanışı"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "84.067",
+   "chg": "-2,25%",
+   "note": "sabah"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.159,40",
+   "chg": "-0,66%",
+   "note": "vadeli, sabah"
+  },
+  {
+   "name": "Brent",
+   "level": "101,84",
+   "chg": "+1,20%",
+   "note": "~08:30 ET"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%5,27",
+   "chg": "—",
+   "note": "Salı kapanışı; bu sabah yükselişte"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Yükselen tahvil faizleri ve petrol risk iştahını bastırıyor; Avrupa’da Stoxx 600 ~%0,7 ekside, BIST açılıştaki artıyı silip %2 geriledi (66 hissede devre kesici). <b>Hisseler:</b> Constellation Brands açılış öncesi -%5,4 (yıllık marj tahminini düşürdü); Micron -%3,1, çip hisselerinde geniş satış.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "ABD uzun vadeli faizleri tırmanıyor",
+     "text": "30 yıllık getiri %5,71 ile 2002'den bu yana en yüksek seviyeye çıktı; vadeliler bu yüzden rekor sonrası geri çekiliyor."
+    },
+    {
+     "title": "Brent tekrar 100$ üzerinde",
+     "text": "Hürmüz’de İran’ın tanker saldırılarını sıklaştırması arz endişesini canlı tutuyor; enflasyon ve faiz beklentileri için kritik."
+    },
+    {
+     "title": "Fed tutanakları bugün",
+     "text": "Eylül toplantısı tutanakları 14:00 ET’de; piyasa bu ay faiz artırımı beklemiyor ama sıkılaşma tonuna bakacak."
+    },
+    {
+     "title": "Kimya Nobeli",
+     "text": "Henri Kagan ve Kenso Soai’ye, molekülün tek bir “ayna görüntüsü” formunu üreten kiral sentez yöntemleri için verildi."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "",
+     "text": "10:30 ET: EIA haftalık ham petrol stokları."
+    },
+    {
+     "title": "",
+     "text": "14:00 ET: FOMC Eylül tutanakları · Kapanış sonrası: Levi Strauss ve Applied Digital bilançoları."
+    },
+    {
+     "title": "",
+     "text": "<i>Secaucus/yol ve magazin: bu aralıkta kayda değer yeni gelişme yok.</i>"
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance – Stock market today",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-7-dow-sp-500-nasdaq-080241833.html"
+  },
+  {
+   "title": "Reuters/AOL – Futures slip as yields, oil rebound",
+   "url": "https://www.aol.com/articles/wall-st-futures-slip-yields-103642000.html"
+  },
+  {
+   "title": "Investing.com – Futures dip, Fed minutes awaited",
+   "url": "https://www.investing.com/news/stock-market-news/us-stock-futures-steady-after-tech-rally-lifts-sp-500-nasdaq-to-records-4935463"
+  },
+  {
+   "title": "Yeniçağ – BIST ilk yarı",
+   "url": "https://www.yenicaggazetesi.com/borsa-istanbul-ilk-yarida-kayipta-bist-100-endeksi-yuzde-205-dustu-1079433h.htm"
+  },
+  {
+   "title": "Bloomberg HT – Dolar/TL",
+   "url": "https://www.bloomberght.com/dolartlde-son-durum-ne-7-ekim-2026-euro-ve-doviz-fiyatlari-pkh2-3790572"
+  },
+  {
+   "title": "Castanet – Nobel Kimya",
+   "url": "https://www.castanet.net/news/World/633570/Nobel-Prize-in-chemistry-awarded-to-Kagan-and-Soai-for-research-solving-mirror-image-mystery"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

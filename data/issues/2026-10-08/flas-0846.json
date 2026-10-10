@@ -1,0 +1,134 @@
+{
+ "id": "flas-0846",
+ "type": "flas",
+ "date": "2026-10-08",
+ "time": "08:46",
+ "published_at": "2026-10-10T19:44:09+00:00",
+ "title": "Gün İçi Flaş · Perşembe 8 Ekim 2026 · 08:46 ET",
+ "subtitle": "Açılış öncesi · 7 Ekim 19:00 – 8 Ekim 08:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.816",
+   "chg": "-0,47%",
+   "note": "vadeli, ~07:30"
+  },
+  {
+   "name": "Nasdaq-100",
+   "level": "31.184",
+   "chg": "-0,69%",
+   "note": "vadeli, ~07:30"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "~49,22",
+   "chg": "—",
+   "note": "serbest piyasa, 06:00"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1180",
+   "chg": "—",
+   "note": "06:00"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.119,61",
+   "chg": "-0,03%",
+   "note": "gün ortası, 06:00"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "82.512",
+   "chg": "-1,43%",
+   "note": "~07:30"
+  },
+  {
+   "name": "Altın (ons)",
+   "level": "4.147,6",
+   "chg": "+0,17%",
+   "note": "vadeli, 07:45"
+  },
+  {
+   "name": "Brent",
+   "level": "105,10",
+   "chg": "+4,89%",
+   "note": "07:18"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "~%5,28–5,30",
+   "chg": "—",
+   "note": "08:30"
+  }
+ ],
+ "market_note": "Bu sabah piyasayı petrol, yükselen tahvil faizleri ve Fed’in faiz artırmayı sürdürme sinyalleri yönlendiriyor. Asya’da sert satış vardı: Kospi %2,6, Nikkei %1,4 düştü. Stoxx 600 -%0,85'te. DXY ~102,3 ile 18 ayın zirvesine yakın. Hisselerde PepsiCo beklentiyi aştı ve +%1,9'da, ancak kâr büyümesi hedefini düşürdü.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "İran’da yeni saldırı ihtimali",
+     "text": "Trump, İran’la artık anlaşma istemediğini söyledi; ABD’nin yeni saldırılara hazırlandığı bildiriliyor. Körfez’de tanker saldırıları da sürünce petrol ~%5 yükseldi."
+    },
+    {
+     "title": "Waller İstanbul’da",
+     "text": "Fed Guvernörü, enflasyon için ek artışlar gerektiğini ama bunların art arda toplantılarda olması gerekmediğini söyledi. Bu sözler ekimde duraklama kapısını aralık bırakıyor."
+    },
+    {
+     "title": "Avrupa’da tahvil gerginliği",
+     "text": "Fransa 10Y faizi %4,92'ye döndü. Deutsche Bank’a göre Avrupa’da bulaşma riski yeniden gündemde."
+    },
+    {
+     "title": "İşsizlik başvuruları",
+     "text": "197 bin geldi, beklenti 200 bindi. Sağlam istihdam verisi şahin Fed beklentisini destekliyor."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin",
+   "items": [
+    {
+     "title": "Halle Berry",
+     "text": "Olivier Martinez’le süren velayet davası kapsamında mahkemenin zorunlu tuttuğu ebeveynlik programını tamamladı (TMZ, mahkeme belgeleri)."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "",
+     "text": "09:30 ABD açılışı · ~10:00 Ağustos toptan stoklar (kesin)"
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html"
+  },
+  {
+   "title": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-08-2026"
+  },
+  {
+   "title": "Fortune",
+   "url": "https://fortune.com/2026/10/08/trump-iran-oil-prices-europe-france-bond-contagion-risk/"
+  },
+  {
+   "title": "FXStreet – Waller",
+   "url": "https://www.fxstreet.com/news/feds-waller-further-hikes-dont-need-to-come-at-consecutive-meetings-202610080854"
+  },
+  {
+   "title": "FXStreet – Başvurular",
+   "url": "https://www.fxstreet.com/news/us-initial-jobless-claims-dropped-to-197k-last-week-202610081232"
+  },
+  {
+   "title": "Yeniçağ",
+   "url": "https://www.yenicaggazetesi.com/piyasalarda-gun-ortasi-belli-oldu-8-ekim-2026-1079775h.htm"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

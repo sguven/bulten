@@ -1,0 +1,134 @@
+{
+ "id": "flas-1545",
+ "type": "flas",
+ "date": "2026-10-09",
+ "time": "15:45",
+ "published_at": "2026-10-10T19:44:10+00:00",
+ "title": "Gün İçi Flaş · Cuma 9 Ekim 2026 · 15:45 ET",
+ "subtitle": "Kapanışa doğru · 12:45–15:45 ET arası gelişmeler",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.817,65",
+   "chg": "+0,67%",
+   "note": "15:19 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "27.382,26",
+   "chg": "+0,69%",
+   "note": "15:19 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,34",
+   "chg": "~0,00%",
+   "note": "9 Ekim, saati belli değil"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1225",
+   "chg": "+0,12%",
+   "note": "gün içi"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.265,98",
+   "chg": "+0,43%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "82.412",
+   "chg": "+0,86%",
+   "note": "~15:19 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.224,40",
+   "chg": "+1,62%",
+   "note": "vadeli, ~15:19"
+  },
+  {
+   "name": "Brent",
+   "level": "~104 $",
+   "chg": "—",
+   "note": "WTI 91,15 $ (-0,37%)"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "5,248%",
+   "chg": "+1,5 bp",
+   "note": "15:26 ET"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Endeksleri teknoloji hisselerindeki toparlanma ve petroldeki gevşeme yukarı taşıyor. Isaias ve Rusya dizel haberi ise enerjiyi iki yöne birden çekiyor. <b>Hisseler:</b> SpaceX’in spektrum anlaşması telekom hisselerini düşürdü (T-Mobile ~-9,5%, AT&T ~-6%). Humana ~+12%, Moderna ~+9%.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Trump: Rusya ABD’ye dizel verecek",
+     "text": "Putin görüşmesinin ardından, ~15:10 ET’de hemen 300 bin ton, kasımda 500 bin ton ve sonrasında 1 milyon ton dizel geleceğini açıkladı. Dizel fiyatları ve yaptırımların gidişatı açısından önemli; yaptırımların gevşetildiği teyit edilmedi."
+    },
+    {
+     "title": "Isaias Kategori 3'te (güncelleme)",
+     "text": "NHC’nin 15:00 ET verisine göre rüzgar 120 mph. Karaya çıkışın bu gece ~22:00 ET’de Pensacola ile Destin arasında olması bekleniyor. Körfez’deki petrol üretiminin ~%63'ü durdu, yani rafineri riski var."
+    },
+    {
+     "title": "Fed Guvernörü Lisa Cook için soruşturma komitesi (güncelleme)",
+     "text": "Beyaz Saray, Cook’un görevden alınması için “yeterli sebep” olup olmadığını inceleyecek 3 kişilik komiteyi bugün resmen yayımladı. Duruşma 5 Kasım’da; Fed’in bağımsızlığı tartışması sürüyor."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "Lincoln Tunnel’da otobüsler yavaş",
+     "text": "HelixAlert’e göre 15:47 ET itibarıyla NJ Transit otobüslerinde iki yönde de yoğun gecikme var. Nedeni belirtilmemiş, kapanma yok. Secaucus’tan bugün yeni bir duyuru gelmedi."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "Bu gece ~22:00 ET",
+     "text": "Isaias karaya çıkacak. Hafta sonu Körfez üretimi ve rafinerilerle ilgili haberler petrolün yönünü belirleyecek."
+    },
+    {
+     "title": "Pzt 12 Ekim, Columbus Day",
+     "text": "Hisse piyasası açık; tahvil piyasasının kapalı olması bekleniyor. Haftaya ABD enflasyon ve perakende satış verileri açıklanacak."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance canlı",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-9-dow-sp-500-nasdaq-080148117.html"
+  },
+  {
+   "title": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-09-2026"
+  },
+  {
+   "title": "AA Borsa",
+   "url": "https://www.aa.com.tr/tr/ekonomi/borsa-gunu-yukselisle-tamamladi/4083772"
+  },
+  {
+   "title": "Kyiv Independent – dizel",
+   "url": "https://kyivindependent.com/trump-says-russia-agreed-to-supply-millions-of-tons-of-diesel-to-us-global-markets/"
+  },
+  {
+   "title": "Al Jazeera – Lisa Cook",
+   "url": "https://www.aljazeera.com/economy/2026/10/9/trump-launches-probe-into-federal-reserve-governor-lisa-cook"
+  },
+  {
+   "title": "FOX Weather – Isaias",
+   "url": "https://www.foxweather.com/live-news/live-updates-hurricane-isaias-threatens-the-gulf-coast-with-dangerous-landfall-expected-tonight"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}
