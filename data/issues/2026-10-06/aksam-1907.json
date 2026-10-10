@@ -1,0 +1,242 @@
+{
+ "id": "aksam-1907",
+ "type": "aksam",
+ "date": "2026-10-06",
+ "time": "19:07",
+ "published_at": "2026-10-10T19:22:36+00:00",
+ "title": "Akşam Bülteni · Salı 6 Ekim 2026",
+ "subtitle": "Hazırlanma: ~19:15 ET · ABD rakamları kapanış",
+ "markets": [
+  {
+   "name": "USD/TRY",
+   "level": "49,18",
+   "chg": "+0,08%",
+   "note": "doviz.com, ~19:00 ET"
+  },
+  {
+   "name": "EUR/TRY",
+   "level": "55,34",
+   "chg": "+0,28%",
+   "note": "EUR/USD yükselişiyle"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1262",
+   "chg": "+0,35%",
+   "note": "Fed artırım beklentisi geriledi"
+  },
+  {
+   "name": "S&P 500",
+   "level": "7.818,93",
+   "chg": "+0,58%",
+   "note": "Rekor kapanış"
+  },
+  {
+   "name": "Nasdaq Comp.",
+   "level": "27.599,79",
+   "chg": "+0,45%",
+   "note": "Rekor kapanış"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.374,26",
+   "chg": "-0,56%",
+   "note": "Kapanış; banka endeksi +0,66%"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "~85.500",
+   "chg": "-0,45%",
+   "note": "Yahoo, 24 saat"
+  },
+  {
+   "name": "Ons altın",
+   "level": "~4.190 $",
+   "chg": "—",
+   "note": "Comex vadeli; kaynaklar +0,1% ile +0,7% arası veriyor"
+  },
+  {
+   "name": "Brent",
+   "level": "~101,1 $",
+   "chg": "+0,51%",
+   "note": "Gün içinde 97,8 $'ı gördü, sonra toparladı"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%5,275",
+   "chg": "-3,6 bp",
+   "note": "Pazartesi 24 yılın en yüksek kapanışını görmüştü"
+  }
+ ],
+ "market_note": "<b>Günün hikâyesi:</b> Wall Street rekorla kapadı. G7'nin stratejik rezervleri piyasaya sürme kararı petrolü gün içinde 100 doların altına itti, 10 yıllık faiz de 24 yılın zirvesinden geri çekildi. Bunlar ve zayıf eylül istihdam verisi, Fed'in 28 Ekim'de faiz artıracağı beklentisini zayıflattı. Constellation Energy, Google ile yaptığı 20 yıllık nükleer anlaşmayla %14,8 yükseldi; Nvidia'nın piyasa değeri 6 trilyon dolara yaklaştı. Borsa İstanbul ise fon soruşturmasının gölgesinde düştü.",
+ "sections": [
+  {
+   "heading": "Dünya — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Hormuz'da tanker saldırıları arttı",
+     "text": "UKMTO 2 Ekim'den beri her gün en az bir saldırı kaydetti. ABD, Devrim Muhafızları'yla bağlantılı tankerleri vurdu. Körfez'in ihracatı savaş öncesi seviyelere yakın olsa da petrol riski canlı."
+    },
+    {
+     "title": "G7'den 100 milyon varillik rezerv",
+     "text": "Rezervler dört ay içinde piyasaya verilecek, ağırlık ilk aylarda ve dizelde olacak. Kısa vadede fiyatı baskılıyor; EIA ise 4. çeyrek sonu için Brent tahminini 105 dolara yükseltti."
+    },
+    {
+     "title": "Fed ikilemi",
+     "text": "Eylül'de yalnızca 29 bin kişilik istihdam artışı oldu ve önceki iki ay toplam 60 bin aşağı revize edildi. Eylül'deki 25 bp artırımın ardından ekim için artırım beklentisi azaldı. Çarşamba açıklanacak FOMC tutanakları kritik."
+    },
+    {
+     "title": "Avrupa ve Kanada",
+     "text": "Fransa'nın bütçe açığına dair kaygılar euroyu baskılıyor. Quebec'te bağımsızlık yanlısı Parti Québécois azınlık hükümeti kurmaya hak kazandı ve referandum vaadinde bulunuyor."
+    },
+    {
+     "title": "Rusya-Ukrayna",
+     "text": "Ukrayna gece boyunca Moskova bölgesine 650'den fazla drone gönderdi. Rusya'nın Harkiv'e düzenlediği saldırıda 6 sivil hayatını kaybetti."
+    }
+   ]
+  },
+  {
+   "heading": "Türkiye — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Karahan Meclis'te sunum yaptı",
+     "text": "Politika faizi %37. Piyasanın 12 ay sonrası için enflasyon beklentisi %23,7, hanehalkınınki %45,6. Yakın vadede faiz indirimi sinyali verilmedi; mesaj, fonlama maliyetindeki düşüşün kredi ve mevduat faizlerine kademeli yansıdığıydı (tüketici kredisi faizi ~%50,8)."
+    },
+    {
+     "title": "Enflasyon ve kira (konut)",
+     "text": "Eylülde yıllık TÜFE %29,73, aylık %1,84 oldu. Buna göre ekimde kira artışında yasal tavan %31,49 (eylülde %31,79'du)."
+    },
+    {
+     "title": "Fon soruşturması",
+     "text": "Adalet Bakanı Gürlek'e göre 85 kişi tutuklandı ve 207 kişi hakkında işlem var. İsviçre'ye gönderilen paraların geri alınması için süreç başlatıldı. 17 Eylül'de tasfiye edilen fonlarda yatırımcılara ara ödeme hızlanıyor."
+    },
+    {
+     "title": "Borsa",
+     "text": "BIST 100 %0,56 düştü. Faktoring/finansal kiralama endeksi -%6,67 ile en kötü performansı gösterdi. Hazine, bugünkü ihalelerde 100,8 milyar TL borçlandı."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yerel",
+   "items": [
+    {
+     "title": "Equinix dizel sızıntısı",
+     "text": "11 Eylül'de bir veri merkezinden ~5.500 galon dizel, Hackensack Nehri'ne bağlanan bir dereye karıştı. Temsilci Nellie Pou, NJDEP'ten 9 Ekim'e kadar ayrıntılı zaman çizelgesi ve temizlik durumu istedi (mektup tarihi 2 Ekim)."
+    },
+    {
+     "title": "Belediye",
+     "text": "Mayor & Council toplantısı 13 Ekim saat 19:00'da (caucus 17:00); yazılı sorular önceden e-postayla gönderilebiliyor. Belediye binası 12 Ekim'de Columbus Day nedeniyle kapalı."
+    },
+    {
+     "title": "İşe gidiş-dönüş",
+     "text": "Bugün için Lincoln Tunnel/XBL'de yeni bir planlı kapanma duyurusu bulamadım. PABT'deki Dyer Ave/40. Cadde düzenlemesi sürüyor: dönüş yapan otobüsler yerel sokakları kullanıyor, en yoğun etki hafta içi 15:00–18:00 arasında; düzenleme 2027'nin ilk çeyreğine kadar geçerli."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin & sosyal medya",
+   "items": [
+    {
+     "title": "Göksel Arsoy'a veda",
+     "text": "Yeşilçam'ın \"Altın Çocuğu\" 90 yaşında hayatını kaybetti (5 Ekim). Sanat dünyasından çok sayıda veda mesajı paylaşıldı."
+    }
+   ]
+  },
+  {
+   "heading": "Yarın ve bu hafta takvimde",
+   "items": [
+    {
+     "title": "Çar 7 Ekim, 14:00 ET",
+     "text": "FOMC tutanakları. Ayrıca Levi Strauss bilançosu (kapanış sonrası)."
+    },
+    {
+     "title": "Per 8 Ekim",
+     "text": "PepsiCo bilançosu (açılış öncesi) ve haftalık işsizlik başvuruları. Delta'nın bilançosu da bu hafta; petrol fiyatına çok duyarlı."
+    },
+    {
+     "title": "Cuma 9 Ekim",
+     "text": "Michigan tüketici güveni öncü verisi. Aynı gün NJDEP'in Equinix sızıntısıyla ilgili yanıt vermesi bekleniyor."
+    },
+    {
+     "title": "13 ve 28 Ekim",
+     "text": "Secaucus Belediye Meclisi ve İmar Kurulu 13 Ekim saat 19:00'da. Fed faiz kararı 28 Ekim'de."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet – Stock Market Today (6 Ekim)",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-06-2026"
+  },
+  {
+   "title": "BBN Times – Dow, petrol ve faizler",
+   "url": "https://www.bbntimes.com/global-economy/dow-jones-djia-rises-253-points-to-51-521-28-as-oil-slips-below-100-and-treasury-yields-ease-from-a-24-year-high"
+  },
+  {
+   "title": "Yahoo Finance – Markets",
+   "url": "https://finance.yahoo.com/markets/"
+  },
+  {
+   "title": "Trading Economics – Brent",
+   "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+  },
+  {
+   "title": "Trading Economics – EUR/USD",
+   "url": "https://tradingeconomics.com/euro-area/currency"
+  },
+  {
+   "title": "Al Jazeera – Hormuz saldırıları",
+   "url": "https://www.aljazeera.com/news/2026/10/6/hormuz-ship-attacks-surge-are-increased-oil-exports-sustainable"
+  },
+  {
+   "title": "Gulf News – Petrol ve G7",
+   "url": "https://gulfnews.com/business/energy/oil-prices-fall-brent-settles-at-10032-as-markets-weigh-higher-gulf-exports-g7-supply-boost-1.500699626"
+  },
+  {
+   "title": "Just Security – Early Edition (6 Ekim)",
+   "url": "https://www.justsecurity.org/159804/early-edition-october-6-2026/"
+  },
+  {
+   "title": "Referans – Borsa günü düşüşle tamamladı",
+   "url": "https://www.referansgazetesi.com.tr/borsa-gunu-dususle-tamamladi-6-ekim"
+  },
+  {
+   "title": "doviz.com",
+   "url": "https://www.doviz.com/"
+  },
+  {
+   "title": "Bloomberg HT – Gürlek fon soruşturması",
+   "url": "https://www.bloomberght.com/bakan-gurlek-ten-fon-sorusturmasina-dair-aciklamalar-3790464"
+  },
+  {
+   "title": "Yeni Ankara – Karahan TBMM sunumu",
+   "url": "https://www.yeniankara.com.tr/ekonomi/fatih-karahan-tbmm-sunumu-kredi-ve-mevduat-faizleri-ne-olacak-185313"
+  },
+  {
+   "title": "Son Dakika – Ekim kira tavanı",
+   "url": "https://www.sondakika.com/guncel/haber-ekim-ayinda-kiralara-uygulanacak-tavan-zam-orani-20298239/"
+  },
+  {
+   "title": "Rep. Pou – Equinix mektubu",
+   "url": "https://pou.house.gov/sites/evo-subsites/pou.house.gov/files/evo-media-document/congresswoman-pou-letter-equinix-diesel-spill-10-2-2026.pdf"
+  },
+  {
+   "title": "Town of Secaucus",
+   "url": "https://secaucusnj.gov/"
+  },
+  {
+   "title": "Port Authority – Dyer Ave duyurusu",
+   "url": "https://www.portauthoritybuilds.com/content/dam/redevelopment/mbt/monthly-updates-tab/advisories/MBTR%20Advisory%20on%20Dyer%20Ave%20and%2040th%20and%20St%20Bus%20Route%20Changes%209.03.26.pdf.coredownload.pdf"
+  },
+  {
+   "title": "Heygotrade – Haftalık takvim",
+   "url": "https://www.heygotrade.com/en/news/weekly-economic-outlook-2026-10-05/"
+  },
+  {
+   "title": "AA – Göksel Arsoy",
+   "url": "https://aa.com.tr/tr/kultur/turk-sinemasinin-usta-oyuncularindan-goksel-arsoy-90-yasinda-vefat-etti/4078457"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar kaynaklardaki son verilere dayanır ve gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}
