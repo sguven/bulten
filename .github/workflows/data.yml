@@ -1,0 +1,26 @@
+name: Veri kontrolü
+
+on:
+  push:
+    branches: [main]
+    paths: ['data/**']
+  workflow_dispatch:
+
+jobs:
+  data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: data/index.json yayın dosyalarıyla uyumlu mu
+        run: |
+          cp data/index.json /tmp/committed.json
+          python3 scripts/publish.py --rebuild
+          python3 - <<'PY'
+          import json
+          a = json.load(open('/tmp/committed.json'))['entries']
+          b = json.load(open('data/index.json'))['entries']
+          assert a == b, 'data/index.json güncel değil'
+          print(f'OK: {len(b)} yayın')
+          PY

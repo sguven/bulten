@@ -1,0 +1,21 @@
+{
+  "name": "gundem-bulten",
+  "version": "1.0.0",
+  "description": "Akşam Bülteni ve Gün İçi Flaş sitesi",
+  "scripts": {
+    "test": "npm run test:py && npm run test:unit && npm run test:e2e",
+    "test:py": "python3 -m pytest -q tests",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:e2e": "playwright test",
+    "serve": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@playwright/test": "^1.56.0",
+    "jsdom": "^29.1.1"
+  },
+  "private": true,
+  "type": "module"
+}

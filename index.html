@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F1F3F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D1319" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Gündem">
+  <title>Gündem</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="assets/fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">İçeriğe geç</a>
+  <header class="masthead">
+    <div class="masthead__inner">
+      <a class="brand" href="#/" aria-label="Gündem, bugünün yayınları">Gündem</a>
+      <nav class="tabs" aria-label="Bölümler">
+        <a class="tab" href="#/" data-tab="today">Bugün</a>
+        <a class="tab" href="#/arsiv" data-tab="archive">Arşiv</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page" tabindex="-1" aria-live="polite">
+    <p class="loading">Yükleniyor…</p>
+    <noscript><p class="notice">Bu sayfa JavaScript gerektirir.</p></noscript>
+  </main>
+
+  <div class="toast" id="toast" role="status" hidden>
+    <span class="toast__text"></span>
+    <a class="toast__action" href="#/">Göster</a>
+    <button class="toast__close" type="button" aria-label="Kapat">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</body>
+</html>

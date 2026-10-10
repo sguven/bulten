@@ -1,0 +1,31 @@
+{
+ "title": "Gün İçi Flaş <script>alert(1)</script>",
+ "subtitle": "<img src=x onerror=\"window.__xss=1\">",
+ "markets": [
+  {
+   "name": "<b>Kalın</b><img src=x onerror=\"window.__xss=2\">",
+   "level": "1",
+   "chg": "+1%",
+   "note": "<i>ok</i>"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> <a href=\"javascript:window.__xss=3\">tıkla</a> &amp; daha fazlası &lt;script&gt;window.__xss=4&lt;/script&gt;",
+ "sections": [
+  {
+   "heading": "Son dakika <svg onload=\"window.__xss=5\">",
+   "items": [
+    {
+     "title": "Başlık <b>kalın</b> <strong onclick=\"window.__xss=6\">x</strong>",
+     "text": "Metin <em>vurgu</em> <iframe src=\"javascript:window.__xss=7\"></iframe>"
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Kötü bağlantı",
+   "url": "https://example.com/\"><script>window.__xss=8</script>"
+  }
+ ],
+ "footer": ""
+}

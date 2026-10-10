@@ -1,0 +1,100 @@
+{
+ "title": "Gün İçi Flaş · Perşembe 8 Ekim · 12:45 ET",
+ "subtitle": "Öğle · 08:45–12:45 arası",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "6.712,40",
+   "chg": "+0,42%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "22.904,11",
+   "chg": "+0,71%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "41,86",
+   "chg": "+0,05%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1642",
+   "chg": "-0,18%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "BIST 100",
+   "level": "10.402,55",
+   "chg": "-1,12%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "121.430",
+   "chg": "+2,30%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "3.985",
+   "chg": "0,00%",
+   "note": "12:30 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "—",
+   "chg": "—",
+   "note": "doğrulanamadı"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%4,12",
+   "chg": "-3 bp",
+   "note": "12:30 ET"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> İşsizlik başvuruları beklentinin altında; teknoloji hisseleri öncülük ediyor.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "İşsizlik başvuruları",
+     "text": "Haftalık başvurular 219 bine geriledi, beklenti 228 bindi."
+    },
+    {
+     "title": "Güncelleme: TCMB",
+     "text": "Başkan yardımcısı dezenflasyonun sürdüğünü, temkinli duruşun korunacağını söyledi."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin & sosyal medya",
+   "items": [
+    {
+     "title": "Ünlü çiftin ayrılık iddiası (doğrulanmadı)",
+     "text": "Page Six'in iddiasına göre çift ayrı yaşıyor; temsilciler yorum yapmadı."
+    },
+    {
+     "title": "X'te yeni özellik",
+     "text": "Platform uzun videolar için yeni bir sekme test ediyor."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "CNBC",
+   "url": "https://www.cnbc.com/"
+  },
+  {
+   "title": "Page Six",
+   "url": "https://pagesix.com/"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}
