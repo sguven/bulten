@@ -1,7 +1,75 @@
 {
  "version": 1,
- "generated_at": "2026-10-10T18:48:29+00:00",
- "count": 0,
- "latest": null,
- "entries": []
+ "generated_at": "2026-10-10T19:22:36+00:00",
+ "count": 3,
+ "latest": "2026-10-09/flas-1245",
+ "entries": [
+  {
+   "id": "flas-1245",
+   "type": "flas",
+   "date": "2026-10-09",
+   "time": "12:45",
+   "title": "Gün İçi Flaş · Cuma 9 Ekim 2026 · 12:45 ET",
+   "subtitle": "Öğle · 08:45 – 12:45 ET",
+   "headlines": [
+    "Hürmüz'de yeni tansiyon",
+    "Kasırga Isaias Kategori 3 oldu",
+    "ABD'den UCM'ye yaptırım",
+    "UMich tüketici güveni 46,3",
+    "Mike Ditka 86 yaşında hayatını kaybetti",
+    "14:00 ET / 16:00 ET",
+    "Pazartesi 12 Ekim"
+   ],
+   "published_at": "2026-10-10T19:22:36+00:00",
+   "path": "data/issues/2026-10-09/flas-1245.json"
+  },
+  {
+   "id": "aksam-1907",
+   "type": "aksam",
+   "date": "2026-10-06",
+   "time": "19:07",
+   "title": "Akşam Bülteni · Salı 6 Ekim 2026",
+   "subtitle": "Hazırlanma: ~19:15 ET · ABD rakamları kapanış",
+   "headlines": [
+    "Hormuz'da tanker saldırıları arttı",
+    "G7'den 100 milyon varillik rezerv",
+    "Fed ikilemi",
+    "Avrupa ve Kanada",
+    "Rusya-Ukrayna",
+    "Karahan Meclis'te sunum yaptı",
+    "Enflasyon ve kira (konut)",
+    "Fon soruşturması",
+    "Borsa",
+    "Equinix dizel sızıntısı",
+    "Belediye",
+    "İşe gidiş-dönüş"
+   ],
+   "published_at": "2026-10-10T19:22:36+00:00",
+   "path": "data/issues/2026-10-06/aksam-1907.json"
+  },
+  {
+   "id": "aksam-1805",
+   "type": "aksam",
+   "date": "2026-10-05",
+   "time": "18:05",
+   "title": "Akşam Bülteni · Pazartesi 5 Ekim 2026",
+   "subtitle": "Hazırlanma: 18:00 ET · ABD rakamları kapanış",
+   "headlines": [
+    "Fransa borç gerginliği euroyu vurdu",
+    "ABD faizleri yükselişte, Fed tutanakları Çarşamba",
+    "Petrol ~100 $, İran gerilimi sürüyor",
+    "ABD Yüksek Mahkemesi yeni döneme başladı",
+    "Ara seçimlere 4 hafta",
+    "Enflasyon %30'un altında",
+    "22 Ekim PPK'da indirim tartışması",
+    "Kira artış tavanı: %31,49",
+    "Borsa fon krizinden toparlanıyor",
+    "Riyad'da savunma teması",
+    "NJ Transit: Hudson tünelinde ray kırıldı",
+    "NJ seçmen kaydı için son gün 13 Ekim"
+   ],
+   "published_at": "2026-10-10T19:22:36+00:00",
+   "path": "data/issues/2026-10-05/aksam-1805.json"
+  }
+ ]
 }

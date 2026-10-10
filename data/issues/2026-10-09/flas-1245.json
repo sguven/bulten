@@ -1,0 +1,134 @@
+{
+ "id": "flas-1245",
+ "type": "flas",
+ "date": "2026-10-09",
+ "time": "12:45",
+ "published_at": "2026-10-10T19:22:36+00:00",
+ "title": "Gün İçi Flaş · Cuma 9 Ekim 2026 · 12:45 ET",
+ "subtitle": "Öğle · 08:45 – 12:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.804,85",
+   "chg": "+0,51%",
+   "note": "~12:20 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "~27.350",
+   "chg": "+0,57%",
+   "note": "~12:20 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,34",
+   "chg": "+0,20%",
+   "note": "öğle"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1193",
+   "chg": "-0,17%",
+   "note": "öğle"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.265,98",
+   "chg": "+0,43%",
+   "note": "kapanış (11:00 ET); hafta artıda"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "83.235",
+   "chg": "+0,72%",
+   "note": "~10:30 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.190 $",
+   "chg": "+1,33%",
+   "note": "~11:45 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "~104,1 $",
+   "chg": "-0,13%",
+   "note": "öğle"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "5,26%",
+   "chg": "+2 bp",
+   "note": "~11:45 ET; 24 yılın zirvesine yakın"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Dünkü yapay zekâ kaynaklı satıştan sonra teknoloji toparlanıyor; ama 10Y %5,26'da ve petrol 100 doların üzerinde, bu da yukarı yönü sınırlıyor. <b>Hisseler:</b> SpaceX'in spektrum anlaşmasından sonra telekomlar sert düşüyor: T-Mobile -%12, Verizon -%11, AT&T -%11. Humana, Medicare Advantage puanı 4 yıldıza geri yükseltilince +%13.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Hürmüz'de yeni tansiyon",
+     "text": "İran Devrim Muhafızları boğazda bir tankeri vurduğunu açıkladı (~09:50 ET); Trump ise savaşın yakında biteceğini söyledi. Petrol primini ayakta tutan ana konu bu."
+    },
+    {
+     "title": "Kasırga Isaias Kategori 3 oldu",
+     "text": "Körfez'deki petrol üretiminin ~%63'ü (~1,28 mn varil/gün) durduruldu. Gece Alabama-Florida sınırında karaya çıkması bekleniyor; rafineri ve akaryakıt riski var."
+    },
+    {
+     "title": "ABD'den UCM'ye yaptırım",
+     "text": "Mahkemeyle her türlü işlem yasaklandı; aralarında İngiltere, Almanya ve Japonya'nın olduğu 8 ülke UCM'ye destek verdi. Bankaların yaptırım uyumunu ilgilendiriyor."
+    },
+    {
+     "title": "UMich tüketici güveni 46,3",
+     "text": "Beklenti 47,6'ydı; düşüş 5 aydır sürüyor. Yüksek benzin fiyatları ve borçlanma maliyeti tüketiciyi zorluyor."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin & sosyal medya",
+   "items": [
+    {
+     "title": "Mike Ditka 86 yaşında hayatını kaybetti",
+     "text": "NFL efsanesinin ölümünü ailesi duyurdu; ABD'de günün en çok konuşulan spor haberi."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "14:00 ET / 16:00 ET",
+     "text": "14:00'te NHC'nin Isaias ara bülteni, 16:00'da ABD kapanışı."
+    },
+    {
+     "title": "Pazartesi 12 Ekim",
+     "text": "Borsa açık, tahvil piyasası kapalı (Columbus Day). Salı büyük bankaların bilançoları, çarşamba TÜFE var."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet - Stock Market Today, 9 Ekim",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-09-2026"
+  },
+  {
+   "title": "Motley Fool - Stock Market Midday, 9 Ekim",
+   "url": "https://www.fool.com/coverage/stock-market-today/2026/10/09/stock-market-midday-oct-9-stocks-edge-higher-humana-jumps-13/"
+  },
+  {
+   "title": "Yahoo Finance - Canlı piyasa",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-9-dow-sp-500-nasdaq-080148117.html"
+  },
+  {
+   "title": "CNBC-e - Borsa haftayı yükselişle kapadı",
+   "url": "https://www.cnbce.com/borsa/borsa-haftayi-yukselisle-kapadi-9-ekim-2026-h39075"
+  },
+  {
+   "title": "Times of Israel - Canlı blog, 9 Ekim",
+   "url": "https://www.timesofisrael.com/liveblog-oct-9-2026/"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}

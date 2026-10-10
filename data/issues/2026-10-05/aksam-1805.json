@@ -1,0 +1,258 @@
+{
+ "id": "aksam-1805",
+ "type": "aksam",
+ "date": "2026-10-05",
+ "time": "18:05",
+ "published_at": "2026-10-10T19:22:36+00:00",
+ "title": "Akşam Bülteni · Pazartesi 5 Ekim 2026",
+ "subtitle": "Hazırlanma: 18:00 ET · ABD rakamları kapanış",
+ "markets": [
+  {
+   "name": "USD/TRY",
+   "level": "49,18",
+   "chg": "+0,07%",
+   "note": "Satış; 09:02 TSİ. Haftalık +%0,51, kontrollü seyir."
+  },
+  {
+   "name": "EUR/TRY",
+   "level": "55,08",
+   "chg": "-0,46%",
+   "note": "Satış; 09:02 TSİ. Euro'daki küresel zayıflık yansıdı."
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1219",
+   "chg": "-0,30%",
+   "note": "Gün içi; Asya'da 1,1161 ile Mayıs 2025'ten beri en düşük."
+  },
+  {
+   "name": "S&P 500",
+   "level": "7.752,30",
+   "chg": "+0,38%",
+   "note": "Kapanış; rekorun %1 yakınında."
+  },
+  {
+   "name": "Nasdaq Composite",
+   "level": "27.383,43",
+   "chg": "+0,71%",
+   "note": "Kapanış; rekor seviye, Nvidia da rekorda."
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.444",
+   "chg": "+1,42%",
+   "note": "Kapanış; aylık hâlâ -%12,4 (fon krizi)."
+  },
+  {
+   "name": "BTC/USD",
+   "level": "85.507",
+   "chg": "+0,32%",
+   "note": "ABD kapanışı civarı."
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.175,30 $",
+   "chg": "+0,31%",
+   "note": "Vadeli, ABD kapanışı."
+  },
+  {
+   "name": "Brent petrol",
+   "level": "99,61 $",
+   "chg": "-1,89%",
+   "note": "Gün içi; G7 stok salımı, Aramco iskontoları. WTI ~90,50 $."
+  },
+  {
+   "name": "ABD 10 yıllık",
+   "level": "%5,32",
+   "chg": "+0,72%",
+   "note": "Getirideki yüzde değişim (~+4 bp); ~20 yılın zirvesine yakın."
+  }
+ ],
+ "market_note": "<b>Günün hikâyesi:</b> ABD'de teknoloji hisseleri, 20 yılın zirvesine yaklaşan tahvil getirilerine rağmen Nasdaq'ı rekora taşıdı; güçlü ISM hizmet verisi (fiyat endeksi 74) Fed'in sıkılaştırma ihtimalini canlı tutuyor. Avrupa'da Fransa kaynaklı tahvil satışı euroyu 17 ayın dibine itti. Borsa İstanbul, beklentiden düşük enflasyon ve SPK'nın fon ara ödeme kararıyla toparlandı.",
+ "sections": [
+  {
+   "heading": "Dünya — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Fransa borç gerginliği euroyu vurdu",
+     "text": "Fransa 10 yıllık getirisi ~%4,92'ye çıktı, Almanya ile makas ~146 bp'ye açıldı; euro 17 ayın dibini gördü. İspanya'da Sánchez 29 Kasım'a erken seçim kararı aldı. Lagarde durumu ciddi ama 2011 değil diye nitelendi; yayılma riski İtalya ve Belçika tahvillerine de sıçradı."
+    },
+    {
+     "title": "ABD faizleri yükselişte, Fed tutanakları Çarşamba",
+     "text": "ISM hizmet endeksi Eylül'de 55,9'a, fiyatlar alt endeksi 74'e çıktı. Fed Eylül'de faizi 25 bp artırıp %3,75-4,00'e taşımıştı; piyasa tutanaklarda yeni artış desteğini arayacak."
+    },
+    {
+     "title": "Petrol ~100 $, İran gerilimi sürüyor",
+     "text": "Brent, G7'nin acil stok salımı ve Aramco'nun Asya iskontolarıyla %2'ye yakın geriledi. ABD, yaptırımlı İran kurumlarıyla iş yapan yabancı bankaları uyardı; Devrim Muhafızları füze menzilini artırma niyetini açıkladı. Jerusalem Post'a göre ABD, İran tehdidi gerekçesiyle bombardıman uçaklarını İngiltere'deki RAF Fairford'dan çekti."
+    },
+    {
+     "title": "ABD Yüksek Mahkemesi yeni döneme başladı",
+     "text": "İlk gün Suncor v. Boulder davası görüşüldü: fosil yakıt şirketlerine eyalet hukukuyla iklim tazminatı davası açılıp açılamayacağı. Dönemde seçmen kaydında vatandaşlık ispatı (RNC v. Mi Familia Vota) gibi kritik dosyalar da var."
+    },
+    {
+     "title": "Ara seçimlere 4 hafta",
+     "text": "3 Kasım ara seçimleri öncesi Trump 5.000 dolarlık çek vaadini yineledi ve daha küçük ödemeler dağıttı (CNBC). Kampanya Demokratların umutlarının yükseldiği bir ortamda sürüyor."
+    }
+   ]
+  },
+  {
+   "heading": "Türkiye — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Enflasyon %30'un altında",
+     "text": "TÜİK'e göre Eylül TÜFE aylık %1,84 (beklenti %2,28), yıllık %29,73 (Ağustos %31,51); yıllık enflasyon 4 yıl 10 ay sonra %30'un altına indi. ENAG yıllık %46,61 açıkladı."
+    },
+    {
+     "title": "22 Ekim PPK'da indirim tartışması",
+     "text": "BofA ve bazı yerli kurumlar 100 bp indirim bekliyor. Atilla Yeşilada gibi ekonomistler ise %2'nin üzerindeki aylık çekirdek enflasyon ve Eylül'deki ~20 milyar $ rezerv kaybı nedeniyle indirime alan olmadığını savunuyor."
+    },
+    {
+     "title": "Kira artış tavanı: %31,49",
+     "text": "Ekim'de yenilenen konut ve işyeri kira sözleşmelerinde uygulanabilecek azami artış (12 aylık TÜFE ortalaması) %31,49 oldu. Kiracılar ve ev sahipleri için doğrudan ilgili."
+    },
+    {
+     "title": "Borsa fon krizinden toparlanıyor",
+     "text": "BIST 100 %1,42 artışla 12.444'te kapandı; ancak aylık kayıp %12,4. SPK, Tera, Pusula, Atlas ve Hedef Portföy'ün tasfiyedeki fonlarında yatırımcıya 1 milyon TL'ye kadar ara ödeme yapılmasına karar vermişti; uygulama para piyasası fonlarından başlıyor."
+    },
+    {
+     "title": "Riyad'da savunma teması",
+     "text": "Dışişleri Bakanı Fidan ve Milli Savunma Bakanı, Mekke Ortak Savunma Anlaşması kapsamındaki komite toplantısı için Riyad'da. Yurt içinde Özgür Özel liderliğindeki Yeni Parti MYK toplantısı yaptı."
+    }
+   ]
+  },
+  {
+   "heading": "NY / NJ yerel",
+   "items": [
+    {
+     "title": "NJ Transit: Hudson tünelinde ray kırıldı",
+     "text": "Sabah Penn Station giriş-çıkışlarında 60 dakikaya varan gecikme yaşandı, Midtown Direct trenleri Hoboken'e yönlendirildi, PATH'te bilet geçerliliği sağlandı. Servis 10:45'te düzeldi, öğlen ~45 dk gecikme sürüyordu; akşam dönüşünde uygulamayı kontrol etmekte fayda var."
+    },
+    {
+     "title": "NJ seçmen kaydı için son gün 13 Ekim",
+     "text": "3 Kasım genel seçimi için kayıt son tarihi 13 Ekim Salı. NJ'de Eylül'de Demokratlar Cumhuriyetçilerden ~15.700 daha fazla yeni seçmen kaydetti."
+    },
+    {
+     "title": "Trenton gündemi",
+     "text": "Vali Sherrill eyalet sağlık sigortası programını (SHBP) reforme etmek için çalışma grupları kurdu; 1 Ekim'de yürürlüğe giren tartışmalı bağımsız yüklenici (ABC testi) kurallarını erteleme talebini reddetti."
+    },
+    {
+     "title": "NYC: ücretsiz çocuk bakımı",
+     "text": "Belediye Başkanı Mamdani, bekleme listesindeki 10.000'den fazla düşük gelirli çocuğa ücretsiz çocuk bakımı sağlanacağını duyurdu."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin & sosyal medya",
+   "items": [
+    {
+     "title": "Gişe: Verity zirvede, Tom Cruise'un Digger'ı çakıldı",
+     "text": "Anne Hathaway ve Dakota Johnson'lı Verity 32,6 milyon $ ile ilk sırada açılırken, Iñárritu imzalı Digger 140-180 milyon $ bütçeye karşın 8 milyon $'da kaldı; Cruise'un kariyerinin en zayıf açılışlarından."
+    },
+    {
+     "title": "Cruise-Hathaway ortaklığı",
+     "text": "Rotten Tomatoes'un aktardığına göre Cruise, Anne Hathaway ile Days of Thunder devam filmi için çalışacağını duyurdu."
+    },
+    {
+     "title": "Orkun Işıtmak baba oluyor",
+     "text": "YouTuber Orkun Işıtmak ve eşi Merve Yorgancılar bebek müjdesini New York gezisinden paylaştı."
+    }
+   ]
+  },
+  {
+   "heading": "Yarın ve bu hafta takvimde",
+   "items": [
+    {
+     "title": "Salı 6 Ekim",
+     "text": "TCMB Başkanı TBMM Plan ve Bütçe Komisyonu'nda sunum yapacak (faiz sinyali için kritik); Euro Bölgesi Ağustos perakende satışları."
+    },
+    {
+     "title": "Çarşamba 7 Ekim, 14:00 ET",
+     "text": "Fed Eylül toplantı tutanakları: Ekim/Aralık'ta ek artış desteği aranacak."
+    },
+    {
+     "title": "Perşembe-Cuma 8-9 Ekim",
+     "text": "PepsiCo (Prş. açılış öncesi) ve Delta Air Lines (Cuma) bilançoları; Cuma Michigan tüketici güveni öncü verisi."
+    },
+    {
+     "title": "İleri tarih",
+     "text": "13 Ekim NJ seçmen kaydı son günü; 22 Ekim TCMB PPK; 3 Kasım ABD ara seçimleri."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance: Stock market today, 5 Ekim 2026",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-monday-october-5-dow-sp-500-nasdaq-081220790.html"
+  },
+  {
+   "title": "Euronews: Euro hits 17-month low as French debt fears mount",
+   "url": "https://www.euronews.com/2026/10/05/euro-hits-17-month-low-as-french-debt-fears-mount-and-spain-heads-for-snap-election"
+  },
+  {
+   "title": "Trading Economics: Brent",
+   "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+  },
+  {
+   "title": "Halk TV: 5 Ekim 2026 BIST 100",
+   "url": "https://halktv.com.tr/ekonomi/5-ekim-2026-borsa-istanbul-endeksi-bist100-kac-puan-artanlar-azalanlar-1059467h"
+  },
+  {
+   "title": "Mynet Finans: 5 Ekim 2026 dolar kuru",
+   "url": "https://finans.mynet.com/haber/detay/doviz/5-ekim-2026-dolar-bugun-kac-tl-serbest-piyasa-dolar-kuru-dolar-tl-gunluk-yatay-seyir-haftalik-yukselis/578803/"
+  },
+  {
+   "title": "Paraanaliz: Enflasyon %30'un altına indi",
+   "url": "https://www.paraanaliz.com/haberler/analiz-enflasyon-yuzde-30-un-altina-indi-tcmb-ekimde-faiz-indirecek-mi"
+  },
+  {
+   "title": "CNN Türk: Ekim 2026 kira artış oranı",
+   "url": "https://www.cnnturk.com/ekonomi/ekim-kira-artis-orani-2026-hesaplama-ekim-ayi-enflasyon-kira-artisi-ne-kadar-yuzde-kac-oldu-tuik-kira-zammi-orani-5-ekim-3474937"
+  },
+  {
+   "title": "Bloomberg HT: SPK'dan ara ödeme kararı",
+   "url": "https://www.bloomberght.com/spkdan-tafsiye-edilen-fonlar-icin-ara-odeme-karari-3789902"
+  },
+  {
+   "title": "Jerusalem Post: Live updates 5 Ekim",
+   "url": "https://www.jpost.com/middle-east/iran-news/2026-10-05/live-updates-910598"
+  },
+  {
+   "title": "Center for American Progress: 2026-27 Yüksek Mahkeme dönemi",
+   "url": "https://www.americanprogress.org/article/previewing-the-2026-2027-supreme-court-term-continuing-the-rightward-march/"
+  },
+  {
+   "title": "CNBC: Trump reiterates pledge to send $5,000 checks",
+   "url": "https://cnbc.com/2026/10/04/trump-5000-checks-cash-payments-midterms.html"
+  },
+  {
+   "title": "CBS New York: NJ Transit rail break",
+   "url": "https://www.cbsnews.com/newyork/news/nj-transit-delays-today-penn-station/"
+  },
+  {
+   "title": "Insider NJ: Morning Intelligence Briefing 10/5/2026",
+   "url": "https://www.insidernj.com/insider-njs-morning-intelligence-briefing-10-5-2026/"
+  },
+  {
+   "title": "Union County NJ: Seçmen kaydı son günü 13 Ekim",
+   "url": "https://ucnj.org/press-releases/public-info/2026/09/29/voter-registration-deadline-for-the-november-3-general-election-is-tuesday-october-13/"
+  },
+  {
+   "title": "amNY: Mamdani child care",
+   "url": "https://www.amny.com/politics/mamdani-low-income-child-care-voucher/"
+  },
+  {
+   "title": "Rotten Tomatoes: Weekend box office",
+   "url": "https://editorial.rottentomatoes.com/article/weekend-box-office-verity-week-1/"
+  },
+  {
+   "title": "Habertürk: Orkun Işıtmak baba oluyor",
+   "url": "https://www.haberturk.com/magazin/foto/orkun-isitmak-baba-oluyor-3917452"
+  },
+  {
+   "title": "TradingKey: Haftalık önizleme (Fed tutanakları, PepsiCo, Delta)",
+   "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262199038-weekly-preview-fed-september-minutes-pepsi-delta-earnings-tradingkey"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar kaynaklardaki son verilere dayanır ve gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}
