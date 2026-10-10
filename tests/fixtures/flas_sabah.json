@@ -1,0 +1,113 @@
+{
+ "title": "Gün İçi Flaş · Perşembe 8 Ekim · 08:45 ET",
+ "subtitle": "Açılış öncesi · dün 19:00'dan bu yana",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "6.712,40",
+   "chg": "+0,42%",
+   "note": "08:30 ET, vadeli"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "22.904,11",
+   "chg": "+0,71%",
+   "note": "08:30 ET, vadeli"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "41,86",
+   "chg": "+0,05%",
+   "note": "08:30 ET, vadeli"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1642",
+   "chg": "-0,18%",
+   "note": "08:30 ET, vadeli"
+  },
+  {
+   "name": "BIST 100",
+   "level": "10.402,55",
+   "chg": "-1,12%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "121.430",
+   "chg": "+2,30%",
+   "note": "08:30 ET, vadeli"
+  },
+  {
+   "name": "Ons altın",
+   "level": "3.985",
+   "chg": "0,00%",
+   "note": "08:30 ET, vadeli"
+  },
+  {
+   "name": "Brent",
+   "level": "—",
+   "chg": "—",
+   "note": "doğrulanamadı"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%4,12",
+   "chg": "-3 bp",
+   "note": "08:30 ET, vadeli"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Fed tutanakları sonrası vadeliler hafif pozitif; Asya karışık kapandı.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Fed tutanakları",
+     "text": "Üyelerin çoğu yıl sonuna kadar bir indirim daha görüyor; piyasa Aralık fiyatlamasını artırdı."
+    },
+    {
+     "title": "TCMB rezervleri",
+     "text": "Brüt rezervler haftalık bazda 2,1 milyar dolar arttı; swap hariç net rezerv de yükseldi."
+    },
+    {
+     "title": "Japonya'da tahvil satışı",
+     "text": "30 yıllık JGB faizi rekor seviyeyi gördü; küresel uzun vadeli faizlere baskı."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "Lincoln Tunnel",
+     "text": "Sabah saatlerinde XBL normal işliyor; Helix'te hafif yoğunluk."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "08:30 ET",
+     "text": "Haftalık işsizlik başvuruları."
+    },
+    {
+     "title": "10:00 ET",
+     "text": "Toptan stoklar."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Reuters — Fed minutes",
+   "url": "https://www.reuters.com/markets/us/fed-minutes"
+  },
+  {
+   "title": "Bloomberg HT",
+   "url": "https://www.bloomberght.com/"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}

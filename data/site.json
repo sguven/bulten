@@ -1,0 +1,13 @@
+{
+  "schedule": {
+    "weekday": [
+      { "type": "flas", "time": "08:45" },
+      { "type": "flas", "time": "12:45" },
+      { "type": "flas", "time": "15:45" },
+      { "type": "aksam", "time": "18:57" }
+    ],
+    "weekend": [
+      { "type": "aksam", "time": "18:57" }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+ "title": "Akşam Bülteni · Perşembe 8 Ekim",
+ "subtitle": "Hazırlanma: 19:06 ET · ABD rakamları kapanış",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "6.712,40",
+   "chg": "+0,42%",
+   "note": "16:00 ET kapanış"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "22.904,11",
+   "chg": "+0,71%",
+   "note": "16:00 ET kapanış"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "41,86",
+   "chg": "+0,05%",
+   "note": "16:00 ET kapanış"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1642",
+   "chg": "-0,18%",
+   "note": "16:00 ET kapanış"
+  },
+  {
+   "name": "BIST 100",
+   "level": "10.402,55",
+   "chg": "-1,12%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "121.430",
+   "chg": "+2,30%",
+   "note": "16:00 ET kapanış"
+  },
+  {
+   "name": "Ons altın",
+   "level": "3.985",
+   "chg": "0,00%",
+   "note": "16:00 ET kapanış"
+  },
+  {
+   "name": "Brent",
+   "level": "—",
+   "chg": "—",
+   "note": "doğrulanamadı"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%4,12",
+   "chg": "-3 bp",
+   "note": "16:00 ET kapanış"
+  }
+ ],
+ "market_note": "<b>Günün hikâyesi:</b> ABD endeksleri yükselişle kapattı; BIST 100 bankacılık kaynaklı geriledi. Dolar/TL yatay seyretti.",
+ "sections": [
+  {
+   "heading": "Dünya — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Fed'den güvercin sinyal",
+     "text": "Tutanaklar ve sonraki konuşmalar Aralık indirimi ihtimalini güçlendirdi."
+    },
+    {
+     "title": "Petrolde arz endişesi",
+     "text": "OPEC+ toplantısı öncesi fiyatlar dalgalı."
+    }
+   ]
+  },
+  {
+   "heading": "Türkiye — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Konut kredisi faizleri",
+     "text": "Kamu bankaları konut kredisi faizlerini 50 baz puan indirdi; emlak piyasası için olumlu."
+    },
+    {
+     "title": "Enflasyon beklentisi",
+     "text": "Piyasa katılımcıları anketinde 12 ay sonrası beklenti geriledi."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yerel",
+   "items": [
+    {
+     "title": "Secaucus belediye meclisi",
+     "text": "Harmon Meadow çevresindeki yol düzenlemesi için ihale onaylandı."
+    },
+    {
+     "title": "Lincoln Tunnel",
+     "text": "Hafta sonu gece saatlerinde bir tüp bakım için kapalı olacak."
+    }
+   ]
+  },
+  {
+   "heading": "Yarın ve bu hafta takvimde",
+   "items": [
+    {
+     "title": "Cuma 08:30 ET",
+     "text": "Eylül tarım dışı istihdam."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Reuters",
+   "url": "https://www.reuters.com/"
+  },
+  {
+   "title": "Habertürk",
+   "url": "https://www.haberturk.com/"
+  },
+  {
+   "title": "Secaucus belediyesi",
+   "url": "https://www.secaucusnj.gov/"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}

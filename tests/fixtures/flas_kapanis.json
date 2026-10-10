@@ -1,0 +1,88 @@
+{
+ "title": "Gün İçi Flaş · Perşembe 8 Ekim · 15:45 ET",
+ "subtitle": "Kapanışa doğru · 12:45–15:45 arası",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "6.712,40",
+   "chg": "+0,42%",
+   "note": "15:40 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "22.904,11",
+   "chg": "+0,71%",
+   "note": "15:40 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "41,86",
+   "chg": "+0,05%",
+   "note": "15:40 ET"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1642",
+   "chg": "-0,18%",
+   "note": "15:40 ET"
+  },
+  {
+   "name": "BIST 100",
+   "level": "10.402,55",
+   "chg": "-1,12%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "121.430",
+   "chg": "+2,30%",
+   "note": "15:40 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "3.985",
+   "chg": "0,00%",
+   "note": "15:40 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "—",
+   "chg": "—",
+   "note": "doğrulanamadı"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%4,12",
+   "chg": "-3 bp",
+   "note": "15:40 ET"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Gün sonuna doğru kâr satışları; dolar endeksi yatay.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Port Authority Bus Terminal",
+     "text": "Kapı 300 bölgesinde arıza nedeniyle bazı NJ Transit otobüsleri 10–15 dk gecikmeli."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "Route 495",
+     "text": "Akşam saatlerinde Helix'te şerit çalışması; eve dönüşte ek süre hesaplayın."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "PANYNJ uyarıları",
+   "url": "https://www.panynj.gov/"
+  }
+ ],
+ "footer": "Claude tarafından otomatik hazırlanmıştır. Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir. \"(doğrulanmadı)\" etiketli maddeler teyit edilmemiş iddialardır."
+}

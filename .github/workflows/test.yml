@@ -1,0 +1,29 @@
+name: Testler
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['data/**']   # her yayın commit'inde değil, kod değişince çalışır
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22', cache: npm }
+      - run: pip install pytest
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:py
+      - run: npm run test:unit
+      - run: npm run test:e2e
+        env: { CI: '1' }
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with: { name: playwright-report, path: playwright-report/, retention-days: 7 }
