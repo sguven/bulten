@@ -1,0 +1,121 @@
+{
+ "id": "flas-0847",
+ "type": "flas",
+ "date": "2026-10-09",
+ "time": "08:47",
+ "published_at": "2026-10-10T19:44:10+00:00",
+ "title": "Gün İçi Flaş · Cuma 9 Ekim 2026 · 08:45 ET",
+ "subtitle": "Açılış öncesi · Dün 19:00 ET’den bu yana",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.843,75",
+   "chg": "+0,35%",
+   "note": "vadeli, ~07:20 ET"
+  },
+  {
+   "name": "Nasdaq 100",
+   "level": "31.198,25",
+   "chg": "+0,74%",
+   "note": "vadeli, ~07:20 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "~49,34",
+   "chg": "—",
+   "note": "serbest piyasa, ~06:00 ET"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1220",
+   "chg": "—",
+   "note": "~06:00 ET"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.254,39",
+   "chg": "+0,33%",
+   "note": "13:00 TSİ (06:00 ET)"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "82.453",
+   "chg": "+0,03%",
+   "note": "~07:20 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "~4.190 $",
+   "chg": "+1,3%",
+   "note": "~06:00 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "102,9 $",
+   "chg": "-1,3%",
+   "note": "Aralık vadeli, ~06:00 ET"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%5,23",
+   "chg": "-5 bp",
+   "note": "~07:20 ET; 24 yılın zirvesine yakın"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Petrol düşüyor ve AI kaygısı hafifliyor; Nasdaq dün %1,25 düşmüştü. Asya ise ikinci haftalık kaybına doğru gidiyor. <b>Hisseler:</b> AT&T, Verizon ve T-Mobile, SpaceX’in ~8 mlr $’lık spektrum alımı haberiyle sert düştü. Apple, iPhone 18 Pro siparişlerinde en az %15 kesinti haberiyle ~%2 ekside.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Trump: seçimlerden önce İran’a saldırı yok",
+     "text": "ABD’nin kasımdaki ara seçimlerden önce İran’ı vurmayacağını söyledi; Brent ~%1 geriledi, ancak piyasa savaşın bitmesi konusunda temkinli."
+    },
+    {
+     "title": "OpenAI kaygısı yatıştı",
+     "text": "FT’ye göre yıllıklandırılmış gelir ~50 mlr $ ile beklentinin altında kaldı; ardından şirketin yıl sonunda ≥70 mlr $ beklediği haberi geldi ve dünkü AI satışı sonrası teknoloji vadelileri toparlandı."
+    },
+    {
+     "title": "AmEx’e 350 mn $ AML cezası",
+     "text": "Kara para aklamayla mücadeledeki eksiklikler nedeniyle kesildi; bankalarda uyum ve denetim tarafı için emsal niteliğinde."
+    },
+    {
+     "title": "Türkiye: sanayi üretimi geriledi",
+     "text": "Ağustosta yıllık -%1,9, aylık -%1,0; imalat yıllık -%2,5. Ekonomideki yavaşlamanın işareti."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "10:00 ET",
+     "text": "Michigan tüketici güveni (Ekim öncü). Beklenti 48, önceki 48,1. Enflasyon beklentisi alt kalemleri de izlenecek."
+    },
+    {
+     "title": "Delta (DAL)",
+     "text": "3. çeyrek bilançosu açılış öncesi açıklanıyor; yakıt maliyeti baskısı öne çıkıyor."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance – Stock market today",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-9-dow-sp-500-nasdaq-080148117.html"
+  },
+  {
+   "title": "Invezz – 5 things to know",
+   "url": "https://invezz.com/en-ae/news/2026/10/09/nasdaq-futures-surge-220-points-5-things-to-know-before-wall-street-opens-on-oct-9/"
+  },
+  {
+   "title": "Capital – Gün ortası",
+   "url": "https://www.capital.com.tr/haberler/tum-haberler/piyasalarda-gun-ortasi-borsa-doviz-ve-altinda-son-durum-ne-9-ekim-2026"
+  },
+  {
+   "title": "Dünya – Sanayi üretimi",
+   "url": "https://www.dunya.com/ekonomi/sanayi-uretiminde-dusus-imalat-sanayisi-yuzde-25-daraldi-haberi-843225"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

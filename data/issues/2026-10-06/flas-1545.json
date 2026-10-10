@@ -1,0 +1,138 @@
+{
+ "id": "flas-1545",
+ "type": "flas",
+ "date": "2026-10-06",
+ "time": "15:45",
+ "published_at": "2026-10-10T19:44:09+00:00",
+ "title": "Gün İçi Flaş · Salı 6 Ekim 2026 · 15:45 ET",
+ "subtitle": "Kapanışa doğru · 12:45–15:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "~7.829",
+   "chg": "+0,71%",
+   "note": "15:34 ET, ilk kez 7.800 üstü, rekor"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "~27.690",
+   "chg": "+0,79%",
+   "note": "13:47 ET, rekor bölgesi"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,18",
+   "chg": "+0,07%",
+   "note": "~11:00 ET"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1375",
+   "chg": "-0,16%",
+   "note": "~15:34 ET"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.374,26",
+   "chg": "-0,56%",
+   "note": "Kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "~86.500",
+   "chg": "—",
+   "note": "~11:00 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.186,20",
+   "chg": "+0,71%",
+   "note": "Öğleden sonra"
+  },
+  {
+   "name": "Brent",
+   "level": "98,67",
+   "chg": "-1,64%",
+   "note": "Öğleden sonra"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "%5,275",
+   "chg": "-3,6 bp",
+   "note": "2Y/10Y farkı ~48 bp"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> Petrol ve faizler gerilerken teknoloji ağırlıklı ralli sürdü. Russell 2000 (-%0,45) ve sağlık sektörü ise düştü. <b>Öne çıkan hisseler:</b> Constellation Energy +%12,3 (Google ile 20 yıllık nükleer anlaşma), Option Care +%32,9 (McKesson/CD&R satın alma haberi). Seagate -%8,0 ve WDC -%6,9 (Toshiba’nın kapasite artırımı endişesi).",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "İran savaşı: Brent 100 $ altında",
+     "text": "Orta Doğu ihracatı Hürmüz’ü atlayan rotalarla savaş öncesine yakın seviyeye döndü ama Hürmüz müzakereleri tıkalı. Bu durum enerji kaynaklı enflasyon beklentisini doğrudan etkiliyor."
+    },
+    {
+     "title": "Yemen’de çatışma sertleşti",
+     "text": "Suudi destekli güçler Kızıldeniz kıyısında mevzi geri aldığını söylüyor, Husiler bunu yalanlıyor. Tek günde 270'ten fazla ölü bildirildi; Bab el-Mendeb nakliyesi için risk."
+    },
+    {
+     "title": "Güncelleme: Paramount-WBD birleşmesi",
+     "text": "Sabah kapanan 110 milyar dolarlık birleşmeyle kurulan Skydance, ilk işlem gününde %2,7 düşüşle 9,56 $’a geriledi."
+    },
+    {
+     "title": "LAX’te taksi yolu kazası",
+     "text": "15:23 ET’de geri itilen bir Air Canada uçağı, taksi yapan bir Delta uçağına kanadıyla çarptı. Yaralı yok."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "Eve dönüş",
+     "text": "Ulaşabildiğim kaynaklarda Lincoln Tunnel, XBL, 495/Helix ve PABT için yeni bir kapanma ya da NJ Transit otobüs uyarısı görünmüyor. Secaucus’tan da yeni yerel duyuru yok. Çıkmadan önce canlı durumu helixalert.com veya 511nj.org’dan kontrol et."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "16:00 ET",
+     "text": "ABD kapanışı. S&P 500 ilk kez 7.800'ün üzerinde kapanacak mı, bakılacak."
+    },
+    {
+     "title": "Yarın",
+     "text": "ABD tüketici enflasyon beklentileri ve Fed tutanakları (tutanaklar genelde 14:00 ET’de açıklanır)."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-06-2026"
+  },
+  {
+   "title": "Yahoo Finance",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-october-6-dow-sp-500-nasdaq-080526166.html"
+  },
+  {
+   "title": "Bloomberg HT piyasa özeti",
+   "url": "https://www.bloomberght.com/piyasa-ozeti-6-ekim-2026-borsa-doviz-altin-ve-kripto-piyasalarindaki-son-durum-pkh-3790523"
+  },
+  {
+   "title": "CBS News İran canlı",
+   "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-prices-yemen-red-sea-houthis-bab-el-mandeb/"
+  },
+  {
+   "title": "Deadline",
+   "url": "https://deadline.com/2026/10/skydance-merger-paramount-warner-bros-discovery-1237147750/"
+  },
+  {
+   "title": "TMZ",
+   "url": "https://www.tmz.com/2026/10/06/two-airplanes-collide-on-lax-tarmac/"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

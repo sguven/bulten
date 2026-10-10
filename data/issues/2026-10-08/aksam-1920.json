@@ -1,0 +1,238 @@
+{
+ "id": "aksam-1920",
+ "type": "aksam",
+ "date": "2026-10-08",
+ "time": "19:20",
+ "published_at": "2026-10-10T19:44:10+00:00",
+ "title": "Akşam Bülteni · Perşembe 8 Ekim 2026",
+ "subtitle": "Hazırlanma: 19:20 ET · ABD rakamları kapanış",
+ "markets": [
+  {
+   "name": "USD/TRY",
+   "level": "49,22",
+   "chg": "+0,03%",
+   "note": "18:30 TSİ"
+  },
+  {
+   "name": "EUR/TRY",
+   "level": "55,28",
+   "chg": "+0,29%",
+   "note": "18:30 TSİ"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1202",
+   "chg": "+0,04%",
+   "note": "Gün içi son veri"
+  },
+  {
+   "name": "S&P 500",
+   "level": "7.765,36",
+   "chg": "-0,47%",
+   "note": "Kapanış; Dow +0,10%"
+  },
+  {
+   "name": "Nasdaq Comp.",
+   "level": "27.193,34",
+   "chg": "-1,25%",
+   "note": "Kapanış; çip satışı"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.207,64",
+   "chg": "+0,70%",
+   "note": "Kapanış; gün içi dip 12.039"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "81.786",
+   "chg": "-1,92%",
+   "note": "ABD kapanışı civarı; 24 saatte ~974 mn $ tasfiye"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.117,5 $",
+   "chg": "+0,13%",
+   "note": "18:30 TSİ spot; vadeli 4.155,6 (+0,36%)"
+  },
+  {
+   "name": "Brent",
+   "level": "~103 $",
+   "chg": "—",
+   "note": "Kaynaklar 101–105 $ veriyor; WTI 91,08 (+3,17%)"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "5,23%",
+   "chg": "-5 bp",
+   "note": "Kapanışa yakın; gün içinde 2002'den beri en yüksek bölge"
+  }
+ ],
+ "market_note": "<b>Günün hikâyesi:</b> Wall Street’te teknoloji geri çekildi. FT, OpenAI’ın gelirinin önceki tahminlerin ~20 milyar $ altında kaldığını yazdı; bu haber Nvidia, Micron ve Intel’i aşağı çekti, çip endeksi gün içinde %4'e kadar düştü. İran’a olası saldırı haberleri petrolü yükseltti. Trump’ın 3 Kasım seçimlerinden önce saldırı olmayacağını söylemesi bu yükselişi sınırladı. İşsizlik başvuruları 197 bine indi. BIST 100, fon krizinde ödemelerin başlamasıyla toparlandı.",
+ "sections": [
+  {
+   "heading": "Dünya — bilmen gerekenler",
+   "items": [
+    {
+     "title": "ABD-İran: savaş hazırlığı sinyali",
+     "text": "Axios’a göre Pentagon, CENTCOM’a İran’da büyük çaplı operasyonlara yeniden başlamaya hazır olma talimatı verdi; tarih belli değil. Trump seçimlerden önce saldırı olmayacağını söyledi. Petrol ve faizler için bir numaralı risk bu."
+    },
+    {
+     "title": "Faizler yüksek kalıyor",
+     "text": "Fed Guvernörü Waller, İstanbul’daki forumda ek faiz artışlarına kapı araladı. Fed Eylül’de faizi 25 bp artırarak 3,75–4,00%’e çekmişti. 10 yıllık getirinin %5'in üzerinde kalması hisse değerlemelerini ve kredi spread’lerini baskılıyor."
+    },
+    {
+     "title": "Yapay zekâ hisselerine darbe",
+     "text": "OpenAI gelir haberi çip hisselerinde sert satış getirdi. Yapay zekâ harcamalarına güven sorgulanırsa Nasdaq ağırlıklı pozisyonlarda oynaklık artar."
+    },
+    {
+     "title": "Körfez’de gerilim tırmanıyor",
+     "text": "Husilerin Riyad ve Abha havalimanlarına saldırısında 3 kişi öldü, 36 kişi yaralandı. Suriye’nin Yemen’e asker göndermesi konuşuluyor. Bu da enerji arzı riskini artırıyor."
+    },
+    {
+     "title": "Ukrayna-Rusya",
+     "text": "Kramatorsk’a düzenlenen Rus saldırısında en az 33 kişi öldü. Ukrayna dronları ilk kez büyük bir Rus veri merkezini (Yandex) vurdu."
+    }
+   ]
+  },
+  {
+   "heading": "Türkiye — bilmen gerekenler",
+   "items": [
+    {
+     "title": "Fon krizinde ilk ödemeler",
+     "text": "Şimşek, A1 Capital, Bulls ve Pardus’a ait 17 fonun tasfiye edildiğini ve ~43,6 bin yatırımcının parasının bankalara aktarıldığını açıkladı. Olağanüstü tasfiyedeki 131 fonda 455 bin yatırımcı var; kişi başı en fazla 1 milyon TL’lik ara ödeme için yasa bekleniyor. Cevdet Yılmaz sistemik risk olmadığını söyledi."
+    },
+    {
+     "title": "Yabancı çıkışı ve rezervler",
+     "text": "Yabancıların fon portföyü 6,1 milyar $ geriledi. TCMB brüt rezervleri haftalık %2,2 düşüşle 167,4 milyar $’a indi, mevduat ~217 milyar TL azaldı."
+    },
+    {
+     "title": "TCMB: indirim için erken",
+     "text": "Goldman Sachs, 22 Ekim’deki PPK toplantısında faiz değişikliği beklemiyor. Gerekçe olarak beklentileri, rezerv kaybını ve kur baskısını gösteriyor."
+    },
+    {
+     "title": "Konut güvenliği: Maltepe’de çökme",
+     "text": "Maltepe’de 7 katlı bir binanın alt iki katı çöktü: 2 kişi öldü, 3 kişi aranıyor. Belediye başkanına göre çöken iki kat kaçaktı; kaçak yapı denetimi yeniden gündemde. Konut kredisi, kira ve tapu vergisinde bugün yeni bir düzenleme yok."
+    },
+    {
+     "title": "Siyaset: Yeni Parti AYM’de",
+     "text": "Özgür Özel’in partisi, Yenilik Partisi’nin isim itirazına karşı AYM’ye savunmasını verdi. Parti 745 bin üye bildiriyor; ilk kurultay 14–15 Kasım’da."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yerel",
+   "items": [
+    {
+     "title": "Veri merkezleri masada (13 Ekim)",
+     "text": "Belediye Başkanı Gonnelli, CoreSite ve Equinix temsilcilerini PSE&G ve Veolia ile birlikte sakinlerin sorularını yanıtlamaya çağırıyor. Odak noktası, veri merkezlerinin elektrik ve su faturalarına etkisi (Patch, 7 Ekim)."
+    },
+    {
+     "title": "Meclis takvimi",
+     "text": "13 Ekim’de meclis ön toplantısı (caucus) 17:00'de, meclis toplantısı 19:00'da; sorular önceden e-postayla iletilebiliyor. 12 Ekim’de (Columbus Day) belediye binaları kapalı."
+    },
+    {
+     "title": "İşe gidiş",
+     "text": "Lincoln Tunnel, XBL ve Port Authority Bus Terminal için bugün yeni bir aksaklık duyurusu bulunamadı. 11 Ekim–14 Kasım arasında Portal köprüsü çalışması nedeniyle NJ Transit bazı tren yolcularının otobüse binmesine izin verecek; sabah yoğun saatlerinde otobüslerde ve terminalde ek kalabalık olabilir."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin & sosyal medya",
+   "items": [
+    {
+     "title": "Nobel Edebiyat Ödülü Anne Carson’a verildi",
+     "text": "Kanadalı şair ve çevirmen 2026 ödülünü kazandı; tören 10 Aralık’ta."
+    },
+    {
+     "title": "Minka Kelly ile Dan Reynolds ayrıldı (doğrulanmadı)",
+     "text": "People’a konuşan isimsiz bir kaynağa göre dört yıllık ilişki bitti; taraflardan resmi açıklama yok."
+    }
+   ]
+  },
+  {
+   "heading": "Yarın ve bu hafta takvimde",
+   "items": [
+    {
+     "title": "Pzt 12 Ekim",
+     "text": "Columbus Day. ABD tahvil piyasası kapalı, borsa açık."
+    },
+    {
+     "title": "Salı 13 Ekim",
+     "text": "JPMorgan 3. çeyrek bilançosunu seans öncesi açıklıyor, banka bilanço sezonu başlıyor. Aynı gün Secaucus’ta meclis ve veri merkezi toplantısı var."
+    },
+    {
+     "title": "Çar–Per 14–15 Ekim",
+     "text": "ABD Eylül TÜFE (Çarşamba 08:30 ET), ardından ÜFE ve perakende satışlar. Yüksek bir TÜFE, Fed’in faizi yeniden artıracağı beklentisini güçlendirir."
+    },
+    {
+     "title": "22 Ekim",
+     "text": "TCMB PPK toplantısı."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance — Stock market today, Oct 8",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html"
+  },
+  {
+   "title": "Bloomberg HT — Piyasalarda günün özeti, 8 Ekim",
+   "url": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-8-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3790873"
+  },
+  {
+   "title": "Trading Economics — EUR/USD",
+   "url": "https://tradingeconomics.com/euro-area/currency"
+  },
+  {
+   "title": "Just Security — Early Edition, Oct 8",
+   "url": "https://www.justsecurity.org/160040/early-edition-october-8-2026/"
+  },
+  {
+   "title": "Euronews — Fon krizi: 17 fonda ödemeler başladı",
+   "url": "https://tr.euronews.com/2026/10/08/fon-krizi-17-fonda-odemeler-bugun-basladi-surec-nasil-ilerleyecek"
+  },
+  {
+   "title": "Yeniçağ — 8 Ekim ekonomi gündemi",
+   "url": "https://www.yenicaggazetesi.com/8-ekim-2026-ekonomi-gundeminde-ne-oldu-1079914h.htm"
+  },
+  {
+   "title": "Bloomberg HT — Goldman: Ekim TCMB indirimi için erken",
+   "url": "https://www.bloomberght.com/goldman-a-gore-ekim-ayi-tcmb-nin-faiz-indirimi-icin-erken-3790781"
+  },
+  {
+   "title": "CNN Türk — 8 Ekim önemli gelişmeler",
+   "url": "https://www.cnnturk.com/turkiye/8-ekim-2026-persembe-gununun-son-dakika-onemli-gelismeleri-cnn-turk-16-30-bulteni-3476714"
+  },
+  {
+   "title": "Kısa Dalga — Yeni Parti AYM savunması",
+   "url": "https://kisadalga.net/haber/gundem/yeni-parti-anayasa-mahkemesine-isim-savunmasini-sundu-745-bin-uye-580-milyon-lira-bagis-140776"
+  },
+  {
+   "title": "Patch — Secaucus data center meeting",
+   "url": "https://patch.com/new-jersey/secaucus/whats-latest-data-centers-secaucus"
+  },
+  {
+   "title": "Town of Secaucus",
+   "url": "https://secaucusnj.gov/"
+  },
+  {
+   "title": "6sqft — NJ Transit Portal cutover",
+   "url": "https://www.6sqft.com/nj-transit-to-cut-service-for-five-weeks-as-final-portal-bridge-cutover-begins/"
+  },
+  {
+   "title": "Cumhuriyet — Nobel Edebiyat Anne Carson",
+   "url": "https://www.cumhuriyet.com.tr/dunya/2026-nobel-edebiyat-odulu-nu-kanadali-yazar-anne-carson-kazandi-2544843"
+  },
+  {
+   "title": "Hürriyet Kelebek — Sessizce ayrıldılar",
+   "url": "https://www.hurriyet.com.tr/kelebek/magazin/buyuk-askin-omru-dort-yilmis-sessizce-ayrildilar-43333437"
+  },
+  {
+   "title": "LiteFinance — Haftalık takvim 12–18 Ekim",
+   "url": "https://litefinance.org/blog/analysts-opinions/weekly-economic-calendar-for-12102026-18102026"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

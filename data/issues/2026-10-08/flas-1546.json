@@ -1,0 +1,139 @@
+{
+ "id": "flas-1546",
+ "type": "flas",
+ "date": "2026-10-08",
+ "time": "15:46",
+ "published_at": "2026-10-10T19:44:10+00:00",
+ "title": "Gün İçi Flaş · Perşembe 8 Ekim 2026 · 15:45 ET",
+ "subtitle": "Kapanışa doğru · 12:45–15:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.755,48",
+   "chg": "-0,59%",
+   "note": "15:19 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "27.151,78",
+   "chg": "-1,40%",
+   "note": "15:19 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "~49,22",
+   "chg": "+0,03%",
+   "note": "~11:30 ET"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,1375",
+   "chg": "-0,16%",
+   "note": "gecikmeli"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.207,64",
+   "chg": "+0,70%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "81.509",
+   "chg": "-2,26%",
+   "note": "15:19 ET"
+  },
+  {
+   "name": "Ons altın",
+   "level": "4.153,60",
+   "chg": "+0,31%",
+   "note": "vadeli, 15:19 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "~103–105",
+   "chg": "—",
+   "note": "13:00 ET sonrası geriledi"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "5,23%",
+   "chg": "~-5 bp",
+   "note": "15:19 ET"
+  }
+ ],
+ "market_note": "Nasdaq’ı aşağı çeken, OpenAI haberinin ardından yapay zeka ve çip hisselerinde gelen satış. Oracle %5,3, Arm/Intel/Marvell %6'dan fazla, AMD %4,2, Nvidia %2,7 düştü. BIST’te ASTOR %6,8 yükselirken bankacılık endeksi %1,6 geriledi.",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "OpenAI geliri beklenenden düşük (FT)",
+     "text": "OpenAI, Eylül sonu yıllıklandırılmış gelirini yatırımcılara ~50 milyar $ olarak bildirmiş. Daha önce konuşulan rakam ~70 milyar $’dı; fark hesaplama yönteminden kaynaklanıyor. Haber, yapay zeka değerlemelerine olan güveni sarstı."
+    },
+    {
+     "title": "Güncelleme – Trump: seçimlerden önce İran’a saldırı yok",
+     "text": "Açıklama ~13:00 ET’de geldi; petrol günlük kazancının bir kısmını geri verdi."
+    },
+    {
+     "title": "TCMB",
+     "text": "Bloomberg HT’ye göre Goldman Sachs, Ekim’i faiz indirimi için erken buluyor."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "Lincoln Tunnel otobüs koridoru",
+     "text": "15:47 ET itibarıyla iki yönde de küçük gecikmeler var. Kapanma ya da NJ Transit otobüs iptali yok. Secaucus’tan bu aralıkta yeni bir duyuru yok."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin",
+   "items": [
+    {
+     "title": "Jeremy Allen White ve Lulu Tenney",
+     "text": "Çift, New York’ta bir parkta el ele görüntülendi (TMZ)."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "Cuma 9 Ekim",
+     "text": "ABD’de önemli bir veri yok; 08:30 ET’de Kanada istihdam verisi açıklanacak. Bilanço sezonu 13 Ekim’de JPMorgan ile başlıyor."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance – Stock market today",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-october-8-dow-sp-500-nasdaq-080537884.html"
+  },
+  {
+   "title": "Yahoo Finance – OpenAI revenue",
+   "url": "https://finance.yahoo.com/technology/ai/articles/openai-revenue-20b-below-previous-181839907.html"
+  },
+  {
+   "title": "Bloomberg HT – Günün özeti",
+   "url": "https://www.bloomberght.com/piyasalarda-gunun-ozeti-8-ekim-2026-bist-100-de-degisimler-ve-doviz-fiyatlari-pkh-3790873"
+  },
+  {
+   "title": "Helix Alert",
+   "url": "https://helixalert.com/"
+  },
+  {
+   "title": "TMZ",
+   "url": "https://www.tmz.com/"
+  },
+  {
+   "title": "FinanceCalendar",
+   "url": "https://www.financecalendar.com/events/2026-10-09/"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

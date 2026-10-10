@@ -1,0 +1,139 @@
+{
+ "id": "flas-1546",
+ "type": "flas",
+ "date": "2026-10-07",
+ "time": "15:46",
+ "published_at": "2026-10-10T19:44:09+00:00",
+ "title": "Gün İçi Flaş · Çarşamba 7 Ekim 2026 · 15:45 ET",
+ "subtitle": "Kapanışa doğru · 12:45–15:45 ET",
+ "markets": [
+  {
+   "name": "S&P 500",
+   "level": "7.798",
+   "chg": "-0,27%",
+   "note": "15:30 ET"
+  },
+  {
+   "name": "Nasdaq",
+   "level": "27.511",
+   "chg": "-0,32%",
+   "note": "15:30 ET"
+  },
+  {
+   "name": "USD/TRY",
+   "level": "49,20",
+   "chg": "+0,06%",
+   "note": "gün içi"
+  },
+  {
+   "name": "EUR/USD",
+   "level": "1,118",
+   "chg": "-0,70%",
+   "note": "gün içi"
+  },
+  {
+   "name": "BIST 100",
+   "level": "12.103",
+   "chg": "-2,19%",
+   "note": "kapanış"
+  },
+  {
+   "name": "BTC/USD",
+   "level": "83.389",
+   "chg": "-2,55%",
+   "note": "~15:45 ET"
+  },
+  {
+   "name": "Altın (ons)",
+   "level": "4.105",
+   "chg": "-1,42%",
+   "note": "~15:45 ET"
+  },
+  {
+   "name": "Brent",
+   "level": "100,99",
+   "chg": "+0,41%",
+   "note": "gün içi, kaynaklar arası fark var"
+  },
+  {
+   "name": "ABD 10Y",
+   "level": "5,28%",
+   "chg": "+1 bp",
+   "note": "15:30 ET"
+  }
+ ],
+ "market_note": "<b>Ne hareket ettiriyor:</b> 24 yılın zirvesindeki getiriler ve şahin Fed tutanakları, rekor sonrası kâr satışını derinleştirdi; dolar güçlü, kripto ve altın satıcılı. <b>Hisseler:</b> Webull (BULL) ~-%20 (Kongre raporu Çin hükümetiyle bağlantıya dikkat çekti; şirket itiraz ediyor). Constellation Brands (STZ) ~-%5 (beklentiyi aştı ama perakende satışları zayıf).",
+ "sections": [
+  {
+   "heading": "Son dakika",
+   "items": [
+    {
+     "title": "Fed tutanakları: yıl sonuna kadar faiz artışı",
+     "text": "Eylül tutanaklarına göre üyelerin çoğu yıl bitmeden bir artış daha bekliyor, ancak 28 Ekim mi 9 Aralık mı olacağı belirsiz; Ekim’de artış olasılığı ~%17–20 fiyatlanıyor."
+    },
+    {
+     "title": "Tahviller tutanak sonrası sakin",
+     "text": "10 yıllık getiri sabah 5,35–5,36% ile 2002'den bu yana zirveyi gördü, öğleden sonra ~5,28–5,29%’a geriledi; değerlemeler üzerindeki baskı sürüyor."
+    },
+    {
+     "title": "Petrol: IEA stok salımını hızlandırıyor, Körfez’de fırtına",
+     "text": "IEA, dizel öncelikli stok salımını hızlandırdı; Meksika Körfezi’nde oluşan fırtınanın sezonun ilk kasırgası olması ve üretimi aksatması bekleniyor. Brent 100 $ civarında dalgalı."
+    }
+   ]
+  },
+  {
+   "heading": "Secaucus & yol",
+   "items": [
+    {
+     "title": "Eve dönüş",
+     "text": "Lincoln Tunnel otobüs koridorunda 15:47 itibarıyla iki yönde de hafif gecikme var; PABT, XBL ve Helix için kapanma ya da ciddi aksaklık bildirimi yok."
+    }
+   ]
+  },
+  {
+   "heading": "Magazin",
+   "items": [
+    {
+     "title": "Mia Goth, Shia LaBeouf’tan boşanma davası açtı",
+     "text": "Mahkeme belgelerine göre gerekçe “uzlaşmaz farklılıklar”; 4 yaşındaki kızlarının birincil velayetini istiyor."
+    }
+   ]
+  },
+  {
+   "heading": "Sıradaki",
+   "items": [
+    {
+     "title": "",
+     "text": "18:57: Akşam Bülteni. Per. 08:30 ET: haftalık işsizlik başvuruları."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Yahoo Finance canlı",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-7-dow-sp-500-nasdaq-080241833.html"
+  },
+  {
+   "title": "TheStreet",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-07-2026"
+  },
+  {
+   "title": "Yahoo – petrol",
+   "url": "https://finance.yahoo.com/energy/articles/oil-prices-rise-storms-air-004803079.html"
+  },
+  {
+   "title": "TGRT – BIST",
+   "url": "https://www.tgrthaber.com/ekonomi/borsa-neden-dusuyor-7-ekim-2026-bist100-neden-dususte-3363892"
+  },
+  {
+   "title": "Trading Economics",
+   "url": "https://tradingeconomics.com/euro-area/currency"
+  },
+  {
+   "title": "TMZ",
+   "url": "https://www.tmz.com/"
+  }
+ ],
+ "footer": "Yatırım tavsiyesi değildir; rakamlar gecikmeli olabilir."
+}

@@ -1,9 +1,51 @@
 {
  "version": 1,
- "generated_at": "2026-10-10T19:22:36+00:00",
- "count": 3,
- "latest": "2026-10-09/flas-1245",
+ "generated_at": "2026-10-10T19:44:10+00:00",
+ "count": 14,
+ "latest": "2026-10-09/aksam-1910",
  "entries": [
+  {
+   "id": "aksam-1910",
+   "type": "aksam",
+   "date": "2026-10-09",
+   "time": "19:10",
+   "title": "Akşam Bülteni · Cuma 9 Ekim 2026",
+   "subtitle": "Hazırlanma: 19:10 ET · ABD rakamları kapanış",
+   "headlines": [
+    "İran: seçime kadar saldırı yok, Körfez yine de gergin",
+    "Faiz baskısı, zayıf tüketici",
+    "Trump ve Fed Guvernörü Lisa Cook",
+    "ABD’den UCM’ye yaptırım",
+    "Kasırga ve şirketler",
+    "Fon tasfiyesi kanun teklifi Meclis’te",
+    "Sanayi üretimi daralıyor",
+    "TCMB: dezenflasyon yavaşladı, duruş sıkı",
+    "Konut",
+    "Veri merkezleri toplantısı (13 Ekim)",
+    "Belediye takvimi",
+    "İşe gidiş-dönüş"
+   ],
+   "published_at": "2026-10-10T19:44:10+00:00",
+   "path": "data/issues/2026-10-09/aksam-1910.json"
+  },
+  {
+   "id": "flas-1545",
+   "type": "flas",
+   "date": "2026-10-09",
+   "time": "15:45",
+   "title": "Gün İçi Flaş · Cuma 9 Ekim 2026 · 15:45 ET",
+   "subtitle": "Kapanışa doğru · 12:45–15:45 ET arası gelişmeler",
+   "headlines": [
+    "Trump: Rusya ABD’ye dizel verecek",
+    "Isaias Kategori 3'te (güncelleme)",
+    "Fed Guvernörü Lisa Cook için soruşturma komitesi (güncelleme)",
+    "Lincoln Tunnel’da otobüsler yavaş",
+    "Bu gece ~22:00 ET",
+    "Pzt 12 Ekim, Columbus Day"
+   ],
+   "published_at": "2026-10-10T19:44:10+00:00",
+   "path": "data/issues/2026-10-09/flas-1545.json"
+  },
   {
    "id": "flas-1245",
    "type": "flas",
@@ -22,6 +64,159 @@
    ],
    "published_at": "2026-10-10T19:22:36+00:00",
    "path": "data/issues/2026-10-09/flas-1245.json"
+  },
+  {
+   "id": "flas-0847",
+   "type": "flas",
+   "date": "2026-10-09",
+   "time": "08:47",
+   "title": "Gün İçi Flaş · Cuma 9 Ekim 2026 · 08:45 ET",
+   "subtitle": "Açılış öncesi · Dün 19:00 ET’den bu yana",
+   "headlines": [
+    "Trump: seçimlerden önce İran’a saldırı yok",
+    "OpenAI kaygısı yatıştı",
+    "AmEx’e 350 mn $ AML cezası",
+    "Türkiye: sanayi üretimi geriledi",
+    "10:00 ET",
+    "Delta (DAL)"
+   ],
+   "published_at": "2026-10-10T19:44:10+00:00",
+   "path": "data/issues/2026-10-09/flas-0847.json"
+  },
+  {
+   "id": "aksam-1920",
+   "type": "aksam",
+   "date": "2026-10-08",
+   "time": "19:20",
+   "title": "Akşam Bülteni · Perşembe 8 Ekim 2026",
+   "subtitle": "Hazırlanma: 19:20 ET · ABD rakamları kapanış",
+   "headlines": [
+    "ABD-İran: savaş hazırlığı sinyali",
+    "Faizler yüksek kalıyor",
+    "Yapay zekâ hisselerine darbe",
+    "Körfez’de gerilim tırmanıyor",
+    "Ukrayna-Rusya",
+    "Fon krizinde ilk ödemeler",
+    "Yabancı çıkışı ve rezervler",
+    "TCMB: indirim için erken",
+    "Konut güvenliği: Maltepe’de çökme",
+    "Siyaset: Yeni Parti AYM’de",
+    "Veri merkezleri masada (13 Ekim)",
+    "Meclis takvimi"
+   ],
+   "published_at": "2026-10-10T19:44:10+00:00",
+   "path": "data/issues/2026-10-08/aksam-1920.json"
+  },
+  {
+   "id": "flas-1546",
+   "type": "flas",
+   "date": "2026-10-08",
+   "time": "15:46",
+   "title": "Gün İçi Flaş · Perşembe 8 Ekim 2026 · 15:45 ET",
+   "subtitle": "Kapanışa doğru · 12:45–15:45 ET",
+   "headlines": [
+    "OpenAI geliri beklenenden düşük (FT)",
+    "Güncelleme – Trump: seçimlerden önce İran’a saldırı yok",
+    "TCMB",
+    "Lincoln Tunnel otobüs koridoru",
+    "Jeremy Allen White ve Lulu Tenney",
+    "Cuma 9 Ekim"
+   ],
+   "published_at": "2026-10-10T19:44:10+00:00",
+   "path": "data/issues/2026-10-08/flas-1546.json"
+  },
+  {
+   "id": "flas-1246",
+   "type": "flas",
+   "date": "2026-10-08",
+   "time": "12:46",
+   "title": "Gün İçi Flaş · Perşembe 8 Ekim 2026 · 12:45 ET",
+   "subtitle": "Öğle turu · 08:45–12:45 ET",
+   "headlines": [
+    "Petrol ve tahvil sıkıştırıyor",
+    "Haftalık işsizlik başvuruları 197 bin",
+    "Isaias kasırgası (güncelleme)",
+    "Maltepe’de çöken bina (güncelleme)",
+    "Tasfiye edilen fonlar",
+    "PANYNJ sitesinde Lincoln Tunnel, PABT ve XBL için aktif uyarılar var ama ayrıntılarına ula",
+    "13:00 ET: 22 milyar $’lık 30 yıllık tahvil ihalesi (reopening). Faizler zirveye yakınken t",
+    "16:00 ET: ABD kapanışı. Isaias için NHC bültenleri de takipte."
+   ],
+   "published_at": "2026-10-10T19:44:09+00:00",
+   "path": "data/issues/2026-10-08/flas-1246.json"
+  },
+  {
+   "id": "flas-0846",
+   "type": "flas",
+   "date": "2026-10-08",
+   "time": "08:46",
+   "title": "Gün İçi Flaş · Perşembe 8 Ekim 2026 · 08:46 ET",
+   "subtitle": "Açılış öncesi · 7 Ekim 19:00 – 8 Ekim 08:45 ET",
+   "headlines": [
+    "İran’da yeni saldırı ihtimali",
+    "Waller İstanbul’da",
+    "Avrupa’da tahvil gerginliği",
+    "İşsizlik başvuruları",
+    "Halle Berry",
+    "09:30 ABD açılışı · ~10:00 Ağustos toptan stoklar (kesin)"
+   ],
+   "published_at": "2026-10-10T19:44:09+00:00",
+   "path": "data/issues/2026-10-08/flas-0846.json"
+  },
+  {
+   "id": "flas-1546",
+   "type": "flas",
+   "date": "2026-10-07",
+   "time": "15:46",
+   "title": "Gün İçi Flaş · Çarşamba 7 Ekim 2026 · 15:45 ET",
+   "subtitle": "Kapanışa doğru · 12:45–15:45 ET",
+   "headlines": [
+    "Fed tutanakları: yıl sonuna kadar faiz artışı",
+    "Tahviller tutanak sonrası sakin",
+    "Petrol: IEA stok salımını hızlandırıyor, Körfez’de fırtına",
+    "Eve dönüş",
+    "Mia Goth, Shia LaBeouf’tan boşanma davası açtı",
+    "18:57: Akşam Bülteni. Per. 08:30 ET: haftalık işsizlik başvuruları."
+   ],
+   "published_at": "2026-10-10T19:44:09+00:00",
+   "path": "data/issues/2026-10-07/flas-1546.json"
+  },
+  {
+   "id": "flas-1246",
+   "type": "flas",
+   "date": "2026-10-07",
+   "time": "12:46",
+   "title": "Gün İçi Flaş · Çarşamba 7 Ekim 2026 · 12:45 ET",
+   "subtitle": "Öğle turu · 08:45–12:45 ET",
+   "headlines": [
+    "Vance İran’da tonu yumuşattı",
+    "Türkiye – fon krizi",
+    "AB yeni Rusya yaptırımlarına hazırlanıyor",
+    "Whitney Rose (RHOSLC) boşanma davası açtı",
+    "14:00 ET",
+    "Kapanış sonrası"
+   ],
+   "published_at": "2026-10-10T19:44:09+00:00",
+   "path": "data/issues/2026-10-07/flas-1246.json"
+  },
+  {
+   "id": "flas-0846",
+   "type": "flas",
+   "date": "2026-10-07",
+   "time": "08:46",
+   "title": "Gün İçi Flaş · Çarşamba 7 Ekim 2026 · 08:45 ET",
+   "subtitle": "Açılış öncesi · Salı 19:00 – Çarşamba 08:45 ET",
+   "headlines": [
+    "ABD uzun vadeli faizleri tırmanıyor",
+    "Brent tekrar 100$ üzerinde",
+    "Fed tutanakları bugün",
+    "Kimya Nobeli",
+    "10:30 ET: EIA haftalık ham petrol stokları.",
+    "14:00 ET: FOMC Eylül tutanakları · Kapanış sonrası: Levi Strauss ve Applied Digital bilanç",
+    "<i>Secaucus/yol ve magazin: bu aralıkta kayda değer yeni gelişme yok.</i>"
+   ],
+   "published_at": "2026-10-10T19:44:09+00:00",
+   "path": "data/issues/2026-10-07/flas-0846.json"
   },
   {
    "id": "aksam-1907",
@@ -46,6 +241,25 @@
    ],
    "published_at": "2026-10-10T19:22:36+00:00",
    "path": "data/issues/2026-10-06/aksam-1907.json"
+  },
+  {
+   "id": "flas-1545",
+   "type": "flas",
+   "date": "2026-10-06",
+   "time": "15:45",
+   "title": "Gün İçi Flaş · Salı 6 Ekim 2026 · 15:45 ET",
+   "subtitle": "Kapanışa doğru · 12:45–15:45 ET",
+   "headlines": [
+    "İran savaşı: Brent 100 $ altında",
+    "Yemen’de çatışma sertleşti",
+    "Güncelleme: Paramount-WBD birleşmesi",
+    "LAX’te taksi yolu kazası",
+    "Eve dönüş",
+    "16:00 ET",
+    "Yarın"
+   ],
+   "published_at": "2026-10-10T19:44:09+00:00",
+   "path": "data/issues/2026-10-06/flas-1545.json"
   },
   {
    "id": "aksam-1805",
