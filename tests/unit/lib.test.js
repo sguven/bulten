@@ -241,23 +241,71 @@ describe('günün durakları (buildStops)', () => {
   });
 });
 
-describe('yönlendirme', () => {
+describe('yönlendirme (Claude sayfası: yalnızca sade #çapa)', () => {
   test('parseRoute', () => {
     assert.deepEqual(L.parseRoute(''), { view: 'today' });
-    assert.deepEqual(L.parseRoute('#/'), { view: 'today' });
-    assert.deepEqual(L.parseRoute('#/bilinmeyen'), { view: 'today' });
-    assert.deepEqual(L.parseRoute('#/arsiv'), { view: 'archive', query: '', type: 'all' });
-    assert.deepEqual(L.parseRoute('#/arsiv?q=dolar%20tl&t=flas'), { view: 'archive', query: 'dolar tl', type: 'flas' });
-    assert.deepEqual(L.parseRoute('#/arsiv?t=hack'), { view: 'archive', query: '', type: 'all' });
-    assert.deepEqual(L.parseRoute('#/g/2026-10-08'), { view: 'day', date: '2026-10-08', id: null });
-    assert.deepEqual(L.parseRoute('#/g/2026-10-08/flas-1246'), { view: 'day', date: '2026-10-08', id: 'flas-1246' });
-    assert.deepEqual(L.parseRoute('#/g/2026-10-08/../../etc'), { view: 'day', date: '2026-10-08', id: null });
-    assert.deepEqual(L.parseRoute('#/g/08-10-2026'), { view: 'today' });
+    assert.deepEqual(L.parseRoute('#bugun'), { view: 'today' });
+    assert.deepEqual(L.parseRoute('#bilinmeyen'), { view: 'today' });
+    assert.deepEqual(L.parseRoute('#arsiv'), { view: 'archive' });
+    assert.deepEqual(L.parseRoute('#g-2026-10-08'), { view: 'day', date: '2026-10-08', id: null });
+    assert.deepEqual(L.parseRoute('#g-2026-10-08-flas-1246'), { view: 'day', date: '2026-10-08', id: 'flas-1246' });
+    assert.deepEqual(L.parseRoute('#g-2026-10-08-aksam-1908'), { view: 'day', date: '2026-10-08', id: 'aksam-1908' });
+    assert.deepEqual(L.parseRoute('#g-2026-10-08-sabah-0800'), { view: 'today' });
+    assert.deepEqual(L.parseRoute('#g-08-10-2026'), { view: 'today' });
   });
-  test('href üreticileri parseRoute ile tutarlı', () => {
+  test('üretilen bağlantılar yalnızca izin verilen karakterleri içerir ve geri okunur', () => {
     const e = { date: '2026-10-08', id: 'aksam-1908' };
+    for (const h of [L.issueHref(e), L.dayHref(e.date), L.archiveHref()]) assert.match(h, /^#[A-Za-z0-9._~-]+$/);
     assert.deepEqual(L.parseRoute(L.issueHref(e)), { view: 'day', date: e.date, id: e.id });
-    assert.deepEqual(L.parseRoute(L.archiveHref({ query: 'Şeker & çay', type: 'aksam' })), { view: 'archive', query: 'Şeker & çay', type: 'aksam' });
-    assert.equal(L.archiveHref(), '#/arsiv');
+    assert.deepEqual(L.parseRoute(L.dayHref(e.date)), { view: 'day', date: e.date, id: null });
+    assert.deepEqual(L.parseRoute(L.archiveHref()), { view: 'archive' });
+  });
+});
+
+describe('veri deposu belgesini temizleme (normalizeIssue)', () => {
+  const full = {
+    type: 'flas', date: '2026-10-11', time: '13:00', key: '2026-10-11T13:00', published_at: '2026-10-11T17:02:00Z',
+    title: 'Gün İçi Flaş · Pazar 11 Ekim 2026 · 13:00 ET', subtitle: 'Öğle',
+    markets: [{ name: 'IAU (iShares Gold)', level: '78,87 $', chg: '+1,56%', note: 'Cuma kapanışı' }],
+    market_note: '<b>Ne hareket ettiriyor:</b> x',
+    sections: [{ heading: 'Son dakika', items: [{ title: 'Başlık (doğrulanmadı)', text: 'Metin' }] }],
+    sources: [{ title: 'TheStreet', url: 'https://www.thestreet.com/x' }],
+    footer: 'Yatırım tavsiyesi değildir.',
+  };
+  test('tam belge olduğu gibi gelir, kimlik ve başlıklar türetilir', () => {
+    const e = L.normalizeIssue('2026-10-11_flas-1300', full);
+    assert.equal(e.id, 'flas-1300');
+    assert.equal(e.key, '2026-10-11T13:00');
+    assert.deepEqual(e.markets[0], full.markets[0]);
+    assert.deepEqual(e.headlines, ['Başlık (doğrulanmadı)']);
+    assert.equal(e.sources.length, 1);
+  });
+  test('eksik tarih/saat/tür belge kimliğinden tamamlanır', () => {
+    const e = L.normalizeIssue('2026-10-11_aksam-1857', { title: 'x', sections: [{ heading: 'h', items: ['madde'] }] });
+    assert.deepEqual([e.date, e.type, e.time, e.id], ['2026-10-11', 'aksam', '18:57', 'aksam-1857']);
+    assert.deepEqual(e.sections[0].items, [{ title: '', text: 'madde' }]);
+  });
+  test('kimliği ve alanları geçersiz belge atlanır', () => {
+    assert.equal(L.normalizeIssue('rastgele', { title: 'x' }), null);
+    assert.equal(L.normalizeIssue('2026-10-11_sabah-0800', {}), null);
+  });
+  test('yanlış tipteki alanlar ve güvensiz bağlantılar temizlenir', () => {
+    const e = L.normalizeIssue('2026-10-11_flas-1300', {
+      markets: 'liste değil',
+      sections: [{ heading: 'Boş', items: [] }, { heading: 'Dolu', items: [null, { title: 7 }, { text: '  ' }] }, { items: [{ text: 'başlıksız bölüm' }] }],
+      sources: [{ url: 'javascript:alert(1)' }, { title: 'ok', url: 'https://a.com' }, null],
+    });
+    assert.deepEqual(e.markets, []);
+    assert.deepEqual(e.sections, [{ heading: 'Dolu', items: [{ title: '7', text: '' }] }]);
+    assert.deepEqual(e.sources, [{ title: 'ok', url: 'https://a.com/' }]);
+  });
+  test('gövdesi null, dizi ya da içeriksiz belge atlanır, çökmez', () => {
+    assert.equal(L.normalizeIssue('2026-10-11_flas-1300', null), null);
+    assert.equal(L.normalizeIssue('2026-10-11_flas-1300', []), null);
+    assert.equal(L.normalizeIssue('2026-10-11_flas-1300', { title: 'yalnız başlık' }), null);
+  });
+  test('docIdFor biçimi normalizeIssue ile uyumlu', () => {
+    assert.equal(L.docIdFor('2026-10-11', 'flas-1300'), '2026-10-11_flas-1300');
+    assert.ok(L.normalizeIssue(L.docIdFor('2026-10-11', 'flas-1300'), { markets: [{ name: 'x' }] }));
   });
 });

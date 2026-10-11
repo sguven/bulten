@@ -1,27 +1,5 @@
 /* Gündem — Akşam Bülteni & Gün İçi Flaş */
 
-/* Yazı tipleri siteyle birlikte barındırılır (Newsreader, Archivo — SIL Open Font License) */
-@font-face {
-  font-family: "Newsreader"; font-style: normal; font-display: swap; font-weight: 200 800;
-  src: url("fonts/newsreader-latin-ext-wght-normal.woff2") format("woff2-variations"), url("fonts/newsreader-latin-ext-wght-normal.woff2") format("woff2");
-  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
-}
-@font-face {
-  font-family: "Newsreader"; font-style: normal; font-display: swap; font-weight: 200 800;
-  src: url("fonts/newsreader-latin-wght-normal.woff2") format("woff2-variations"), url("fonts/newsreader-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-@font-face {
-  font-family: "Archivo"; font-style: normal; font-display: swap; font-weight: 100 900;
-  src: url("fonts/archivo-latin-ext-wght-normal.woff2") format("woff2-variations"), url("fonts/archivo-latin-ext-wght-normal.woff2") format("woff2");
-  unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;
-}
-@font-face {
-  font-family: "Archivo"; font-style: normal; font-display: swap; font-weight: 100 900;
-  src: url("fonts/archivo-latin-wght-normal.woff2") format("woff2-variations"), url("fonts/archivo-latin-wght-normal.woff2") format("woff2");
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-
 :root {
   --bg: #F1F3F6;
   --surface: #FFFFFF;
@@ -38,6 +16,7 @@
   --down: #B42318;
   --mark: #FBE7A6;
   --focus: #1C7ED6;
+  --on-accent: #FFFFFF;
 
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -55,7 +34,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #0D1319;
     --surface: #141C24;
     --ink: #E4E9EE;
@@ -71,7 +50,28 @@
     --down: #F2766B;
     --mark: #5A4A12;
     --focus: #74B6F0;
+    --on-accent: #0D1319;
+    color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+    --bg: #0D1319;
+    --surface: #141C24;
+    --ink: #E4E9EE;
+    --muted: #93A0AD;
+    --line: #26313C;
+    --accent: #7DB8DB;
+    --accent-soft: #17293A;
+    --link: #8CC4E6;
+    --signal: #F0B43C;
+    --signal-dot: #F0B43C;
+    --signal-soft: #2C2412;
+    --up: #4CC17F;
+    --down: #F2766B;
+    --mark: #5A4A12;
+    --focus: #74B6F0;
+    --on-accent: #0D1319;
+    color-scheme: dark;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -87,7 +87,6 @@ body {
   font: 400 var(--step-0)/1.55 var(--sans);
   font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
 }
 
 a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
@@ -111,12 +110,11 @@ button, input { font: inherit; color: inherit; }
 /* ------------------------------------------------------------ üst bant */
 
 .masthead {
-  position: sticky; top: 0; z-index: 20;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: saturate(1.4) blur(10px);
   -webkit-backdrop-filter: saturate(1.4) blur(10px);
   border-bottom: 1px solid var(--line);
-  padding-top: env(safe-area-inset-top);
 }
 .masthead__inner {
   max-width: var(--measure); margin: 0 auto; padding: 0 var(--gutter);
@@ -132,8 +130,7 @@ button, input { font: inherit; color: inherit; }
   color: var(--muted); text-decoration: none; font-weight: 500; border-radius: 999px;
 }
 .tab:hover { color: var(--ink); }
-.tab[aria-current="page"] { color: var(--surface); background: var(--accent); }
-@media (prefers-color-scheme: dark) { .tab[aria-current="page"] { color: var(--bg); } }
+.tab[aria-current="page"] { color: var(--on-accent); background: var(--accent); }
 
 /* ------------------------------------------------------------ sayfa */
 
@@ -220,9 +217,8 @@ a.stop__link:hover { background: var(--accent-soft); }
 .button {
   display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 16px;
   border-radius: 999px; border: 1px solid var(--accent); background: var(--accent);
-  color: var(--surface); font-weight: 600; cursor: pointer; text-decoration: none;
+  color: var(--on-accent); font-weight: 600; cursor: pointer; text-decoration: none;
 }
-@media (prefers-color-scheme: dark) { .button { color: var(--bg); } }
 .button--quiet { background: transparent; color: var(--accent); }
 
 /* ------------------------------------------------------------ yayın */
@@ -240,8 +236,7 @@ a.stop__link:hover { background: var(--accent-soft); }
   font-size: 0.75rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap;
   color: var(--accent); background: var(--accent-soft);
 }
-.pill--aksam { color: var(--surface); background: var(--accent); }
-@media (prefers-color-scheme: dark) { .pill--aksam { color: var(--bg); } }
+.pill--aksam { color: var(--on-accent); background: var(--accent); }
 
 .issue__title { font: 600 var(--step-2)/1.2 var(--serif); letter-spacing: -0.01em; margin: 10px 0 4px; }
 .issue__sub { margin: 0; color: var(--muted); font-size: var(--step--1); }
@@ -340,8 +335,7 @@ a.stop__link:hover { background: var(--accent-soft); }
   display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px;
   border-radius: 999px; color: var(--muted); font-weight: 500; font-size: 0.9375rem;
 }
-.segmented input:checked + span { background: var(--accent); color: var(--surface); }
-@media (prefers-color-scheme: dark) { .segmented input:checked + span { color: var(--bg); } }
+.segmented input:checked + span { background: var(--accent); color: var(--on-accent); }
 .segmented input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
 
 .result-count { color: var(--muted); font-size: var(--step--1); margin: 6px 0 4px; }

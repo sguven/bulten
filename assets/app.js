@@ -3,57 +3,77 @@ import {
   escapeHtml, inlineFormat, safeUrl, hostOf, stripTags, changeDirection,
   nyParts, formatDateLong, formatDateShort, monthLabel, relativeTime, roundLabel, splitUnverified,
   filterEntries, highlight, matchesQuery, sortEntries, groupByDate, neighbors, buildStops,
-  parseRoute, issueHref, archiveHref, fold,
+  parseRoute, issueHref, archiveHref, dayHref, fold, normalizeIssue,
 } from './lib.js';
 
-const REFRESH_MS = 5 * 60 * 1000;
 const DAYS_PER_PAGE = 10;
+const PAGE_SIZE = 300;      // ilk yüklemede ~75 günlük yayın
+const COLLECTION = 'issues';
 
 const state = {
-  index: null,          // data/index.json
+  known: new Map(),         // docId -> normalizeIssue çıktısı (canlı pencere + yüklenen eski yayınlar)
+  windowIds: new Set(),     // son canlı anlık görüntüdeki belgeler
+  olderDone: false,
   schedule: DEFAULT_SCHEDULE,
-  issues: new Map(),    // path -> issue JSON
   route: null,
+  archive: { query: '', type: 'all' },
   archiveDays: DAYS_PER_PAGE,
-  seenLatest: null,
+  latestKey: null,
+  loaded: false,
+  db: null,
 };
+
+// Claude sayfa iskeletinde html etiketinin lang özelliği yok; ekran okuyucular ve tireleme için Türkçe olduğunu belirt
+document.documentElement.lang = 'tr';
 
 const main = document.getElementById('main');
 const toast = document.getElementById('toast');
 
 // ------------------------------------------------------------------ veri
 
-async function fetchJson(url, { fresh = false } = {}) {
-  const res = await fetch(url, { cache: fresh ? 'no-store' : 'default' });
-  if (!res.ok) throw new Error(`${res.status} ${url}`);
-  return res.json();
-}
-
-async function loadIndex() {
-  const idx = await fetchJson(`data/index.json?t=${Date.now()}`, { fresh: true });
-  if (!idx || !Array.isArray(idx.entries)) throw new Error('index.json bozuk');
-  idx.entries = sortEntries(idx.entries);
-  return idx;
-}
-
-async function loadSchedule() {
-  try {
-    const site = await fetchJson(`data/site.json?t=${Date.now()}`, { fresh: true });
-    if (site && site.schedule && Array.isArray(site.schedule.weekday)) state.schedule = site.schedule;
-  } catch { /* varsayılan program kullanılır */ }
-}
-
-async function loadIssue(entry) {
-  const key = `${entry.path}?v=${entry.published_at}`;
-  if (!state.issues.has(key)) {
-    state.issues.set(key, fetchJson(`${entry.path}?v=${encodeURIComponent(entry.published_at || '')}`)
-      .catch((e) => { state.issues.delete(key); throw e; }));
+function toEntries(docs) {
+  const out = [];
+  for (const d of docs) {
+    const e = normalizeIssue(d.id, d.data());
+    if (e) out.push(e);
   }
-  return state.issues.get(key);
+  return out;
 }
 
-const entries = () => (state.index ? state.index.entries : []);
+function allEntries() {
+  return sortEntries([...state.known.values()]);
+}
+
+// Canlı pencere (en yeni PAGE_SIZE yayın) değiştiğinde: penceredeki belgeleri güncelle,
+// penceredeyken silinenleri çıkar, pencereden aşağı kayanları (ör. "eski yayınları yükle"
+// ile gelmiş olanları) koru.
+function applyWindow(list) {
+  const ids = new Set(list.map((e) => e.docId));
+  const floor = list.length ? list[list.length - 1].key : '';
+  for (const [docId, e] of state.known) {
+    if (!ids.has(docId) && state.windowIds.has(docId) && (!floor || e.key >= floor || list.length < PAGE_SIZE)) {
+      state.known.delete(docId);
+    }
+  }
+  for (const e of list) state.known.set(e.docId, e);
+  state.windowIds = ids;
+}
+
+let cachedAll = null;
+const entries = () => cachedAll || (cachedAll = allEntries());
 const entriesOn = (date) => entries().filter((e) => e.date === date);
+function invalidate() { cachedAll = null; }
+
+async function loadOlder() {
+  const list = entries();
+  const oldest = list[list.length - 1];
+  if (!oldest || !state.db) { state.olderDone = true; return; }
+  const snap = await state.db.collection(COLLECTION).where('key', '<', oldest.key).orderBy('key', 'desc').limit(PAGE_SIZE).get();
+  const more = toEntries(snap.docs);
+  for (const e of more) if (!state.known.has(e.docId)) state.known.set(e.docId, e);
+  if (more.length < PAGE_SIZE) state.olderDone = true;
+  invalidate();
+}
 
 // ------------------------------------------------------------------ küçük parçalar
 
@@ -80,9 +100,15 @@ function setTab(view) {
   });
 }
 
+function lastPublished() {
+  const e = entries()[0];
+  return e && e.published_at ? e.published_at : '';
+}
+
 function updatedLine() {
-  if (!state.index || !state.index.generated_at) return '';
-  return `<span data-updated>Son güncelleme ${escapeHtml(relativeTime(state.index.generated_at))}</span>`;
+  const t = lastPublished();
+  if (!t) return '';
+  return `<span data-updated>Son yayın ${escapeHtml(relativeTime(t))}</span>`;
 }
 
 // ------------------------------------------------------------------ rota (günün durakları)
@@ -175,17 +201,8 @@ function pagerHtml(entry) {
   </nav>`;
 }
 
-async function fillIssue(slot, entry, token) {
-  slot.innerHTML = '<p class="loading">Yayın yükleniyor…</p>';
-  try {
-    const doc = await loadIssue(entry);
-    if (token !== renderToken) return;
-    slot.innerHTML = issueHtml(entry, doc) + pagerHtml(entry);
-  } catch (e) {
-    if (token !== renderToken) return;
-    slot.innerHTML = `<div class="callout callout--error" role="alert"><p><strong>Bu yayın yüklenemedi.</strong></p><p>Bağlantınızı kontrol edip yeniden deneyin.</p><button class="button" type="button" data-retry>Yeniden dene</button></div>`;
-    slot.querySelector('[data-retry]').addEventListener('click', () => fillIssue(slot, entry, renderToken));
-  }
+function fillIssue(slot, entry) {
+  slot.innerHTML = issueHtml(entry, entry) + pagerHtml(entry);
 }
 
 // ------------------------------------------------------------------ görünümler
@@ -193,7 +210,7 @@ async function fillIssue(slot, entry, token) {
 let renderToken = 0;
 
 function renderDay(date, id, { isToday }) {
-  const token = ++renderToken;
+  ++renderToken;
   const day = entriesOn(date);
   const notFound = Boolean(id) && !day.some((e) => e.id === id);
   // day[0] = günün en son yayını; istenen yayın yoksa ona düşülür
@@ -201,7 +218,7 @@ function renderDay(date, id, { isToday }) {
 
   const heading = isToday
     ? `<h1>Bugün</h1><div class="dayhead__meta"><span>${escapeHtml(formatDateLong(date))}</span>${updatedLine()}</div>`
-    : `<h1>${escapeHtml(formatDateLong(date, { year: false }))}</h1><div class="dayhead__meta"><span>${date.slice(0, 4)}</span><a href="#/">Bugüne dön</a><a href="${archiveHref()}">Arşiv</a></div>`;
+    : `<h1>${escapeHtml(formatDateLong(date, { year: false }))}</h1><div class="dayhead__meta"><span>${date.slice(0, 4)}</span><a href="#bugun">Bugüne dön</a><a href="${archiveHref()}">Arşiv</a></div>`;
 
   let notice = '';
   let shown = selected;
@@ -229,16 +246,20 @@ function renderDay(date, id, { isToday }) {
     ${notice}
     <div data-issue-slot></div>`;
 
-  if (shown) fillIssue(main.querySelector('[data-issue-slot]'), shown, token);
+  if (shown) fillIssue(main.querySelector('[data-issue-slot]'), shown);
   setTitle(shown && day.length ? `${TYPE_LABEL[shown.type]} ${shown.time}, ${formatDateShort(shown.date)}` : isToday ? 'Bugün' : formatDateLong(date, { weekday: false }));
 }
 
 function archiveListHtml(route) {
   const list = filterEntries(entries(), { query: route.query, type: route.type });
+  const olderBtn = state.olderDone ? '' : `<div class="more"><button class="button button--quiet" type="button" data-older>Daha eski yayınları yükle</button></div>`;
   if (!entries().length) {
     return '<div class="empty"><strong>Arşiv boş.</strong>Yayınlar geldikçe burada gün gün listelenecek.</div>';
   }
   if (!list.length) {
+    if (!state.olderDone && route.query) {
+      return `<div class="empty"><strong>“${escapeHtml(route.query)}” için yüklü yayınlarda sonuç yok.</strong>Daha eski yayınlarda da aramak için onları yükleyin.</div>${olderBtn}`;
+    }
     const q = route.query ? `“${escapeHtml(route.query)}” için sonuç yok.` : 'Bu filtrede yayın yok.';
     return `<div class="empty"><strong>${q}</strong>${route.type !== 'all' ? 'Filtreyi “Tümü” yapın ya da farklı bir kelime deneyin.' : 'Farklı bir kelime deneyin.'}</div>`;
   }
@@ -251,12 +272,14 @@ function archiveListHtml(route) {
     if (m !== month) { html += `<h2 class="month">${escapeHtml(m)}</h2>`; month = m; }
     const dots = entriesOn(g.date).slice().reverse().map((e) => `<i class="${e.type === 'aksam' ? 'sq' : ''}"></i>`).join('');
     html += `<section class="day" aria-label="${escapeHtml(formatDateLong(g.date))}">
-      <div class="day__head"><h3><a href="#/g/${g.date}">${escapeHtml(formatDateLong(g.date, { year: false }))}</a></h3><span class="dots" aria-hidden="true">${dots}</span></div>
+      <div class="day__head"><h3><a href="${dayHref(g.date)}">${escapeHtml(formatDateLong(g.date, { year: false }))}</a></h3><span class="dots" aria-hidden="true">${dots}</span></div>
       <ul class="rows">${g.items.map((e) => rowHtml(e, route.query)).join('')}</ul>
     </section>`;
   }
   if (groups.length > visible.length) {
     html += `<div class="more"><button class="button button--quiet" type="button" data-more>Daha eski günleri göster</button></div>`;
+  } else {
+    html += olderBtn;
   }
   return html;
 }
@@ -277,14 +300,15 @@ function rowHtml(e, query) {
   </a></li>`;
 }
 
-function renderArchive(route, { keepTools = false } = {}) {
+function renderArchive({ keepTools = false } = {}) {
   ++renderToken;
   setTitle('Arşiv');
+  const route = state.archive;
   const tools = main.querySelector('.archive-tools');
   if (!keepTools || !tools) {
     state.archiveDays = DAYS_PER_PAGE;
-    main.innerHTML = `<div class="dayhead"><h1>Arşiv</h1><div class="dayhead__meta"><span>${entries().length} yayın</span>${updatedLine()}</div></div>
-      <form class="archive-tools" role="search" onsubmit="return false">
+    main.innerHTML = `<div class="dayhead"><h1>Arşiv</h1><div class="dayhead__meta"><span data-count>${entries().length} yayın</span>${updatedLine()}</div></div>
+      <form class="archive-tools" role="search">
         <div class="search">
           ${icon.search}
           <label class="visually-hidden" for="q">Başlıklarda ara</label>
@@ -293,44 +317,54 @@ function renderArchive(route, { keepTools = false } = {}) {
         </div>
         <fieldset class="segmented">
           <legend class="visually-hidden">Yayın türü</legend>
-          ${[['all', 'Tümü'], ['flas', 'Flaş'], ['aksam', 'Akşam Bülteni']].map(([v, l]) => `<label><input type="radio" name="t" value="${v}"${route.type === v ? ' checked' : ''}><span>${l}</span></label>`).join('')}
+          ${[['all', 'Tümü', 't-all'], ['flas', 'Flaş', 't-flas'], ['aksam', 'Akşam Bülteni', 't-aksam']].map(([v, l, id]) => `<label><input type="radio" id="${id}" name="t" value="${v}"${route.type === v ? ' checked' : ''}><span>${l}</span></label>`).join('')}
         </fieldset>
       </form>
       <div data-list></div>`;
     bindArchiveTools();
+  } else {
+    const c = main.querySelector('[data-count]');
+    if (c) c.textContent = `${entries().length} yayın`;
   }
   main.querySelector('[data-list]').innerHTML = archiveListHtml(route);
   const more = main.querySelector('[data-more]');
-  if (more) more.addEventListener('click', () => { state.archiveDays += DAYS_PER_PAGE; renderArchive(parseRoute(location.hash), { keepTools: true }); });
+  if (more) more.addEventListener('click', () => { state.archiveDays += DAYS_PER_PAGE; renderArchive({ keepTools: true }); });
+  const older = main.querySelector('[data-older]');
+  if (older) older.addEventListener('click', async () => {
+    older.disabled = true; older.textContent = 'Yükleniyor…';
+    try { await loadOlder(); } catch { older.disabled = false; older.textContent = 'Yüklenemedi, yeniden dene'; return; }
+    state.archiveDays += DAYS_PER_PAGE;
+    renderArchive({ keepTools: true });
+  });
 }
 
 function bindArchiveTools() {
+  const form = main.querySelector('.archive-tools');
   const input = main.querySelector('#q');
   const clear = main.querySelector('.clear');
   let timer;
   const apply = () => {
     const type = (main.querySelector('input[name="t"]:checked') || {}).value || 'all';
-    const href = archiveHref({ query: input.value.trim(), type });
-    history.replaceState(null, '', href);
+    state.archive = { query: input.value.trim(), type };
     clear.hidden = !input.value;
     state.archiveDays = DAYS_PER_PAGE;
-    renderArchive(parseRoute(href), { keepTools: true });
+    renderArchive({ keepTools: true });
   };
+  form.addEventListener('submit', (e) => { e.preventDefault(); apply(); });
   input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(apply, 120); });
   input.addEventListener('keydown', (e) => { if (e.key === 'Escape' && input.value) { input.value = ''; apply(); } });
   clear.addEventListener('click', () => { input.value = ''; apply(); input.focus(); });
   main.querySelectorAll('input[name="t"]').forEach((r) => r.addEventListener('change', apply));
 }
 
-function renderError(err) {
+function renderError(kind) {
   ++renderToken;
-  console.error(err);
-  main.innerHTML = `<div class="callout callout--error" role="alert">
-    <p><strong>Yayınlar yüklenemedi.</strong></p>
-    <p>Bağlantınızı kontrol edip yeniden deneyin.</p>
-    <button class="button" type="button" data-retry>Yeniden dene</button>
-  </div>`;
-  main.querySelector('[data-retry]').addEventListener('click', () => boot());
+  const msg = kind === 'nodb'
+    ? '<p><strong>Yayınlar bu görünümde açılamıyor.</strong></p><p>Sayfayı claude.ai\'de, hesabınızla giriş yapmışken açın.</p>'
+    : '<p><strong>Yayınlar yüklenemedi.</strong></p><p>Bağlantınızı kontrol edip yeniden deneyin.</p><button class="button" type="button" data-retry>Yeniden dene</button>';
+  main.innerHTML = `<div class="callout callout--error" role="alert">${msg}</div>`;
+  const r = main.querySelector('[data-retry]');
+  if (r) r.addEventListener('click', () => boot());
 }
 
 // ------------------------------------------------------------------ yönlendirme
@@ -341,8 +375,9 @@ function render({ scroll = true } = {}) {
   state.route = route;
   setTab(route.view);
   const today = nyParts().date;
+  if (!state.loaded) return;
   if (route.view === 'archive') {
-    renderArchive(route, { keepTools: prev && prev.view === 'archive' });
+    renderArchive({ keepTools: prev && prev.view === 'archive' });
   } else if (route.view === 'day') {
     renderDay(route.date, route.id, { isToday: route.date === today });
     setTab(route.date === today ? 'today' : 'day');
@@ -378,55 +413,64 @@ function showToast(entry) {
 function hideToast() { toast.hidden = true; }
 toast.querySelector('.toast__close').addEventListener('click', hideToast);
 
-async function refresh() {
-  try {
-    const idx = await loadIndex();
-    state.index = idx;
-    const latest = idx.entries[0];
-    if (latest && idx.latest !== state.seenLatest) {
-      state.seenLatest = idx.latest;
-      showToast(latest);
-    }
-    // Rota ve "son güncelleme" satırını yerinde tazele; okunan yayına dokunma.
-    const r = state.route;
-    if (r && r.view !== 'archive') {
-      const date = r.view === 'day' ? r.date : nyParts().date;
-      const slot = main.querySelector('[data-route]');
-      const day = entriesOn(date);
-      const shownId = main.querySelector('[data-issue]')?.dataset.issue;
-      const sel = day.find((e) => e.id === (r.id || shownId));
-      if (slot) slot.innerHTML = routeHtml(date, sel);
-    }
-    const upd = main.querySelector('[data-updated]');
-    if (upd) upd.textContent = `Son güncelleme ${relativeTime(idx.generated_at)}`;
-  } catch { /* sessizce bir sonraki denemeyi bekle */ }
-}
-
-let timer;
-function startRefresh() {
-  clearInterval(timer);
-  timer = setInterval(refresh, REFRESH_MS);
-}
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible' && state.index) { refresh(); startRefresh(); }
-});
-
-// ------------------------------------------------------------------ başlat
-
-async function boot() {
-  main.innerHTML = '<p class="loading">Yükleniyor…</p>';
-  try {
-    const [idx] = await Promise.all([loadIndex(), loadSchedule()]);
-    state.index = idx;
-    state.seenLatest = idx.latest;
+// Yeni yayın geldiğinde: okunan yayına dokunmadan rotayı ve sayaçları tazele, bildirim göster.
+function onData() {
+  const latest = entries()[0];
+  const key = latest ? latest.key : null;
+  const first = !state.loaded;
+  state.loaded = true;
+  if (first) {
+    state.latestKey = key;
     render({ scroll: false });
-    startRefresh();
-  } catch (e) {
-    renderError(e);
+    return;
+  }
+  if (key && key !== state.latestKey && (!state.latestKey || key > state.latestKey)) {
+    state.latestKey = key;
+    showToast(latest);
+  }
+  const r = state.route;
+  if (r && r.view === 'archive') { renderArchive({ keepTools: true }); return; }
+  if (r) {
+    const shown = main.querySelector('[data-issue]');
+    if (!shown || (r.view === 'day' && r.id && !shown)) { render({ scroll: false }); return; }
+    const date = r.view === 'day' ? r.date : nyParts().date;
+    const slot = main.querySelector('[data-route]');
+    const day = entriesOn(date);
+    const sel = day.find((e) => e.id === (r.id || shown.dataset.issue));
+    if (slot) slot.innerHTML = routeHtml(date, sel);
+    const upd = main.querySelector('[data-updated]');
+    if (upd) upd.textContent = `Son yayın ${relativeTime(lastPublished())}`;
   }
 }
 
+let unsubscribe = null;
+
+async function boot() {
+  main.innerHTML = '<p class="loading">Yükleniyor…</p>';
+  state.loaded = false;
+  const db = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('db') : null;
+  if (!db) { renderError('nodb'); return; }
+  state.db = db;
+  if (unsubscribe) unsubscribe();
+  state.known = new Map(); state.windowIds = new Set(); state.olderDone = false;
+  unsubscribe = db.collection(COLLECTION).orderBy('key', 'desc').limit(PAGE_SIZE).onSnapshot((snap) => {
+    applyWindow(toEntries(snap.docs));
+    if (snap.size < PAGE_SIZE) state.olderDone = true;
+    invalidate();
+    onData();
+  }, (err) => {
+    console.error('db', err && err.code);
+    renderError('load');
+  });
+}
+
+// "Son yayın … önce" ifadesini dakikada bir tazele
+setInterval(() => {
+  const upd = main.querySelector('[data-updated]');
+  if (upd && lastPublished()) upd.textContent = `Son yayın ${relativeTime(lastPublished())}`;
+}, 60000);
+
 // test ve hata ayıklama için
-window.__gundem = { state, refresh, fold };
+window.__gundem = { state, fold };
 
 boot();

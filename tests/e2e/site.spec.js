@@ -1,4 +1,4 @@
-// Uçtan uca testler: gerçek tarayıcıda (masaüstü + telefon), publish.py ile üretilmiş veriyle.
+// Uçtan uca testler: derlenmiş Claude sayfası, gerçek tarayıcıda (masaüstü + telefon), sahte veri deposuyla.
 import { test as base, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
@@ -33,7 +33,7 @@ test.afterEach(async ({ consoleErrors }, info) => {
 
 test.describe('Bugün sayfası', () => {
   test('gün ortası: yayımlananlar, hazırlanan ve bekleyen duraklar', async ({ page }) => {
-    await open(page, '#/', FRI_1300);
+    await open(page, '#bugun', FRI_1300);
     await expect(page.locator('.dayhead h1')).toHaveText('Bugün');
     await expect(page.locator('.dayhead__meta')).toContainText('9 Ekim 2026, Cuma');
     await expect(stops(page)).toHaveCount(4);
@@ -48,13 +48,13 @@ test.describe('Bugün sayfası', () => {
   });
 
   test('bekleyen durak tıklanamaz, yayımlanan durak bağlantıdır', async ({ page }) => {
-    await open(page, '#/', FRI_1300);
-    await expect(stops(page).nth(0).locator('a')).toHaveAttribute('href', '#/g/2026-10-09/flas-0846');
+    await open(page, '#bugun', FRI_1300);
+    await expect(stops(page).nth(0).locator('a')).toHaveAttribute('href', '#g-2026-10-09-flas-0846');
     await expect(stops(page).nth(2).locator('a')).toHaveCount(0);
   });
 
   test('bugün henüz yayın yoksa sıradaki saat ve son yayın gösterilir', async ({ page }) => {
-    await open(page, '#/', SAT_1400);
+    await open(page, '#bugun', SAT_1400);
     await expect(page.locator('.callout')).toContainText('Bugün henüz yayın yok');
     await expect(page.locator('.callout')).toContainText('Sıradaki: Akşam Bülteni, 18:57');
     await expect(stops(page)).toHaveCount(1);
@@ -65,7 +65,7 @@ test.describe('Bugün sayfası', () => {
   });
 
   test('marka bağlantısı Bugün’e döner', async ({ page }) => {
-    await open(page, '#/arsiv', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
     await page.locator('.brand').click();
     await expect(page.locator('.dayhead h1')).toHaveText('Bugün');
   });
@@ -75,7 +75,7 @@ test.describe('Bugün sayfası', () => {
 
 test.describe('Gün görünümü ve yayın', () => {
   test('tam gün: dört durak, varsayılan olarak en son yayın açılır', async ({ page }) => {
-    await open(page, '#/g/2026-10-08', FRI_1300);
+    await open(page, '#g-2026-10-08', FRI_1300);
     await expect(page.locator('.dayhead h1')).toHaveText('8 Ekim, Perşembe');
     await expect(stops(page)).toHaveCount(4);
     await expect(page.locator('.route .stop[data-state="published"]')).toHaveCount(4);
@@ -84,9 +84,9 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('durağa tıklayınca o yayın açılır ve adres güncellenir', async ({ page }) => {
-    await open(page, '#/g/2026-10-08', FRI_1300);
+    await open(page, '#g-2026-10-08', FRI_1300);
     await stops(page).nth(1).locator('a').click();
-    await expect(page).toHaveURL(/#\/g\/2026-10-08\/flas-1246$/);
+    await expect(page).toHaveURL(/#g-2026-10-08-flas-1246$/);
     await expect(page.locator('.issue__title')).toHaveText('Gün İçi Flaş');
     await expect(page.locator('.issue .kicker')).toContainText('Öğle');
     await expect(page.locator('.issue')).toContainText('İşsizlik başvuruları');
@@ -95,7 +95,7 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('piyasa tablosu: tüm satırlar, renk yönleri ve erişilebilir metin', async ({ page }) => {
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
+    await open(page, '#g-2026-10-08-flas-1246', FRI_1300);
     const rows = page.locator('.markets tbody tr');
     await expect(rows).toHaveCount(9);
     await expect(rows.nth(0).locator('.asset')).toContainText('S&P 500');
@@ -114,7 +114,7 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('bölümler, "doğrulanmadı" etiketi, kaynaklar ve dipnot', async ({ page }) => {
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
+    await open(page, '#g-2026-10-08-flas-1246', FRI_1300);
     await expect(page.locator('.issue section h3')).toHaveText(['Piyasalar', 'Son dakika', 'Magazin & sosyal medya']);
     const gossip = page.locator('.item').filter({ hasText: 'Ünlü çiftin ayrılık iddiası' });
     await expect(gossip.locator('.tag')).toHaveText('doğrulanmadı');
@@ -136,7 +136,7 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('boş bölümler gösterilmez, başlıksız madde düzgün görünür', async ({ page }) => {
-    await open(page, '#/g/2026-10-05', FRI_1300);
+    await open(page, '#g-2026-10-05', FRI_1300);
     await expect(page.locator('.issue section h3')).toHaveText(['Dünya — bilmen gerekenler']);
     await expect(page.locator('.item__title')).toHaveCount(0);
     await expect(page.locator('.item__text')).toHaveText('Tek maddelik başlıksız haber.');
@@ -144,19 +144,19 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('önceki/sonraki gezinme günler arasında kronolojik çalışır', async ({ page }) => {
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
+    await open(page, '#g-2026-10-08-flas-1246', FRI_1300);
     await expect(page.locator('.pager__prev .what')).toHaveText('Flaş 08:47, 8 Ekim');
     await expect(page.locator('.pager__next .what')).toHaveText('Flaş 15:49, 8 Ekim');
     await page.locator('.pager__prev').click();
     await expect(page).toHaveURL(/flas-0847$/);
     await page.locator('.pager__prev').click();
-    await expect(page).toHaveURL(/#\/g\/2026-10-07\/aksam-1906$/);
+    await expect(page).toHaveURL(/#g-2026-10-07-aksam-1906$/);
     await expect(page.locator('.dayhead h1')).toHaveText('7 Ekim, Çarşamba');
   });
 
   test('klavye okları ile önceki/sonraki', async ({ page, isMobile }) => {
     test.skip(isMobile, 'klavye yalnızca masaüstünde');
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
+    await open(page, '#g-2026-10-08-flas-1246', FRI_1300);
     await page.keyboard.press('ArrowRight');
     await expect(page).toHaveURL(/flas-1549$/);
     await expect(page.locator('.pager__prev')).toBeVisible();
@@ -168,15 +168,15 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('en yeni yayında "sonraki" yok, en eskisinde "önceki" yok', async ({ page }) => {
-    await open(page, '#/g/2026-10-09/flas-0846', FRI_1300);
+    await open(page, '#g-2026-10-09-flas-0846', FRI_1300);
     await expect(page.locator('.pager__next')).toHaveCount(0);
     await expect(page.locator('.pager__prev')).toHaveCount(1);
-    await open(page, '#/g/2026-09-15/aksam-1902', FRI_1300);
+    await open(page, '#g-2026-09-15-aksam-1902', FRI_1300);
     await expect(page.locator('.pager__prev')).toHaveCount(0);
   });
 
   test('tarayıcı geri tuşu önceki görünüme döner', async ({ page }) => {
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
+    await open(page, '#g-2026-10-08-flas-1246', FRI_1300);
     await page.locator('.tab[data-tab="archive"]').click();
     await expect(page.locator('.dayhead h1')).toHaveText('Arşiv');
     await page.goBack();
@@ -185,17 +185,17 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 
   test('bulunamayan yayın: açıklama ve günün yayınları', async ({ page }) => {
-    await open(page, '#/g/2026-10-08/flas-0000', FRI_1300);
+    await open(page, '#g-2026-10-08-flas-0000', FRI_1300);
     await expect(page.locator('.callout')).toContainText('Bu yayın bulunamadı');
     await expect(page.locator('.issue__title')).toHaveText('Akşam Bülteni');
     await expect(page.locator('.route .stop[aria-current="true"] .stop__time')).toHaveText('19:08');
   });
 
   test('yayın olmayan gün: arşive yönlendirir', async ({ page }) => {
-    await open(page, '#/g/2026-09-01', FRI_1300);
+    await open(page, '#g-2026-09-01', FRI_1300);
     await expect(page.locator('.empty')).toContainText('1 Eylül 2026, Salı tarihinde yayın yok');
     await page.locator('.empty a', { hasText: 'Arşive git' }).click();
-    await expect(page).toHaveURL(/#\/arsiv$/);
+    await expect(page).toHaveURL(/#arsiv$/);
   });
 });
 
@@ -203,7 +203,7 @@ test.describe('Gün görünümü ve yayın', () => {
 
 test.describe('Arşiv', () => {
   test('gün gün listeler, ay başlıkları ve sayfalama', async ({ page }) => {
-    await open(page, '#/arsiv', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
     await expect(page.locator('.tab[data-tab="archive"]')).toHaveAttribute('aria-current', 'page');
     await expect(page.locator('.dayhead__meta')).toContainText('28 yayın');
     await expect(page.locator('.result-count')).toHaveText('28 yayın, 25 gün');
@@ -226,25 +226,24 @@ test.describe('Arşiv', () => {
   });
 
   test('satıra tıklayınca yayın açılır', async ({ page }) => {
-    await open(page, '#/arsiv', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
     await page.locator('section.day').nth(1).locator('.row a').nth(2).click();
-    await expect(page).toHaveURL(/#\/g\/2026-10-08\/flas-1246$/);
+    await expect(page).toHaveURL(/#g-2026-10-08-flas-1246$/);
     await expect(page.locator('.issue')).toContainText('İşsizlik başvuruları');
   });
 
   test('gün başlığına tıklayınca gün görünümü açılır', async ({ page }) => {
-    await open(page, '#/arsiv', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
     await page.locator('section.day h3 a', { hasText: '7 Ekim' }).click();
-    await expect(page).toHaveURL(/#\/g\/2026-10-07$/);
+    await expect(page).toHaveURL(/#g-2026-10-07$/);
   });
 
   test('arama: Türkçe karakter duyarsız, vurgulu, adrese yazılır', async ({ page }) => {
-    await open(page, '#/arsiv', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
     const q = page.getByRole('searchbox', { name: 'Başlıklarda ara' });
     await q.fill('tutanaklari');
     await expect(page.locator('.result-count')).toHaveText('2 yayın, 2 gün');
     await expect(page.locator('.row mark').first()).toHaveText('tutanakları');
-    await expect(page).toHaveURL(/#\/arsiv\?q=tutanaklari$/);
     // odak arama kutusunda kalır
     await expect(q).toBeFocused();
     await q.fill('SECAUCUS');
@@ -252,18 +251,23 @@ test.describe('Arşiv', () => {
     await expect(page.locator('.row .h').first()).toContainText('Secaucus belediye meclisi');
   });
 
-  test('arama yenilemeden sonra korunur', async ({ page }) => {
-    await open(page, '#/arsiv?q=lincoln&t=flas', FRI_1300);
+  test('arama ve filtre, bir yayına gidip geri dönünce korunur', async ({ page }) => {
+    await open(page, '#arsiv', FRI_1300);
+    await page.getByRole('searchbox').fill('lincoln');
+    await page.locator('label', { hasText: 'Flaş' }).click();
+    await expect(page.locator('.result-count')).toHaveText('2 yayın, 2 gün');
+    await page.locator('.row a').first().click();
+    await expect(page.locator('.issue')).toBeVisible();
+    await page.locator('.tab[data-tab="archive"]').click();
     await expect(page.getByRole('searchbox')).toHaveValue('lincoln');
     await expect(page.getByRole('radio', { name: 'Flaş' })).toBeChecked();
     await expect(page.locator('.result-count')).toHaveText('2 yayın, 2 gün');
   });
 
   test('tür filtresi', async ({ page }) => {
-    await open(page, '#/arsiv', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
     await page.locator('label', { hasText: 'Flaş' }).click();
     await expect(page.locator('.result-count')).toHaveText('5 yayın, 3 gün');
-    await expect(page).toHaveURL(/t=flas/);
     await page.locator('label', { hasText: 'Akşam Bülteni' }).click();
     await expect(page.locator('.result-count')).toHaveText('23 yayın, 23 gün');
     await page.locator('label', { hasText: 'Tümü' }).click();
@@ -271,7 +275,8 @@ test.describe('Arşiv', () => {
   });
 
   test('sonuç yoksa yol gösterir; temizle ve Esc çalışır', async ({ page }) => {
-    await open(page, '#/arsiv?t=aksam', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
+    await page.locator('label', { hasText: 'Akşam Bülteni' }).click();
     const q = page.getByRole('searchbox');
     await q.fill('işsizlik');
     await expect(page.locator('.empty')).toContainText('“işsizlik” için sonuç yok.');
@@ -290,7 +295,7 @@ test.describe('Arşiv', () => {
 
 test.describe('Güvenlik', () => {
   test('yayın içeriğindeki HTML/JS çalıştırılmaz', async ({ page }) => {
-    await open(page, '#/g/2026-10-06/flas-1245', FRI_1300);
+    await open(page, '#g-2026-10-06-flas-1245', FRI_1300);
     await page.locator('details.sources summary').click();
     await page.waitForTimeout(300);
     expect(await page.evaluate(() => window.__xss)).toBeUndefined();
@@ -307,7 +312,9 @@ test.describe('Güvenlik', () => {
   });
 
   test('arşivde kötü niyetli başlık metin olarak görünür', async ({ page }) => {
-    await open(page, '#/arsiv?q=kalin', FRI_1300);
+    await open(page, '#arsiv', FRI_1300);
+    await page.getByRole('searchbox').fill('kalin');
+    await expect(page.locator('.result-count')).toHaveText('1 yayın, 1 gün');
     expect(await page.evaluate(() => window.__xss)).toBeUndefined();
     await expect(page.locator('.rows strong, .rows b')).toHaveCount(0);
   });
@@ -316,32 +323,47 @@ test.describe('Güvenlik', () => {
 // ---------------------------------------------------------------- Hata ve boş durumlar
 
 test.describe('Hata ve boş durumlar', () => {
-  test('dizin yüklenemezse hata ve "Yeniden dene"', async ({ page }) => {
+  test('veri deposu yanıt vermezse hata ve "Yeniden dene"', async ({ page }) => {
     test.info().annotations.push({ type: 'allow-errors' });
-    await page.route('**/data/index.json*', (r) => r.abort());
+    await page.addInitScript(() => { window.__FAKE_DB = { failSnapshot: true }; });
     await page.clock.setFixedTime(FRI_1300);
-    await page.goto('/#/');
+    await page.goto('/#bugun');
     await expect(page.locator('.callout--error')).toContainText('Yayınlar yüklenemedi');
-    await page.unroute('**/data/index.json*');
+    await page.evaluate(() => { window.__FAKE_DB.failSnapshot = false; });
     await page.getByRole('button', { name: 'Yeniden dene' }).click();
     await expect(page.locator('.dayhead h1')).toHaveText('Bugün');
     await expect(page.locator('.issue')).toBeVisible();
   });
 
-  test('tek yayın yüklenemezse yalnızca o alan hata verir', async ({ page }) => {
-    test.info().annotations.push({ type: 'allow-errors' });
-    await page.route('**/data/issues/2026-10-08/flas-1246.json*', (r) => r.abort());
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
-    await expect(page.locator('.callout--error')).toContainText('Bu yayın yüklenemedi');
-    await expect(stops(page)).toHaveCount(4);
-    await page.unroute('**/data/issues/2026-10-08/flas-1246.json*');
-    await page.getByRole('button', { name: 'Yeniden dene' }).click();
-    await expect(page.locator('.issue')).toContainText('İşsizlik başvuruları');
+  test('veri deposu olmayan görünümde açıklama gösterilir', async ({ page }) => {
+    await page.addInitScript(() => { window.__FAKE_DB = { noDb: true }; });
+    await page.clock.setFixedTime(FRI_1300);
+    await page.goto('/#bugun');
+    await expect(page.locator('.callout--error')).toContainText('claude.ai');
+    await expect(page.getByRole('button', { name: 'Yeniden dene' })).toHaveCount(0);
+  });
+
+  test('bozuk ya da eksik belgeler sayfayı bozmaz', async ({ page }) => {
+    await page.addInitScript(() => {
+      window.__SEED_DOCS = {
+        'çöp': { title: 'adı kurala uymayan belge' },
+        '2026-10-09_flas-0900': { title: 'Gün İçi Flaş', markets: 'liste değil', sections: [{ heading: 'Son dakika', items: ['düz metin madde', { title: 5 }, null] }], sources: [{ url: 'javascript:alert(1)' }, { title: 'Ok', url: 'https://example.com/a' }] },
+        '2026-10-09_aksam-1910': null,
+      };
+    });
+    await open(page, '#g-2026-10-09-flas-0900', FRI_1300);
+    await expect(page.locator('.issue .kicker')).toContainText('09:00 ET');
+    await expect(page.locator('.markets')).toHaveCount(0);
+    await expect(page.locator('.item')).toHaveText(['düz metin madde', '5']);
+    await page.locator('details.sources summary').click();
+    await expect(page.locator('.sources li a')).toHaveCount(1);
+    await page.locator('.tab[data-tab="archive"]').click();
+    await expect(page.locator('.result-count')).toHaveText('1 yayın, 1 gün');
   });
 
   test('site boşken (ilk gün) anlaşılır mesajlar', async ({ page }) => {
-    await page.route('**/data/index.json*', (r) => r.fulfill({ json: { version: 1, generated_at: '2026-10-09T17:00:00+00:00', count: 0, latest: null, entries: [] } }));
-    await open(page, '#/', FRI_1300);
+    await page.addInitScript(() => { window.__SEED_DOCS = {}; });
+    await open(page, '#bugun', FRI_1300);
     await expect(page.locator('.empty')).toContainText('Henüz yayın yok');
     // 13:00'te 08:45 durağı geçmiş ve boş -> gizli; 12:45 hazırlanıyor
     await expect(stops(page)).toHaveCount(3);
@@ -349,50 +371,61 @@ test.describe('Hata ve boş durumlar', () => {
     await page.locator('.tab[data-tab="archive"]').click();
     await expect(page.locator('.empty')).toContainText('Arşiv boş');
   });
-
-  test('site.json yoksa varsayılan program kullanılır', async ({ page }) => {
-    await page.route('**/data/site.json*', (r) => r.fulfill({ status: 404, body: '' }));
-    test.info().annotations.push({ type: 'allow-errors' });
-    await open(page, '#/', FRI_1300);
-    await expect(stops(page)).toHaveCount(4);
-  });
 });
 
-// ---------------------------------------------------------------- Otomatik yenileme
+// ---------------------------------------------------------------- Canlı güncelleme
 
 test('yeni yayın gelince bildirim çıkar ve tek dokunuşla açılır', async ({ page }) => {
-  let calls = 0;
-  const newEntry = { id: 'flas-1251', type: 'flas', date: '2026-10-09', time: '12:51', title: 'Gün İçi Flaş', subtitle: 'Öğle', headlines: ['Yeni başlık'], published_at: '2026-10-09T16:51:00+00:00', path: 'data/issues/2026-10-09/flas-1251.json' };
-  await page.route('**/data/index.json*', async (route) => {
-    const res = await route.fetch();
-    const idx = await res.json();
-    if (++calls > 1) { idx.entries.unshift(newEntry); idx.latest = '2026-10-09/flas-1251'; idx.count++; }
-    await route.fulfill({ json: idx });
-  });
-  await page.route('**/data/issues/2026-10-09/flas-1251.json*', (r) => r.fulfill({ json: { ...newEntry, markets: [], sections: [{ heading: 'Son dakika', items: [{ title: 'Yeni başlık', text: 'Yeni gelişme.' }] }], sources: [] } }));
-  await page.clock.install({ time: at('2026-10-09T12:55:00-04:00') });
-  await page.goto('/#/');
+  await page.clock.setFixedTime(at('2026-10-09T12:55:00-04:00'));
+  await page.goto('/#bugun');
   await expect(page.locator('.issue .kicker')).toContainText('08:46 ET');
   await expect(page.locator('#toast')).toBeHidden();
-  await page.clock.runFor('05:01');
+  await page.evaluate(() => window.__fakeDb.put('2026-10-09_flas-1251', {
+    type: 'flas', date: '2026-10-09', time: '12:51', key: '2026-10-09T12:51', published_at: '2026-10-09T16:51:00Z',
+    title: 'Gün İçi Flaş', subtitle: 'Öğle', markets: [], sections: [{ heading: 'Son dakika', items: [{ title: 'Yeni başlık', text: 'Yeni gelişme.' }] }], sources: [],
+  }));
   await expect(page.locator('#toast')).toBeVisible();
   await expect(page.locator('#toast')).toContainText('Yeni yayın: Gün İçi Flaş, 12:51');
   // okunan yayın değişmedi, ama rota yeni durağı gösteriyor
   await expect(page.locator('.issue .kicker')).toContainText('08:46 ET');
   await expect(page.locator('.route .stop[data-state="published"]')).toHaveCount(2);
   await page.locator('#toast .toast__action').click();
-  await expect(page).toHaveURL(/flas-1251$/);
+  await expect(page).toHaveURL(/#g-2026-10-09-flas-1251$/);
   await expect(page.locator('.issue')).toContainText('Yeni gelişme.');
   await expect(page.locator('#toast')).toBeHidden();
+});
+
+test('arşiv canlı güncellenir; eski yayınlar istenince yüklenir', async ({ page }) => {
+  await page.addInitScript(() => {
+    const docs = {};
+    // 320 yayın: ilk yüklemede 300'ü gelir
+    for (let i = 0; i < 320; i++) {
+      const d = new Date(Date.UTC(2026, 0, 1) + i * 86400000).toISOString().slice(0, 10);
+      docs[`${d}_aksam-1900`] = { type: 'aksam', date: d, time: '19:00', key: `${d}T19:00`, title: 'Akşam Bülteni', sections: [{ heading: 'Dünya', items: [{ title: i < 20 ? `Eski kayıt ${i}` : `Gün ${i}`, text: 'x' }] }] };
+    }
+    window.__SEED_DOCS = docs;
+  });
+  await open(page, '#arsiv', FRI_1300);
+  await expect(page.locator('.dayhead__meta')).toContainText('300 yayın');
+  const q = page.getByRole('searchbox');
+  await q.fill('eski kayit');
+  await expect(page.locator('.empty')).toContainText('yüklü yayınlarda sonuç yok');
+  await page.getByRole('button', { name: 'Daha eski yayınları yükle' }).click();
+  await expect(page.locator('.result-count')).toHaveText('20 yayın, 20 gün');
+  await q.fill('');
+  await expect(page.locator('.dayhead__meta')).toContainText('320 yayın');
+  await page.evaluate(() => window.__fakeDb.put('2026-11-20_aksam-1900', { type: 'aksam', date: '2026-11-20', time: '19:00', key: '2026-11-20T19:00', title: 'Akşam Bülteni', sections: [{ heading: 'Dünya', items: [{ title: 'En yeni', text: 'x' }] }] }));
+  await expect(page.locator('.dayhead__meta')).toContainText('321 yayın');
+  await expect(page.locator('section.day h3').first()).toHaveText('20 Kasım, Cuma');
 });
 
 // ---------------------------------------------------------------- Yerleşim ve erişilebilirlik
 
 test.describe('Yerleşim ve erişilebilirlik', () => {
   for (const [name, hash, now] of [
-    ['Bugün', '#/', FRI_1300],
-    ['Yayın', '#/g/2026-10-08/flas-1246', FRI_1300],
-    ['Arşiv', '#/arsiv', FRI_1300],
+    ['Bugün', '#bugun', FRI_1300],
+    ['Yayın', '#g-2026-10-08-flas-1246', FRI_1300],
+    ['Arşiv', '#arsiv', FRI_1300],
   ]) {
     test(`${name}: yatay taşma yok`, async ({ page }) => {
       await open(page, hash, now);
@@ -414,27 +447,34 @@ test.describe('Yerleşim ve erişilebilirlik', () => {
     }
   }
 
-  test('site dış kaynak yüklemez, yazı tipleri yüklenir', async ({ page }) => {
+  test('sayfa yalnızca izin verilen dış kaynakları kullanır', async ({ page }) => {
+    const fs = await import('node:fs');
+    const html = fs.readFileSync(new URL('../../dist/gundem.html', import.meta.url), 'utf8');
+    const urls = [...html.matchAll(/(?:src|href)="(https?:[^"]+)"/g)].map((m) => m[1]);
+    for (const u of urls) {
+      const ok = /^https:\/\/fonts\.(googleapis|gstatic)\.com(\/|$)/.test(u) || /^https?:/.test(u) === false;
+      expect(ok, u).toBe(true);
+    }
+    expect(html).toContain('family=Archivo');
+    expect(html).toContain('family=Newsreader');
+    expect(html).not.toMatch(/<!doctype|<html[\s>]|<head[\s>]|<body[\s>]/i);
+    expect(html.indexOf('<title>Gündem</title>')).toBe(0);
     const external = [];
     page.on('request', (r) => { if (!r.url().startsWith('http://127.0.0.1')) external.push(r.url()); });
-    await open(page, '#/g/2026-10-08/flas-1246', FRI_1300);
-    await page.evaluate(() => document.fonts.ready);
+    await open(page, '#g-2026-10-08-flas-1246', FRI_1300);
     expect(external).toEqual([]);
-    expect(await page.evaluate(() => document.fonts.check('600 24px Newsreader'))).toBe(true);
-    const loaded = await page.evaluate(() => [...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family.replace(/"/g, '')));
-    expect(loaded).toEqual(expect.arrayContaining(['Newsreader', 'Archivo']));
   });
 
   test('koyu tema uygulanır', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
-    await open(page, '#/', FRI_1300);
+    await open(page, '#bugun', FRI_1300);
     const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
     expect(bg).toBe('rgb(13, 19, 25)');
   });
 
   test('dokunma hedefleri en az 40px', async ({ page, isMobile }) => {
     test.skip(!isMobile, 'telefon için');
-    await open(page, '#/g/2026-10-08', FRI_1300);
+    await open(page, '#g-2026-10-08', FRI_1300);
     for (const sel of ['.tab', '.route .stop__link', '.pager a']) {
       const heights = await page.locator(sel).evaluateAll((els) => els.map((e) => e.getBoundingClientRect().height));
       expect(Math.min(...heights), sel).toBeGreaterThanOrEqual(40);
@@ -442,7 +482,7 @@ test.describe('Yerleşim ve erişilebilirlik', () => {
   });
 
   test('üst bant kaydırırken sabit kalır', async ({ page }) => {
-    await open(page, '#/g/2026-10-08/aksam-1908', FRI_1300);
+    await open(page, '#g-2026-10-08-aksam-1908', FRI_1300);
     await page.mouse.wheel(0, 1500);
     await page.waitForFunction(() => window.scrollY > 300);
     const top = await page.locator('.masthead').evaluate((e) => e.getBoundingClientRect().top);
@@ -451,7 +491,7 @@ test.describe('Yerleşim ve erişilebilirlik', () => {
 
   test('klavye ile gezinme: atlama bağlantısı ve görünür odak', async ({ page, isMobile }) => {
     test.skip(isMobile, 'klavye yalnızca masaüstünde');
-    await open(page, '#/', FRI_1300);
+    await open(page, '#bugun', FRI_1300);
     await page.keyboard.press('Tab');
     await expect(page.locator('.skip')).toBeFocused();
     await page.keyboard.press('Tab');
