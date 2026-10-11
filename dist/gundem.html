@@ -1,0 +1,1240 @@
+<title>Gündem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Newsreader:opsz,wght@6..72,500..700&display=swap">
+<style>
+/* Gündem — Akşam Bülteni & Gün İçi Flaş */
+
+:root {
+  --bg: #F1F3F6;
+  --surface: #FFFFFF;
+  --ink: #15202B;
+  --muted: #5B6672;
+  --line: #DCE1E7;
+  --accent: #0B3D5C;      /* PDF bültenlerindeki petrol mavisi */
+  --accent-soft: #E3ECF2;
+  --link: #0F5A86;
+  --signal: #855400;      /* otobüs tabelası kehribarı — metin için koyu ton */
+  --signal-dot: #E3A21A;
+  --signal-soft: #FCF3DE;
+  --up: #147A3D;
+  --down: #B42318;
+  --mark: #FBE7A6;
+  --focus: #1C7ED6;
+  --on-accent: #FFFFFF;
+
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --sans: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --step--1: 0.8125rem;   /* 13 */
+  --step-0: 1rem;         /* 16 */
+  --step-1: 1.1875rem;    /* 19 */
+  --step-2: 1.5rem;       /* 24 */
+  --step-3: 2rem;         /* 32 */
+
+  --gutter: 16px;
+  --measure: 42rem;
+  --radius-s: 6px;
+  --radius-m: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1319;
+    --surface: #141C24;
+    --ink: #E4E9EE;
+    --muted: #93A0AD;
+    --line: #26313C;
+    --accent: #7DB8DB;
+    --accent-soft: #17293A;
+    --link: #8CC4E6;
+    --signal: #F0B43C;
+    --signal-dot: #F0B43C;
+    --signal-soft: #2C2412;
+    --up: #4CC17F;
+    --down: #F2766B;
+    --mark: #5A4A12;
+    --focus: #74B6F0;
+    --on-accent: #0D1319;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+    --bg: #0D1319;
+    --surface: #141C24;
+    --ink: #E4E9EE;
+    --muted: #93A0AD;
+    --line: #26313C;
+    --accent: #7DB8DB;
+    --accent-soft: #17293A;
+    --link: #8CC4E6;
+    --signal: #F0B43C;
+    --signal-dot: #F0B43C;
+    --signal-soft: #2C2412;
+    --up: #4CC17F;
+    --down: #F2766B;
+    --mark: #5A4A12;
+    --focus: #74B6F0;
+    --on-accent: #0D1319;
+    color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 72px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 var(--step-0)/1.55 var(--sans);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--link); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+
+button, input { font: inherit; color: inherit; }
+
+.skip {
+  position: absolute; left: var(--gutter); top: -40px; z-index: 50;
+  background: var(--surface); padding: 6px 10px; border-radius: var(--radius-s);
+}
+.skip:focus { top: 8px; }
+
+.visually-hidden {
+  position: absolute !important; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ------------------------------------------------------------ üst bant */
+
+.masthead {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  -webkit-backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.masthead__inner {
+  max-width: var(--measure); margin: 0 auto; padding: 0 var(--gutter);
+  height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.brand {
+  font: 600 1.5rem/1 var(--serif); letter-spacing: -0.01em;
+  color: var(--ink); text-decoration: none;
+}
+.tabs { display: flex; gap: 4px; }
+.tab {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px;
+  color: var(--muted); text-decoration: none; font-weight: 500; border-radius: 999px;
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-current="page"] { color: var(--on-accent); background: var(--accent); }
+
+/* ------------------------------------------------------------ sayfa */
+
+.page {
+  max-width: var(--measure); margin: 0 auto;
+  padding: 20px var(--gutter) calc(64px + env(safe-area-inset-bottom));
+  outline: none;
+}
+.loading, .notice { color: var(--muted); padding: 32px 0; }
+
+.dayhead { margin: 4px 0 18px; }
+.dayhead h1 {
+  font: 600 var(--step-3)/1.1 var(--serif); letter-spacing: -0.015em; margin: 0;
+}
+.dayhead__meta {
+  display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px;
+  color: var(--muted); font-size: var(--step--1);
+}
+.dayhead__meta a { color: inherit; }
+
+/* ------------------------------------------------------------ günün rotası */
+
+.route { margin: 0 calc(-1 * var(--gutter)) 22px; padding: 0 var(--gutter); overflow-x: auto; scrollbar-width: none; }
+.route::-webkit-scrollbar { display: none; }
+.route ol {
+  --dot: 14px;
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-auto-flow: column; grid-auto-columns: minmax(78px, 1fr);
+  position: relative;
+}
+.stop { position: relative; }
+/* durağı bir sonrakine bağlayan hat */
+.stop:not(:last-child)::after {
+  content: ""; position: absolute; top: calc(var(--dot) / 2 + 9px - 1.5px);
+  left: calc(50% + var(--dot) / 2 + 3px); right: calc(-50% + var(--dot) / 2 + 3px);
+  height: 3px; border-radius: 2px; background: var(--accent);
+}
+.stop[data-next="upcoming"]::after,
+.stop[data-next="preparing"]::after {
+  background: repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 11px);
+}
+.stop__link {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 9px 4px 8px; text-decoration: none; color: var(--ink); border-radius: var(--radius-m);
+  text-align: center;
+}
+a.stop__link:hover { background: var(--accent-soft); }
+.stop__dot {
+  width: var(--dot); height: var(--dot); border-radius: 50%;
+  background: var(--accent); border: 3px solid var(--accent); margin-bottom: 6px;
+  box-shadow: 0 0 0 3px var(--bg);
+}
+.stop[data-type="aksam"] .stop__dot { border-radius: 4px; }
+.stop__time { font-weight: 600; font-size: var(--step-0); font-variant-numeric: tabular-nums; }
+.stop__label { font-size: 0.75rem; line-height: 1.25; color: var(--muted); max-width: 11ch; }
+
+.stop[aria-current="true"] .stop__dot {
+  background: var(--surface); transform: scale(1.35);
+}
+.stop[aria-current="true"] .stop__label { color: var(--ink); font-weight: 600; }
+
+.stop[data-state="upcoming"] .stop__dot { background: var(--bg); border-color: var(--line); box-shadow: 0 0 0 3px var(--bg); }
+.stop[data-state="upcoming"] .stop__time { color: var(--muted); font-weight: 500; }
+
+.stop[data-state="preparing"] .stop__dot { background: var(--signal-dot); border-color: var(--signal-dot); animation: pulse 1.8s ease-in-out infinite; }
+.stop[data-state="preparing"] .stop__label { color: var(--signal); font-weight: 600; }
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px var(--bg), 0 0 0 3px color-mix(in srgb, var(--signal-dot) 40%, transparent); }
+  50% { box-shadow: 0 0 0 3px var(--bg), 0 0 0 9px transparent; }
+}
+
+/* ------------------------------------------------------------ boş günler / bildirimler */
+
+.callout {
+  border-radius: var(--radius-m); padding: 14px 16px; margin: 0 0 22px;
+  background: var(--accent-soft); color: var(--ink);
+}
+.callout p { margin: 0; }
+.callout p + p { margin-top: 6px; }
+.callout--error { background: color-mix(in srgb, var(--down) 12%, var(--surface)); }
+.callout .button { margin-top: 10px; }
+
+.button {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 16px;
+  border-radius: 999px; border: 1px solid var(--accent); background: var(--accent);
+  color: var(--on-accent); font-weight: 600; cursor: pointer; text-decoration: none;
+}
+.button--quiet { background: transparent; color: var(--accent); }
+
+/* ------------------------------------------------------------ yayın */
+
+.issue {
+  background: var(--surface); border-radius: var(--radius-m);
+  padding: 20px 18px 8px; margin: 0 calc(-1 * var(--gutter) + 6px);
+  border: 1px solid var(--line);
+}
+@media (min-width: 560px) { .issue { margin: 0; padding: 26px 28px 12px; } }
+
+.kicker { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: var(--step--1); color: var(--muted); }
+.pill {
+  display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: 999px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap;
+  color: var(--accent); background: var(--accent-soft);
+}
+.pill--aksam { color: var(--on-accent); background: var(--accent); }
+
+.issue__title { font: 600 var(--step-2)/1.2 var(--serif); letter-spacing: -0.01em; margin: 10px 0 4px; }
+.issue__sub { margin: 0; color: var(--muted); font-size: var(--step--1); }
+
+.block { margin-top: 26px; }
+.block > h3 {
+  font: 600 var(--step-1)/1.25 var(--serif); margin: 0 0 10px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+
+/* piyasa tablosu */
+.markets { width: 100%; border-collapse: collapse; font-size: 0.9375rem; }
+.markets th {
+  text-align: left; font-weight: 500; font-size: 0.75rem; color: var(--muted);
+  padding: 0 0 6px;
+}
+.markets td { padding: 9px 0; border-top: 1px solid var(--line); vertical-align: top; }
+.markets tbody tr:first-child td { border-top: 0; }
+.markets .num { text-align: right; white-space: nowrap; padding-left: 12px; }
+.markets .asset { font-weight: 600; }
+.markets .note { display: block; font-weight: 400; color: var(--muted); font-size: 0.75rem; line-height: 1.35; margin-top: 2px; }
+.chg { font-weight: 600; }
+.chg--up { color: var(--up); }
+.chg--down { color: var(--down); }
+.chg--flat, .chg--none { color: var(--muted); }
+.chg__arrow { display: inline-block; font-size: 0.7em; margin-right: 0.3em; vertical-align: 0.1em; }
+
+.market-note {
+  margin: 14px 0 0; padding: 12px 14px; border-radius: var(--radius-s);
+  background: var(--bg); font-size: 0.9375rem;
+}
+
+/* haber maddeleri */
+.items { list-style: none; margin: 0; padding: 0; }
+.item { padding: 12px 0; }
+.item + .item { border-top: 1px solid var(--line); }
+.item__title { font: 600 1.0625rem/1.35 var(--sans); margin: 0 0 3px; letter-spacing: -0.003em; }
+.item__text { margin: 0; color: var(--ink); max-width: 68ch; }
+.item__text:only-child { margin: 0; }
+.tag {
+  display: inline-block; vertical-align: 0.1em; margin-left: 6px; padding: 1px 7px;
+  border-radius: 4px; font: 600 0.6875rem/1.5 var(--sans);
+  color: var(--signal); background: var(--signal-soft); white-space: nowrap;
+}
+
+/* kaynaklar */
+.sources summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px;
+  font: 600 var(--step-1)/1.25 var(--serif); padding: 4px 0 8px; border-bottom: 1px solid var(--line);
+}
+.sources summary::-webkit-details-marker { display: none; }
+.sources summary .count { font: 500 var(--step--1) var(--sans); color: var(--muted); }
+.sources summary svg { margin-left: auto; transition: transform .2s; color: var(--muted); }
+.sources[open] summary svg { transform: rotate(180deg); }
+.sources ul { list-style: none; margin: 0; padding: 4px 0 0; }
+.sources li { padding: 7px 0; }
+.sources li a { display: inline; }
+.sources .host { display: block; color: var(--muted); font-size: 0.75rem; }
+
+.issue__foot { margin: 22px 0 10px; color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
+
+/* önceki / sonraki */
+.pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 0; }
+.pager a {
+  display: flex; flex-direction: column; gap: 2px; padding: 12px 14px;
+  border: 1px solid var(--line); border-radius: var(--radius-m);
+  text-decoration: none; color: var(--ink); background: var(--surface); min-height: 64px;
+}
+.pager a:hover { border-color: var(--accent); }
+.pager .dir { font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+.pager .what { font-weight: 600; font-size: 0.9375rem; }
+.pager .pager__next { grid-column: 2; text-align: right; align-items: flex-end; }
+
+/* ------------------------------------------------------------ arşiv */
+
+.archive-tools { display: flex; flex-direction: column; gap: 10px; margin: 0 0 8px; }
+.search { position: relative; }
+.search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search input {
+  width: 100%; height: 46px; padding: 0 40px 0 42px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); font-size: 1rem;
+}
+.search input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.search input::-webkit-search-cancel-button { display: none; }
+.search .clear {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  width: 34px; height: 34px; border-radius: 50%; border: 0; background: transparent; color: var(--muted); cursor: pointer;
+  display: grid; place-items: center;
+}
+.search .clear:hover { background: var(--bg); color: var(--ink); }
+
+.segmented { margin: 0; min-width: 0; display: inline-flex; padding: 3px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); align-self: flex-start; }
+.segmented label { position: relative; }
+.segmented input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.segmented span {
+  display: inline-flex; align-items: center; min-height: 34px; padding: 0 14px;
+  border-radius: 999px; color: var(--muted); font-weight: 500; font-size: 0.9375rem;
+}
+.segmented input:checked + span { background: var(--accent); color: var(--on-accent); }
+.segmented input:focus-visible + span { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+.result-count { color: var(--muted); font-size: var(--step--1); margin: 6px 0 4px; }
+
+.month { font: 600 var(--step-2)/1.2 var(--serif); margin: 28px 0 0; }
+.day { margin-top: 16px; }
+.day__head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 6px 0; }
+.day__head h3 { margin: 0; font: 600 1rem/1.3 var(--sans); }
+.day__head h3 a { color: var(--ink); text-decoration: none; }
+.day__head h3 a:hover { text-decoration: underline; }
+.day__head .dots { display: inline-flex; gap: 4px; }
+.day__head .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: block; }
+.day__head .dots i.sq { border-radius: 2px; }
+
+.rows { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); overflow: hidden; }
+.row + .row { border-top: 1px solid var(--line); }
+.row a {
+  display: grid; grid-template-columns: 3.4rem 1fr; gap: 2px 10px; padding: 12px 14px;
+  text-decoration: none; color: var(--ink);
+}
+.row a:hover { background: var(--accent-soft); }
+.row .t { font-weight: 600; grid-row: span 2; padding-top: 1px; }
+.row .h { font-size: 0.9375rem; line-height: 1.4; }
+.row .m { font-size: 0.75rem; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.row .m .pill { height: 20px; font-size: 0.6875rem; padding: 0 8px; }
+.row mark, .issue mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 1px; }
+
+.more { display: flex; justify-content: center; margin: 22px 0 0; }
+
+.empty { text-align: left; padding: 28px 0; color: var(--muted); }
+.empty strong { display: block; color: var(--ink); font: 600 var(--step-1)/1.3 var(--serif); margin-bottom: 4px; }
+
+/* ------------------------------------------------------------ yeni yayın bildirimi */
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  z-index: 30; display: flex; align-items: center; gap: 10px;
+  width: min(calc(100% - 2 * var(--gutter)), 30rem);
+  padding: 10px 8px 10px 16px; border-radius: 999px;
+  background: var(--ink); color: var(--bg); box-shadow: 0 8px 28px rgba(13, 19, 25, .28);
+}
+.toast[hidden] { display: none; }
+.toast__text { flex: 1; font-size: 0.9375rem; font-weight: 500; }
+.toast__action {
+  color: var(--bg); background: transparent; border: 1px solid color-mix(in srgb, var(--bg) 50%, transparent);
+  border-radius: 999px; padding: 6px 14px; font-weight: 600; text-decoration: none; white-space: nowrap;
+}
+.toast__close { border: 0; background: transparent; color: inherit; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+</style>
+<a class="skip" href="#main">İçeriğe geç</a>
+<header class="masthead">
+  <div class="masthead__inner">
+    <a class="brand" href="#bugun" aria-label="Gündem, bugünün yayınları">Gündem</a>
+    <nav class="tabs" aria-label="Bölümler">
+      <a class="tab" href="#bugun" data-tab="today">Bugün</a>
+      <a class="tab" href="#arsiv" data-tab="archive">Arşiv</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="page" tabindex="-1" aria-live="polite">
+  <p class="loading">Yükleniyor…</p>
+</main>
+<div class="toast" id="toast" role="status" hidden>
+  <span class="toast__text"></span>
+  <a class="toast__action" href="#bugun">Göster</a>
+  <button class="toast__close" type="button" aria-label="Kapat">
+    <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+</div>
+<script type="module">
+// lib.js
+// Saf yardımcı fonksiyonlar — DOM'a dokunmaz, Node testlerinden doğrudan içe aktarılır.
+
+const TZ = 'America/New_York';
+
+const TYPE_LABEL = { flas: 'Gün İçi Flaş', aksam: 'Akşam Bülteni' };
+const TYPE_SHORT = { flas: 'Flaş', aksam: 'Akşam' };
+
+const MONTHS = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz',
+  'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+const WEEKDAYS = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
+
+// ---------- HTML güvenliği ----------
+
+const ENTITY = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", apos: "'", nbsp: ' ' };
+
+function decodeEntities(s) {
+  return String(s ?? '').replace(/&(amp|lt|gt|quot|#39|apos|nbsp);/g, (_, e) => ENTITY[e]);
+}
+
+function escapeHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+// Metni güvenli HTML'e çevirir; yalnızca <b>, <strong>, <i>, <em>, <br> etiketlerine izin verir.
+function inlineFormat(s) {
+  const safe = escapeHtml(decodeEntities(s)).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
+  // İzin verilen etiketleri geri aç; eşi olmayan kapanışları at, açık kalanları kapat.
+  const stack = [];
+  const out = safe.replace(/&lt;(\/?)(b|strong|i|em)&gt;/gi, (_, slash, raw) => {
+    const tag = raw.toLowerCase();
+    if (!slash) { stack.push(tag); return `<${tag}>`; }
+    const at = stack.lastIndexOf(tag);
+    if (at === -1) return '';
+    const closing = stack.splice(at).reverse().map((t) => `</${t}>`).join('');
+    // iç içe geçmiş açık etiketleri kapatıp yeniden açmak yerine yalnızca kapatırız
+    return closing;
+  });
+  return out + stack.reverse().map((t) => `</${t}>`).join('');
+}
+
+function stripTags(s) {
+  return decodeEntities(String(s ?? '').replace(/<[^>]*>/g, ''));
+}
+
+// Yalnızca http(s) bağlantılarına izin ver.
+function safeUrl(u) {
+  try {
+    const url = new URL(String(u));
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+function hostOf(u) {
+  const s = safeUrl(u);
+  return s ? new URL(s).hostname.replace(/^www\./, '') : '';
+}
+
+// ---------- Piyasa değişimi ----------
+
+// "+0,40%" -> 'up', "-1,2%" / "−1,2%" -> 'down', "0,00%" -> 'flat', "—" -> 'none'
+function changeDirection(v) {
+  const s = String(v ?? '').trim();
+  if (!s || /^[—–-]+$/.test(s)) return 'none';
+  if (/^[-−–]/.test(s)) return 'down';
+  const digits = s.replace(/[^0-9]/g, '');
+  if (digits && /^0+$/.test(digits)) return 'flat';
+  if (/^\+/.test(s)) return 'up';
+  return /\d/.test(s) ? 'up' : 'none';
+}
+
+// ---------- Tarih / saat (New York) ----------
+
+// Verilen anın New York'taki tarih ve saatini döndürür: { date: 'YYYY-MM-DD', time: 'HH:MM', weekday: 0-6 }
+function nyParts(now = new Date()) {
+  const f = new Intl.DateTimeFormat('en-US', {
+    timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hourCycle: 'h23', weekday: 'short',
+  });
+  const p = Object.fromEntries(f.formatToParts(now).map((x) => [x.type, x.value]));
+  const wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
+  return { date: `${p.year}-${p.month}-${p.day}`, time: `${p.hour}:${p.minute}`, weekday: wd };
+}
+
+function weekdayOf(dateStr) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  return new Date(Date.UTC(y, m - 1, d)).getUTCDay();
+}
+
+function isWeekend(dateStr) {
+  const wd = weekdayOf(dateStr);
+  return wd === 0 || wd === 6;
+}
+
+function addDays(dateStr, n) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const t = new Date(Date.UTC(y, m - 1, d + n));
+  return t.toISOString().slice(0, 10);
+}
+
+// "10 Ekim 2026, Cumartesi" gibi
+function formatDateLong(dateStr, { year = true, weekday = true } = {}) {
+  const [y, m, d] = dateStr.split('-').map(Number);
+  let s = `${d} ${MONTHS[m - 1]}`;
+  if (year) s += ` ${y}`;
+  if (weekday) s += `, ${WEEKDAYS[weekdayOf(dateStr)]}`;
+  return s;
+}
+
+function formatDateShort(dateStr) {
+  const [, m, d] = dateStr.split('-').map(Number);
+  return `${d} ${MONTHS[m - 1]}`;
+}
+
+function monthLabel(dateStr) {
+  const [y, m] = dateStr.split('-').map(Number);
+  return `${MONTHS[m - 1]} ${y}`;
+}
+
+function toMinutes(hhmm) {
+  const [h, m] = String(hhmm).split(':').map(Number);
+  return h * 60 + m;
+}
+
+// "12 dk önce", "3 saat önce", "dün" …
+function relativeTime(iso, now = new Date()) {
+  const t = new Date(iso).getTime();
+  if (Number.isNaN(t)) return '';
+  const diff = Math.round((now.getTime() - t) / 60000);
+  if (diff < 1) return 'az önce';
+  if (diff < 60) return `${diff} dk önce`;
+  const h = Math.floor(diff / 60);
+  if (h < 24) return `${h} saat önce`;
+  const d = Math.floor(h / 24);
+  return d === 1 ? 'dün' : `${d} gün önce`;
+}
+
+// ---------- Yayın etiketleri ----------
+
+function roundLabel(type, time) {
+  if (type === 'aksam') return 'Akşam Bülteni';
+  const m = toMinutes(time);
+  if (m < 11 * 60) return 'Açılış öncesi';
+  if (m < 14 * 60 + 30) return 'Öğle';
+  return 'Kapanışa doğru';
+}
+
+// "(doğrulanmadı)" ekini ayırır
+function splitUnverified(title) {
+  const s = String(title ?? '').trim();
+  const re = /\s*\((doğrulanmadı|dogrulanmadi|doğrulanmamış)\)\s*\.?$/i;
+  return re.test(s) ? { text: s.replace(re, ''), unverified: true } : { text: s, unverified: false };
+}
+
+// ---------- Arama ----------
+
+// Türkçe büyük/küçük harf ve aksan farkını yok sayar: "İstanbul" ~ "istanbul" ~ "Istanbul"
+function fold(s) {
+  return String(s ?? '')
+    .replace(/İ/g, 'i').replace(/I/g, 'ı')
+    .toLowerCase()
+    .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c').replace(/â/g, 'a').replace(/î/g, 'i').replace(/û/g, 'u')
+    .normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+function matchesQuery(entry, query) {
+  const terms = fold(query).split(/\s+/).filter(Boolean);
+  if (!terms.length) return true;
+  const hay = fold([entry.title, entry.subtitle, ...(entry.headlines || [])].join(' '));
+  return terms.every((t) => hay.includes(t));
+}
+
+function filterEntries(entries, { query = '', type = 'all' } = {}) {
+  return entries.filter((e) => (type === 'all' || e.type === type) && matchesQuery(e, query));
+}
+
+// Eşleşen kısımları <mark> ile işaretler (metin önce kaçışlanır)
+function highlight(text, query) {
+  const raw = String(text ?? '');
+  const terms = fold(query).split(/\s+/).filter(Boolean);
+  if (!terms.length) return escapeHtml(raw);
+  const folded = fold(raw);
+  // fold() karakter sayısını korur mu? Korumadığı durumda işaretlemeden vazgeç.
+  if (folded.length !== raw.length) return escapeHtml(raw);
+  const marks = new Array(raw.length).fill(false);
+  for (const t of terms) {
+    let i = folded.indexOf(t);
+    while (i !== -1) {
+      for (let k = i; k < i + t.length; k++) marks[k] = true;
+      i = folded.indexOf(t, i + t.length);
+    }
+  }
+  let out = '';
+  let open = false;
+  for (let i = 0; i < raw.length; i++) {
+    if (marks[i] && !open) { out += '<mark>'; open = true; }
+    if (!marks[i] && open) { out += '</mark>'; open = false; }
+    out += escapeHtml(raw[i]);
+  }
+  if (open) out += '</mark>';
+  return out;
+}
+
+// ---------- Sıralama / gruplama ----------
+
+function sortEntries(entries) {
+  return [...entries].sort((a, b) => (a.date === b.date ? b.time.localeCompare(a.time) : b.date.localeCompare(a.date)));
+}
+
+function groupByDate(entries) {
+  const map = new Map();
+  for (const e of sortEntries(entries)) {
+    if (!map.has(e.date)) map.set(e.date, []);
+    map.get(e.date).push(e);
+  }
+  return [...map.entries()].map(([date, items]) => ({ date, items }));
+}
+
+// Kronolojik komşular (önceki = daha eski, sonraki = daha yeni)
+function neighbors(entries, id, date) {
+  const asc = sortEntries(entries).reverse();
+  const i = asc.findIndex((e) => e.id === id && e.date === date);
+  if (i === -1) return { prev: null, next: null };
+  return { prev: asc[i - 1] || null, next: asc[i + 1] || null };
+}
+
+// ---------- Günün rotası (duraklar) ----------
+
+const DEFAULT_SCHEDULE = {
+  weekday: [
+    { type: 'flas', time: '08:45' },
+    { type: 'flas', time: '12:45' },
+    { type: 'flas', time: '15:45' },
+    { type: 'aksam', time: '18:57' },
+  ],
+  weekend: [{ type: 'aksam', time: '18:57' }],
+};
+
+// Bir yayın, planlanan saatten en fazla 15 dk önce / 120 dk sonra yayımlandıysa o durağa aittir.
+const EARLY = 15;
+const LATE = 120;
+// Planlanan saatten sonra bu kadar dakika "hazırlanıyor" gösterilir.
+const PREPARING_WINDOW = 45;
+
+/**
+ * Bir günün durak listesini üretir.
+ * Her durak: { type, time, label, state: 'published'|'preparing'|'upcoming', entry? }
+ * Geçmiş günlerde yalnızca yayımlanmış duraklar gösterilir.
+ */
+function buildStops(dayEntries, dateStr, { schedule = DEFAULT_SCHEDULE, now = new Date() } = {}) {
+  const ny = nyParts(now);
+  const isToday = dateStr === ny.date;
+  const nowMin = toMinutes(ny.time);
+  const entries = [...dayEntries].sort((a, b) => a.time.localeCompare(b.time));
+  const used = new Set();
+  const stops = [];
+
+  if (isToday) {
+    const slots = (isWeekend(dateStr) ? schedule.weekend : schedule.weekday) || [];
+    for (const slot of slots) {
+      const sm = toMinutes(slot.time);
+      const match = entries.find((e) => !used.has(e) && e.type === slot.type
+        && toMinutes(e.time) >= sm - EARLY && toMinutes(e.time) <= sm + LATE);
+      if (match) {
+        used.add(match);
+        continue; // yayımlananlar aşağıda eklenecek
+      }
+      if (nowMin < sm) stops.push({ type: slot.type, time: slot.time, label: roundLabel(slot.type, slot.time), state: 'upcoming' });
+      else if (nowMin <= sm + PREPARING_WINDOW) stops.push({ type: slot.type, time: slot.time, label: roundLabel(slot.type, slot.time), state: 'preparing' });
+      // süresi geçmiş ve yayımlanmamış duraklar gösterilmez
+    }
+  }
+  for (const e of entries) {
+    stops.push({ type: e.type, time: e.time, label: roundLabel(e.type, e.time), state: 'published', entry: e });
+  }
+  return stops.sort((a, b) => a.time.localeCompare(b.time));
+}
+
+// ---------- Yönlendirme ----------
+// Claude sayfalarında yalnızca sade #çapa (harf, rakam, . _ ~ -) çalışır:
+// '#bugun' (ya da boş), '#arsiv', '#g-2026-10-10', '#g-2026-10-10-flas-1245'
+function parseRoute(hash) {
+  const h = String(hash || '').replace(/^#/, '');
+  if (h === 'arsiv') return { view: 'archive' };
+  const m = h.match(/^g-(\d{4}-\d{2}-\d{2})(?:-((?:flas|aksam)-\d{4}))?$/);
+  if (m) return { view: 'day', date: m[1], id: m[2] || null };
+  return { view: 'today' };
+}
+
+function issueHref(entry) {
+  return `#g-${entry.date}-${entry.id}`;
+}
+
+function dayHref(date) {
+  return `#g-${date}`;
+}
+
+function archiveHref() {
+  return '#arsiv';
+}
+
+// ---------- Veri deposundan gelen belgeyi temizleme ----------
+// Zamanlanmış görevler belgeleri doğrudan yazar; sayfa bozuk alanlara karşı dayanıklı olmalı.
+const str = (v) => (typeof v === 'string' ? v.trim() : typeof v === 'number' ? String(v) : '');
+
+function docIdFor(date, id) {
+  return `${date}_${id}`;
+}
+
+function normalizeIssue(docId, raw) {
+  const d = raw && typeof raw === 'object' ? raw : {};
+  const m = String(docId || '').match(/^(\d{4}-\d{2}-\d{2})_((flas|aksam)-(\d{2})(\d{2}))$/);
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(str(d.date)) ? str(d.date) : (m ? m[1] : '');
+  const type = ['flas', 'aksam'].includes(str(d.type)) ? str(d.type) : (m ? m[3] : '');
+  const time = /^\d{2}:\d{2}$/.test(str(d.time)) ? str(d.time) : (m ? `${m[4]}:${m[5]}` : '');
+  if (!date || !type || !time) return null;
+  const id = `${type}-${time.replace(':', '')}`;
+  const markets = (Array.isArray(d.markets) ? d.markets : [])
+    .filter((x) => x && typeof x === 'object' && str(x.name))
+    .map((x) => ({ name: str(x.name), level: str(x.level) || '—', chg: str(x.chg) || '—', note: str(x.note) }));
+  const sections = (Array.isArray(d.sections) ? d.sections : [])
+    .filter((s) => s && typeof s === 'object' && str(s.heading))
+    .map((s) => ({
+      heading: str(s.heading),
+      items: (Array.isArray(s.items) ? s.items : [])
+        .map((it) => (typeof it === 'string' ? { title: '', text: it.trim() } : { title: str(it && it.title), text: str(it && it.text) }))
+        .filter((it) => it.title || it.text),
+    }))
+    .filter((s) => s.items.length);
+  const sources = (Array.isArray(d.sources) ? d.sources : [])
+    .filter((s) => s && typeof s === 'object' && safeUrl(s.url))
+    .map((s) => ({ title: str(s.title), url: safeUrl(s.url) }));
+  if (!markets.length && !sections.length) return null;  // içeriksiz belge gösterilmez
+  const headlines = [];
+  for (const s of sections) for (const it of s.items) headlines.push(it.title || it.text.slice(0, 90));
+  return {
+    docId, id, type, date, time,
+    key: `${date}T${time}`,
+    title: str(d.title), subtitle: str(d.subtitle),
+    market_note: str(d.market_note), footer: str(d.footer),
+    published_at: str(d.published_at),
+    markets, sections, sources,
+    headlines: headlines.slice(0, 12),
+  };
+}
+
+// app.js
+const DAYS_PER_PAGE = 10;
+const PAGE_SIZE = 300;      // ilk yüklemede ~75 günlük yayın
+const COLLECTION = 'issues';
+
+const state = {
+  known: new Map(),         // docId -> normalizeIssue çıktısı (canlı pencere + yüklenen eski yayınlar)
+  windowIds: new Set(),     // son canlı anlık görüntüdeki belgeler
+  olderDone: false,
+  schedule: DEFAULT_SCHEDULE,
+  route: null,
+  archive: { query: '', type: 'all' },
+  archiveDays: DAYS_PER_PAGE,
+  latestKey: null,
+  loaded: false,
+  db: null,
+};
+
+// Claude sayfa iskeletinde html etiketinin lang özelliği yok; ekran okuyucular ve tireleme için Türkçe olduğunu belirt
+document.documentElement.lang = 'tr';
+
+const main = document.getElementById('main');
+const toast = document.getElementById('toast');
+
+// ------------------------------------------------------------------ veri
+
+function toEntries(docs) {
+  const out = [];
+  for (const d of docs) {
+    const e = normalizeIssue(d.id, d.data());
+    if (e) out.push(e);
+  }
+  return out;
+}
+
+function allEntries() {
+  return sortEntries([...state.known.values()]);
+}
+
+// Canlı pencere (en yeni PAGE_SIZE yayın) değiştiğinde: penceredeki belgeleri güncelle,
+// penceredeyken silinenleri çıkar, pencereden aşağı kayanları (ör. "eski yayınları yükle"
+// ile gelmiş olanları) koru.
+function applyWindow(list) {
+  const ids = new Set(list.map((e) => e.docId));
+  const floor = list.length ? list[list.length - 1].key : '';
+  for (const [docId, e] of state.known) {
+    if (!ids.has(docId) && state.windowIds.has(docId) && (!floor || e.key >= floor || list.length < PAGE_SIZE)) {
+      state.known.delete(docId);
+    }
+  }
+  for (const e of list) state.known.set(e.docId, e);
+  state.windowIds = ids;
+}
+
+let cachedAll = null;
+const entries = () => cachedAll || (cachedAll = allEntries());
+const entriesOn = (date) => entries().filter((e) => e.date === date);
+function invalidate() { cachedAll = null; }
+
+async function loadOlder() {
+  const list = entries();
+  const oldest = list[list.length - 1];
+  if (!oldest || !state.db) { state.olderDone = true; return; }
+  const snap = await state.db.collection(COLLECTION).where('key', '<', oldest.key).orderBy('key', 'desc').limit(PAGE_SIZE).get();
+  const more = toEntries(snap.docs);
+  for (const e of more) if (!state.known.has(e.docId)) state.known.set(e.docId, e);
+  if (more.length < PAGE_SIZE) state.olderDone = true;
+  invalidate();
+}
+
+// ------------------------------------------------------------------ küçük parçalar
+
+const icon = {
+  chevL: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  chevR: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  chevD: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  search: '<svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M13 13l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+  x: '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>',
+};
+
+function pill(type) {
+  return `<span class="pill pill--${type}">${TYPE_SHORT[type] || escapeHtml(type)}</span>`;
+}
+
+function setTitle(t) {
+  document.title = t ? `${t} — Gündem` : 'Gündem';
+}
+
+function setTab(view) {
+  document.querySelectorAll('.tab').forEach((a) => {
+    const on = (view === 'archive' && a.dataset.tab === 'archive') || (view !== 'archive' && a.dataset.tab === 'today' && view === 'today');
+    if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  });
+}
+
+function lastPublished() {
+  const e = entries()[0];
+  return e && e.published_at ? e.published_at : '';
+}
+
+function updatedLine() {
+  const t = lastPublished();
+  if (!t) return '';
+  return `<span data-updated>Son yayın ${escapeHtml(relativeTime(t))}</span>`;
+}
+
+// ------------------------------------------------------------------ rota (günün durakları)
+
+function routeHtml(date, selected) {
+  const stops = buildStops(entriesOn(date), date, { schedule: state.schedule });
+  if (!stops.length) return '';
+  const lis = stops.map((s, i) => {
+    const next = stops[i + 1];
+    const cur = selected && s.entry && s.entry.id === selected.id;
+    const stateText = s.state === 'upcoming' ? 'bekleniyor' : s.state === 'preparing' ? 'hazırlanıyor' : '';
+    const label = s.state === 'preparing' ? 'Hazırlanıyor' : s.label;
+    const inner = `<span class="stop__dot" aria-hidden="true"></span>
+        <span class="stop__time">${escapeHtml(s.time)}</span>
+        <span class="stop__label">${escapeHtml(label)}</span>`;
+    const body = s.entry
+      ? `<a class="stop__link" href="${issueHref(s.entry)}" aria-label="${escapeHtml(`${TYPE_LABEL[s.type]}, ${s.time}`)}${cur ? ' (açık)' : ''}">${inner}</a>`
+      : `<div class="stop__link" aria-label="${escapeHtml(`${TYPE_LABEL[s.type]}, ${s.time}, ${stateText}`)}">${inner}</div>`;
+    return `<li class="stop" data-state="${s.state}" data-type="${s.type}"${next ? ` data-next="${next.state}"` : ''}${cur ? ' aria-current="true"' : ''}>${body}</li>`;
+  }).join('');
+  return `<nav class="route" aria-label="Günün yayınları"><ol>${lis}</ol></nav>`;
+}
+
+// ------------------------------------------------------------------ yayın
+
+function marketsHtml(markets) {
+  if (!markets || !markets.length) return '';
+  const rows = markets.map((m) => {
+    const dir = changeDirection(m.chg);
+    const arrow = dir === 'up' ? '▲' : dir === 'down' ? '▼' : '';
+    const dirText = dir === 'up' ? 'yükseliş' : dir === 'down' ? 'düşüş' : dir === 'flat' ? 'değişim yok' : 'veri yok';
+    return `<tr>
+      <td class="asset">${escapeHtml(m.name)}${m.note ? `<span class="note">${inlineFormat(m.note)}</span>` : ''}</td>
+      <td class="num">${escapeHtml(m.level || '—')}</td>
+      <td class="num"><span class="chg chg--${dir}"><span class="chg__arrow" aria-hidden="true">${arrow}</span>${escapeHtml(m.chg || '—')}<span class="visually-hidden"> ${dirText}</span></span></td>
+    </tr>`;
+  }).join('');
+  return `<table class="markets">
+      <thead><tr><th scope="col">Varlık</th><th scope="col" class="num">Seviye</th><th scope="col" class="num">Değişim</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+}
+
+function itemHtml(it) {
+  const { text: title, unverified } = splitUnverified(it.title);
+  const tag = unverified ? '<span class="tag" title="Bu iddia teyit edilmedi">doğrulanmadı</span>' : '';
+  const t = title ? `<p class="item__title">${inlineFormat(title)}${tag}</p>` : '';
+  const body = it.text ? `<p class="item__text">${inlineFormat(it.text)}${!title && tag ? tag : ''}</p>` : '';
+  return `<li class="item">${t}${body}</li>`;
+}
+
+function sourcesHtml(sources) {
+  const list = (sources || []).filter((s) => safeUrl(s.url));
+  if (!list.length) return '';
+  const lis = list.map((s) => `<li><a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(stripTags(s.title) || hostOf(s.url))}</a><span class="host">${escapeHtml(hostOf(s.url))}</span></li>`).join('');
+  return `<details class="block sources"><summary>Kaynaklar <span class="count">${list.length}</span>${icon.chevD}</summary><ul>${lis}</ul></details>`;
+}
+
+function issueHtml(entry, doc) {
+  const round = entry.type === 'flas' ? `<span>${escapeHtml(roundLabel(entry.type, entry.time))}</span>` : '';
+  const sections = (doc.sections || []).filter((s) => s.items && s.items.length).map((s) => `
+    <section class="block" aria-label="${escapeHtml(stripTags(s.heading))}">
+      <h3>${inlineFormat(s.heading)}</h3>
+      <ul class="items">${s.items.map(itemHtml).join('')}</ul>
+    </section>`).join('');
+  const marketsBlock = (doc.markets && doc.markets.length) || doc.market_note ? `
+    <section class="block" aria-label="Piyasalar">
+      <h3>Piyasalar</h3>
+      ${marketsHtml(doc.markets)}
+      ${doc.market_note ? `<p class="market-note">${inlineFormat(doc.market_note)}</p>` : ''}
+    </section>` : '';
+  return `<article class="issue" data-issue="${escapeHtml(entry.id)}">
+    <div class="kicker"><strong><time datetime="${escapeHtml(`${entry.date}T${entry.time}`)}">${escapeHtml(entry.time)} ET</time></strong>${round}<span>${escapeHtml(formatDateLong(entry.date, { year: false }))}</span></div>
+    <h2 class="issue__title">${TYPE_LABEL[entry.type]}</h2>
+    ${doc.subtitle ? `<p class="issue__sub">${inlineFormat(doc.subtitle)}</p>` : ''}
+    ${marketsBlock}
+    ${sections}
+    ${sourcesHtml(doc.sources)}
+    ${doc.footer ? `<p class="issue__foot">${inlineFormat(doc.footer)}</p>` : ''}
+  </article>`;
+}
+
+function pagerHtml(entry) {
+  const { prev, next } = neighbors(entries(), entry.id, entry.date);
+  if (!prev && !next) return '';
+  const desc = (e) => `${TYPE_SHORT[e.type]} ${e.time}, ${formatDateShort(e.date)}`;
+  return `<nav class="pager" aria-label="Diğer yayınlar">
+    ${prev ? `<a class="pager__prev" href="${issueHref(prev)}" rel="prev"><span class="dir">${icon.chevL}Önceki</span><span class="what">${escapeHtml(desc(prev))}</span></a>` : ''}
+    ${next ? `<a class="pager__next" href="${issueHref(next)}" rel="next"><span class="dir">Sonraki${icon.chevR}</span><span class="what">${escapeHtml(desc(next))}</span></a>` : ''}
+  </nav>`;
+}
+
+function fillIssue(slot, entry) {
+  slot.innerHTML = issueHtml(entry, entry) + pagerHtml(entry);
+}
+
+// ------------------------------------------------------------------ görünümler
+
+let renderToken = 0;
+
+function renderDay(date, id, { isToday }) {
+  ++renderToken;
+  const day = entriesOn(date);
+  const notFound = Boolean(id) && !day.some((e) => e.id === id);
+  // day[0] = günün en son yayını; istenen yayın yoksa ona düşülür
+  const selected = (id && day.find((e) => e.id === id)) || day[0];
+
+  const heading = isToday
+    ? `<h1>Bugün</h1><div class="dayhead__meta"><span>${escapeHtml(formatDateLong(date))}</span>${updatedLine()}</div>`
+    : `<h1>${escapeHtml(formatDateLong(date, { year: false }))}</h1><div class="dayhead__meta"><span>${date.slice(0, 4)}</span><a href="#bugun">Bugüne dön</a><a href="${archiveHref()}">Arşiv</a></div>`;
+
+  let notice = '';
+  let shown = selected;
+  if (notFound) {
+    notice = `<div class="callout" role="status"><p><strong>Bu yayın bulunamadı.</strong> ${day.length ? 'Bu günün diğer yayınları aşağıda.' : ''}</p></div>`;
+  }
+  if (!day.length) {
+    const latest = entries()[0];
+    if (isToday) {
+      const upcoming = buildStops([], date, { schedule: state.schedule }).find((s) => s.state !== 'published');
+      notice += `<div class="callout"><p><strong>Bugün henüz yayın yok.</strong>${upcoming ? ` Sıradaki: ${escapeHtml(TYPE_LABEL[upcoming.type])}, ${escapeHtml(upcoming.time)}.` : ''}</p>${latest ? '<p>En son yayın aşağıda.</p>' : ''}</div>`;
+      shown = latest || null;
+    } else {
+      notice += `<div class="empty"><strong>${escapeHtml(formatDateLong(date))} tarihinde yayın yok.</strong>Arşivden başka bir gün seçebilirsiniz.<p><a class="button button--quiet" href="${archiveHref()}">Arşive git</a></p></div>`;
+      shown = null;
+    }
+  }
+  if (!entries().length) {
+    notice = `<div class="empty"><strong>Henüz yayın yok.</strong>İlk Gün İçi Flaş ya da Akşam Bülteni yayımlandığında burada görünecek.</div>`;
+    shown = null;
+  }
+
+  main.innerHTML = `<div class="dayhead">${heading}</div>
+    <div data-route>${routeHtml(date, selected)}</div>
+    ${notice}
+    <div data-issue-slot></div>`;
+
+  if (shown) fillIssue(main.querySelector('[data-issue-slot]'), shown);
+  setTitle(shown && day.length ? `${TYPE_LABEL[shown.type]} ${shown.time}, ${formatDateShort(shown.date)}` : isToday ? 'Bugün' : formatDateLong(date, { weekday: false }));
+}
+
+function archiveListHtml(route) {
+  const list = filterEntries(entries(), { query: route.query, type: route.type });
+  const olderBtn = state.olderDone ? '' : `<div class="more"><button class="button button--quiet" type="button" data-older>Daha eski yayınları yükle</button></div>`;
+  if (!entries().length) {
+    return '<div class="empty"><strong>Arşiv boş.</strong>Yayınlar geldikçe burada gün gün listelenecek.</div>';
+  }
+  if (!list.length) {
+    if (!state.olderDone && route.query) {
+      return `<div class="empty"><strong>“${escapeHtml(route.query)}” için yüklü yayınlarda sonuç yok.</strong>Daha eski yayınlarda da aramak için onları yükleyin.</div>${olderBtn}`;
+    }
+    const q = route.query ? `“${escapeHtml(route.query)}” için sonuç yok.` : 'Bu filtrede yayın yok.';
+    return `<div class="empty"><strong>${q}</strong>${route.type !== 'all' ? 'Filtreyi “Tümü” yapın ya da farklı bir kelime deneyin.' : 'Farklı bir kelime deneyin.'}</div>`;
+  }
+  const groups = groupByDate(list);
+  const visible = groups.slice(0, state.archiveDays);
+  let html = `<p class="result-count" aria-live="polite">${list.length} yayın, ${groups.length} gün</p>`;
+  let month = '';
+  for (const g of visible) {
+    const m = monthLabel(g.date);
+    if (m !== month) { html += `<h2 class="month">${escapeHtml(m)}</h2>`; month = m; }
+    const dots = entriesOn(g.date).slice().reverse().map((e) => `<i class="${e.type === 'aksam' ? 'sq' : ''}"></i>`).join('');
+    html += `<section class="day" aria-label="${escapeHtml(formatDateLong(g.date))}">
+      <div class="day__head"><h3><a href="${dayHref(g.date)}">${escapeHtml(formatDateLong(g.date, { year: false }))}</a></h3><span class="dots" aria-hidden="true">${dots}</span></div>
+      <ul class="rows">${g.items.map((e) => rowHtml(e, route.query)).join('')}</ul>
+    </section>`;
+  }
+  if (groups.length > visible.length) {
+    html += `<div class="more"><button class="button button--quiet" type="button" data-more>Daha eski günleri göster</button></div>`;
+  } else {
+    html += olderBtn;
+  }
+  return html;
+}
+
+function rowHtml(e, query) {
+  const heads = e.headlines || [];
+  let lead = heads[0] || e.subtitle || TYPE_LABEL[e.type];
+  if (query) {
+    const hit = heads.find((h) => matchesQuery({ headlines: [h] }, query));
+    if (hit) lead = hit;
+  }
+  const leadText = splitUnverified(stripTags(lead)).text;
+  const extra = heads.length > 1 ? `<span>+${heads.length - 1} başlık</span>` : '';
+  return `<li class="row"><a href="${issueHref(e)}">
+    <span class="t">${escapeHtml(e.time)}</span>
+    <span class="h">${highlight(leadText, query)}</span>
+    <span class="m">${pill(e.type)}${extra}</span>
+  </a></li>`;
+}
+
+function renderArchive({ keepTools = false } = {}) {
+  ++renderToken;
+  setTitle('Arşiv');
+  const route = state.archive;
+  const tools = main.querySelector('.archive-tools');
+  if (!keepTools || !tools) {
+    state.archiveDays = DAYS_PER_PAGE;
+    main.innerHTML = `<div class="dayhead"><h1>Arşiv</h1><div class="dayhead__meta"><span data-count>${entries().length} yayın</span>${updatedLine()}</div></div>
+      <form class="archive-tools" role="search">
+        <div class="search">
+          ${icon.search}
+          <label class="visually-hidden" for="q">Başlıklarda ara</label>
+          <input id="q" type="search" placeholder="Ara: dolar, Fed, Secaucus…" autocomplete="off" enterkeyhint="search" value="${escapeHtml(route.query)}">
+          <button class="clear" type="button" aria-label="Aramayı temizle"${route.query ? '' : ' hidden'}>${icon.x}</button>
+        </div>
+        <fieldset class="segmented">
+          <legend class="visually-hidden">Yayın türü</legend>
+          ${[['all', 'Tümü', 't-all'], ['flas', 'Flaş', 't-flas'], ['aksam', 'Akşam Bülteni', 't-aksam']].map(([v, l, id]) => `<label><input type="radio" id="${id}" name="t" value="${v}"${route.type === v ? ' checked' : ''}><span>${l}</span></label>`).join('')}
+        </fieldset>
+      </form>
+      <div data-list></div>`;
+    bindArchiveTools();
+  } else {
+    const c = main.querySelector('[data-count]');
+    if (c) c.textContent = `${entries().length} yayın`;
+  }
+  main.querySelector('[data-list]').innerHTML = archiveListHtml(route);
+  const more = main.querySelector('[data-more]');
+  if (more) more.addEventListener('click', () => { state.archiveDays += DAYS_PER_PAGE; renderArchive({ keepTools: true }); });
+  const older = main.querySelector('[data-older]');
+  if (older) older.addEventListener('click', async () => {
+    older.disabled = true; older.textContent = 'Yükleniyor…';
+    try { await loadOlder(); } catch { older.disabled = false; older.textContent = 'Yüklenemedi, yeniden dene'; return; }
+    state.archiveDays += DAYS_PER_PAGE;
+    renderArchive({ keepTools: true });
+  });
+}
+
+function bindArchiveTools() {
+  const form = main.querySelector('.archive-tools');
+  const input = main.querySelector('#q');
+  const clear = main.querySelector('.clear');
+  let timer;
+  const apply = () => {
+    const type = (main.querySelector('input[name="t"]:checked') || {}).value || 'all';
+    state.archive = { query: input.value.trim(), type };
+    clear.hidden = !input.value;
+    state.archiveDays = DAYS_PER_PAGE;
+    renderArchive({ keepTools: true });
+  };
+  form.addEventListener('submit', (e) => { e.preventDefault(); apply(); });
+  input.addEventListener('input', () => { clearTimeout(timer); timer = setTimeout(apply, 120); });
+  input.addEventListener('keydown', (e) => { if (e.key === 'Escape' && input.value) { input.value = ''; apply(); } });
+  clear.addEventListener('click', () => { input.value = ''; apply(); input.focus(); });
+  main.querySelectorAll('input[name="t"]').forEach((r) => r.addEventListener('change', apply));
+}
+
+function renderError(kind) {
+  ++renderToken;
+  const msg = kind === 'nodb'
+    ? '<p><strong>Yayınlar bu görünümde açılamıyor.</strong></p><p>Sayfayı claude.ai\'de, hesabınızla giriş yapmışken açın.</p>'
+    : '<p><strong>Yayınlar yüklenemedi.</strong></p><p>Bağlantınızı kontrol edip yeniden deneyin.</p><button class="button" type="button" data-retry>Yeniden dene</button>';
+  main.innerHTML = `<div class="callout callout--error" role="alert">${msg}</div>`;
+  const r = main.querySelector('[data-retry]');
+  if (r) r.addEventListener('click', () => boot());
+}
+
+// ------------------------------------------------------------------ yönlendirme
+
+function render({ scroll = true } = {}) {
+  const route = parseRoute(location.hash);
+  const prev = state.route;
+  state.route = route;
+  setTab(route.view);
+  const today = nyParts().date;
+  if (!state.loaded) return;
+  if (route.view === 'archive') {
+    renderArchive({ keepTools: prev && prev.view === 'archive' });
+  } else if (route.view === 'day') {
+    renderDay(route.date, route.id, { isToday: route.date === today });
+    setTab(route.date === today ? 'today' : 'day');
+  } else {
+    renderDay(today, null, { isToday: true });
+  }
+  if (scroll && !(prev && prev.view === 'archive' && route.view === 'archive')) {
+    window.scrollTo(0, 0);
+  }
+}
+
+window.addEventListener('hashchange', () => {
+  hideToast();
+  render();
+  if (state.route.view !== 'archive') main.focus({ preventScroll: true });
+});
+
+// Yayın sayfasında ← → ile önceki/sonraki yayın
+document.addEventListener('keydown', (e) => {
+  if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+  if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName)) return;
+  const link = e.key === 'ArrowLeft' ? main.querySelector('a[rel="prev"]') : e.key === 'ArrowRight' ? main.querySelector('a[rel="next"]') : null;
+  if (link) { e.preventDefault(); location.hash = link.getAttribute('href'); }
+});
+
+// ------------------------------------------------------------------ otomatik yenileme
+
+function showToast(entry) {
+  toast.querySelector('.toast__text').textContent = `Yeni yayın: ${TYPE_LABEL[entry.type]}, ${entry.time}`;
+  toast.querySelector('.toast__action').setAttribute('href', issueHref(entry));
+  toast.hidden = false;
+}
+function hideToast() { toast.hidden = true; }
+toast.querySelector('.toast__close').addEventListener('click', hideToast);
+
+// Yeni yayın geldiğinde: okunan yayına dokunmadan rotayı ve sayaçları tazele, bildirim göster.
+function onData() {
+  const latest = entries()[0];
+  const key = latest ? latest.key : null;
+  const first = !state.loaded;
+  state.loaded = true;
+  if (first) {
+    state.latestKey = key;
+    render({ scroll: false });
+    return;
+  }
+  if (key && key !== state.latestKey && (!state.latestKey || key > state.latestKey)) {
+    state.latestKey = key;
+    showToast(latest);
+  }
+  const r = state.route;
+  if (r && r.view === 'archive') { renderArchive({ keepTools: true }); return; }
+  if (r) {
+    const shown = main.querySelector('[data-issue]');
+    if (!shown || (r.view === 'day' && r.id && !shown)) { render({ scroll: false }); return; }
+    const date = r.view === 'day' ? r.date : nyParts().date;
+    const slot = main.querySelector('[data-route]');
+    const day = entriesOn(date);
+    const sel = day.find((e) => e.id === (r.id || shown.dataset.issue));
+    if (slot) slot.innerHTML = routeHtml(date, sel);
+    const upd = main.querySelector('[data-updated]');
+    if (upd) upd.textContent = `Son yayın ${relativeTime(lastPublished())}`;
+  }
+}
+
+let unsubscribe = null;
+
+async function boot() {
+  main.innerHTML = '<p class="loading">Yükleniyor…</p>';
+  state.loaded = false;
+  const db = window.claude && typeof window.claude.use === 'function' ? await window.claude.use('db') : null;
+  if (!db) { renderError('nodb'); return; }
+  state.db = db;
+  if (unsubscribe) unsubscribe();
+  state.known = new Map(); state.windowIds = new Set(); state.olderDone = false;
+  unsubscribe = db.collection(COLLECTION).orderBy('key', 'desc').limit(PAGE_SIZE).onSnapshot((snap) => {
+    applyWindow(toEntries(snap.docs));
+    if (snap.size < PAGE_SIZE) state.olderDone = true;
+    invalidate();
+    onData();
+  }, (err) => {
+    console.error('db', err && err.code);
+    renderError('load');
+  });
+}
+
+// "Son yayın … önce" ifadesini dakikada bir tazele
+setInterval(() => {
+  const upd = main.querySelector('[data-updated]');
+  if (upd && lastPublished()) upd.textContent = `Son yayın ${relativeTime(lastPublished())}`;
+}, 60000);
+
+// test ve hata ayıklama için
+window.__gundem = { state, fold };
+
+boot();
+
+</script>

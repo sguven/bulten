@@ -281,31 +281,69 @@ export function buildStops(dayEntries, dateStr, { schedule = DEFAULT_SCHEDULE, n
 }
 
 // ---------- Yönlendirme ----------
-
-// '#/', '#/arsiv?q=dolar&t=flas', '#/g/2026-10-10', '#/g/2026-10-10/flas-1245'
+// Claude sayfalarında yalnızca sade #çapa (harf, rakam, . _ ~ -) çalışır:
+// '#bugun' (ya da boş), '#arsiv', '#g-2026-10-10', '#g-2026-10-10-flas-1245'
 export function parseRoute(hash) {
   const h = String(hash || '').replace(/^#/, '');
-  const [path, qs = ''] = h.split('?');
-  const params = new URLSearchParams(qs);
-  const parts = path.split('/').filter(Boolean);
-  if (parts[0] === 'arsiv') {
-    return { view: 'archive', query: params.get('q') || '', type: ['flas', 'aksam'].includes(params.get('t')) ? params.get('t') : 'all' };
-  }
-  if (parts[0] === 'g' && /^\d{4}-\d{2}-\d{2}$/.test(parts[1] || '')) {
-    const id = parts[2] && /^(flas|aksam)-\d{4}$/.test(parts[2]) ? parts[2] : null;
-    return { view: 'day', date: parts[1], id };
-  }
+  if (h === 'arsiv') return { view: 'archive' };
+  const m = h.match(/^g-(\d{4}-\d{2}-\d{2})(?:-((?:flas|aksam)-\d{4}))?$/);
+  if (m) return { view: 'day', date: m[1], id: m[2] || null };
   return { view: 'today' };
 }
 
 export function issueHref(entry) {
-  return `#/g/${entry.date}/${entry.id}`;
+  return `#g-${entry.date}-${entry.id}`;
 }
 
-export function archiveHref({ query = '', type = 'all' } = {}) {
-  const p = new URLSearchParams();
-  if (query) p.set('q', query);
-  if (type && type !== 'all') p.set('t', type);
-  const s = p.toString();
-  return `#/arsiv${s ? `?${s}` : ''}`;
+export function dayHref(date) {
+  return `#g-${date}`;
+}
+
+export function archiveHref() {
+  return '#arsiv';
+}
+
+// ---------- Veri deposundan gelen belgeyi temizleme ----------
+// Zamanlanmış görevler belgeleri doğrudan yazar; sayfa bozuk alanlara karşı dayanıklı olmalı.
+const str = (v) => (typeof v === 'string' ? v.trim() : typeof v === 'number' ? String(v) : '');
+
+export function docIdFor(date, id) {
+  return `${date}_${id}`;
+}
+
+export function normalizeIssue(docId, raw) {
+  const d = raw && typeof raw === 'object' ? raw : {};
+  const m = String(docId || '').match(/^(\d{4}-\d{2}-\d{2})_((flas|aksam)-(\d{2})(\d{2}))$/);
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(str(d.date)) ? str(d.date) : (m ? m[1] : '');
+  const type = ['flas', 'aksam'].includes(str(d.type)) ? str(d.type) : (m ? m[3] : '');
+  const time = /^\d{2}:\d{2}$/.test(str(d.time)) ? str(d.time) : (m ? `${m[4]}:${m[5]}` : '');
+  if (!date || !type || !time) return null;
+  const id = `${type}-${time.replace(':', '')}`;
+  const markets = (Array.isArray(d.markets) ? d.markets : [])
+    .filter((x) => x && typeof x === 'object' && str(x.name))
+    .map((x) => ({ name: str(x.name), level: str(x.level) || '—', chg: str(x.chg) || '—', note: str(x.note) }));
+  const sections = (Array.isArray(d.sections) ? d.sections : [])
+    .filter((s) => s && typeof s === 'object' && str(s.heading))
+    .map((s) => ({
+      heading: str(s.heading),
+      items: (Array.isArray(s.items) ? s.items : [])
+        .map((it) => (typeof it === 'string' ? { title: '', text: it.trim() } : { title: str(it && it.title), text: str(it && it.text) }))
+        .filter((it) => it.title || it.text),
+    }))
+    .filter((s) => s.items.length);
+  const sources = (Array.isArray(d.sources) ? d.sources : [])
+    .filter((s) => s && typeof s === 'object' && safeUrl(s.url))
+    .map((s) => ({ title: str(s.title), url: safeUrl(s.url) }));
+  if (!markets.length && !sections.length) return null;  // içeriksiz belge gösterilmez
+  const headlines = [];
+  for (const s of sections) for (const it of s.items) headlines.push(it.title || it.text.slice(0, 90));
+  return {
+    docId, id, type, date, time,
+    key: `${date}T${time}`,
+    title: str(d.title), subtitle: str(d.subtitle),
+    market_note: str(d.market_note), footer: str(d.footer),
+    published_at: str(d.published_at),
+    markets, sections, sources,
+    headlines: headlines.slice(0, 12),
+  };
 }
