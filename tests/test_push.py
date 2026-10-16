@@ -1,4 +1,4 @@
-"""scripts/publish_and_push.sh için testler — gerçek git depolarıyla (yerel 'bare' uzak depo)."""
+"""Tests for scripts/publish_and_push.sh — with real git repos (a local 'bare' remote)."""
 import json
 import shutil
 import subprocess
@@ -24,7 +24,7 @@ def sh(*args, cwd, env=None, check=True):
 
 @pytest.fixture
 def remote(tmp_path):
-    """İçinde betikler ve boş data/ olan bir uzak depo + iki bağımsız klon."""
+    """A remote repo with the scripts and an empty data/ + two independent clones."""
     bare = tmp_path / "remote.git"
     sh("git", "init", "-q", "--bare", "-b", "main", str(bare), cwd=tmp_path)
     seed = tmp_path / "seed"
@@ -78,18 +78,18 @@ def test_rerun_same_content_is_noop(remote):
     bare, (a, _), tmp = remote
     sh("bash", "scripts/publish_and_push.sh", str(FIX / "aksam.json"), "aksam", "2026-10-08", "19:08", cwd=a)
     before = sh("git", "rev-parse", "HEAD", cwd=a).stdout
-    # aynı yayın yeniden: yalnızca published_at değişir -> yine commit edilir ama tek yayın kalır
+    # the same issue again: only published_at changes -> still committed, but only one issue remains
     sh("bash", "scripts/publish_and_push.sh", str(FIX / "aksam.json"), "aksam", "2026-10-08", "19:08", cwd=a)
     idx, _ = remote_index(bare, tmp)
     assert idx["count"] == 1
-    assert before  # HEAD vardı
+    assert before  # HEAD existed
 
 
 def test_concurrent_publish_resolves_index_conflict(remote):
-    """İki görev aynı anda yayımlarsa ikinci push reddedilir; betik birleştirip yeniden dener."""
+    """If two tasks publish at the same time the second push is rejected; the script merges and retries."""
     bare, (a, b), tmp = remote
     sh("bash", "scripts/publish_and_push.sh", str(FIX / "flas_kapanis.json"), "flas", "2026-10-08", "15:49", cwd=a)
-    # b eski haliyle (pull yapmadan) yayımlıyor -> push reddedilecek, index.json çakışacak
+    # b publishes from its old state (without pulling) -> the push will be rejected and index.json will conflict
     r = sh("bash", "scripts/publish_and_push.sh", str(FIX / "aksam.json"), "aksam", "2026-10-08", "19:08", cwd=b,
            env={"GUNDEM_SKIP_PULL": "1"})
     assert "Push reddedildi" in r.stderr
@@ -97,7 +97,7 @@ def test_concurrent_publish_resolves_index_conflict(remote):
     idx, check = remote_index(bare, tmp)
     assert [e["id"] for e in idx["entries"]] == ["aksam-1908", "flas-1549"]
     assert idx["latest"] == "2026-10-08/aksam-1908"
-    # uzak depodaki dizin dosyalarla birebir tutarlı
+    # the index in the remote repo matches the files exactly
     sh("python3", "scripts/publish.py", "--rebuild", cwd=check)
     rebuilt = json.loads((check / "data/index.json").read_text(encoding="utf-8"))
     assert rebuilt["entries"] == idx["entries"]

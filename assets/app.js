@@ -40,7 +40,7 @@ async function loadSchedule() {
   try {
     const site = await fetchJson(`data/site.json?t=${Date.now()}`, { fresh: true });
     if (site && site.schedule && Array.isArray(site.schedule.weekday)) state.schedule = site.schedule;
-  } catch { /* varsayılan program kullanılır */ }
+  } catch { /* the default schedule is used */ }
 }
 
 async function loadIssue(entry) {
@@ -55,7 +55,7 @@ async function loadIssue(entry) {
 const entries = () => (state.index ? state.index.entries : []);
 const entriesOn = (date) => entries().filter((e) => e.date === date);
 
-// ------------------------------------------------------------------ küçük parçalar
+// ------------------------------------------------------------------ small pieces
 
 const icon = {
   chevL: '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
@@ -85,7 +85,7 @@ function updatedLine() {
   return `<span data-updated>Son güncelleme ${escapeHtml(relativeTime(state.index.generated_at))}</span>`;
 }
 
-// ------------------------------------------------------------------ rota (günün durakları)
+// ------------------------------------------------------------------ route (the day's stops)
 
 function routeHtml(date, selected) {
   const stops = buildStops(entriesOn(date), date, { schedule: state.schedule });
@@ -106,7 +106,7 @@ function routeHtml(date, selected) {
   return `<nav class="route" aria-label="Günün yayınları"><ol>${lis}</ol></nav>`;
 }
 
-// ------------------------------------------------------------------ yayın
+// ------------------------------------------------------------------ issue
 
 function marketsHtml(markets) {
   if (!markets || !markets.length) return '';
@@ -188,7 +188,7 @@ async function fillIssue(slot, entry, token) {
   }
 }
 
-// ------------------------------------------------------------------ görünümler
+// ------------------------------------------------------------------ views
 
 let renderToken = 0;
 
@@ -196,7 +196,7 @@ function renderDay(date, id, { isToday }) {
   const token = ++renderToken;
   const day = entriesOn(date);
   const notFound = Boolean(id) && !day.some((e) => e.id === id);
-  // day[0] = günün en son yayını; istenen yayın yoksa ona düşülür
+  // day[0] = the day's latest issue; falls back to it if the requested issue doesn't exist
   const selected = (id && day.find((e) => e.id === id)) || day[0];
 
   const heading = isToday
@@ -333,7 +333,7 @@ function renderError(err) {
   main.querySelector('[data-retry]').addEventListener('click', () => boot());
 }
 
-// ------------------------------------------------------------------ yönlendirme
+// ------------------------------------------------------------------ routing
 
 function render({ scroll = true } = {}) {
   const route = parseRoute(location.hash);
@@ -360,7 +360,7 @@ window.addEventListener('hashchange', () => {
   if (state.route.view !== 'archive') main.focus({ preventScroll: true });
 });
 
-// Yayın sayfasında ← → ile önceki/sonraki yayın
+// On an issue page, ← → go to the previous/next issue
 document.addEventListener('keydown', (e) => {
   if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
   if (/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName)) return;
@@ -387,7 +387,7 @@ async function refresh() {
       state.seenLatest = idx.latest;
       showToast(latest);
     }
-    // Rota ve "son güncelleme" satırını yerinde tazele; okunan yayına dokunma.
+    // Refresh the route and the "last updated" line in place; leave the issue being read alone.
     const r = state.route;
     if (r && r.view !== 'archive') {
       const date = r.view === 'day' ? r.date : nyParts().date;
@@ -399,7 +399,7 @@ async function refresh() {
     }
     const upd = main.querySelector('[data-updated]');
     if (upd) upd.textContent = `Son güncelleme ${relativeTime(idx.generated_at)}`;
-  } catch { /* sessizce bir sonraki denemeyi bekle */ }
+  } catch { /* quietly wait for the next attempt */ }
 }
 
 let timer;
@@ -411,7 +411,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible' && state.index) { refresh(); startRefresh(); }
 });
 
-// ------------------------------------------------------------------ başlat
+// ------------------------------------------------------------------ start
 
 async function boot() {
   main.innerHTML = '<p class="loading">Yükleniyor…</p>';
@@ -426,7 +426,7 @@ async function boot() {
   }
 }
 
-// test ve hata ayıklama için
+// for tests and debugging
 window.__gundem = { state, refresh, fold };
 
 boot();

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Zamanlanmış görevlerin çağırdığı tek komut: doğrula -> yaz -> commit -> push.
-#   bash scripts/publish_and_push.sh /yol/veri.json flas      # ya da: aksam
-# İsteğe bağlı 3. ve 4. argüman: tarih (YYYY-AA-GG) ve saat (SS:DD). Verilmezse New York saatiyle şimdi.
+# The single command the scheduled tasks call: validate -> write -> commit -> push.
+#   bash scripts/publish_and_push.sh /path/veri.json flas      # or: aksam
+# Optional 3rd and 4th arguments: date (YYYY-MM-DD) and time (HH:MM). Defaults to now in New York time.
 set -euo pipefail
 
 VERI="${1:?veri.json yolu gerekli}"
@@ -15,7 +15,7 @@ ARGS=("$VERI" --type "$TYPE")
 [[ -n "$TIME" ]] && ARGS+=(--time "$TIME")
 
 python3 scripts/publish.py "${ARGS[@]}" --check
-[[ -n "${GUNDEM_SKIP_PULL:-}" ]] || git pull --rebase --quiet origin main || true  # GUNDEM_SKIP_PULL yalnızca testler için
+[[ -n "${GUNDEM_SKIP_PULL:-}" ]] || git pull --rebase --quiet origin main || true  # GUNDEM_SKIP_PULL is for tests only
 python3 scripts/publish.py "${ARGS[@]}"
 
 git config user.name  >/dev/null || git config user.name  "Gundem Bot"
@@ -38,7 +38,7 @@ for i in 1 2 3; do
   sleep $((i * 2))
   git fetch --quiet origin main
   if ! git rebase --quiet origin/main; then
-    # Aynı anda iki yayın: çakışma yalnızca data/index.json'da olur -> yeniden üret
+    # Two issues at the same time: the only conflict is in data/index.json -> rebuild it
     python3 scripts/publish.py --rebuild >/dev/null
     git add data/index.json
     GIT_EDITOR=true git rebase --continue || { git rebase --abort; echo "HATA: çözülemeyen çakışma" >&2; exit 1; }

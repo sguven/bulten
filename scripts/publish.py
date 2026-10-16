@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""Bülten sitesine yeni bir yayın ekler ve arşiv dizinini (data/index.json) yeniden üretir.
+"""Adds a new issue to the brief site and rebuilds the archive index (data/index.json).
 
-Kullanım:
-    python3 scripts/publish.py veri.json --type flas            # saat/tarih: şu an (New York)
+Usage:
+    python3 scripts/publish.py veri.json --type flas            # date/time: now (New York)
     python3 scripts/publish.py veri.json --type aksam --date 2026-10-10 --time 18:57
-    python3 scripts/publish.py veri.json --type flas --check    # sadece doğrula, yazma
-    python3 scripts/publish.py --rebuild                        # yalnızca index.json'u yeniden üret
+    python3 scripts/publish.py veri.json --type flas --check    # validate only, don't write
+    python3 scripts/publish.py --rebuild                        # only rebuild index.json
 
-veri.json, PDF betiğinin (bulten_pdf.py) kullandığı yapının aynısıdır:
+veri.json has the same structure the PDF script (bulten_pdf.py) uses:
     {"title", "subtitle", "markets": [{"name","level","chg","note"}], "market_note",
      "sections": [{"heading","items": [{"title","text"}]}], "sources": [{"title","url"}], "footer"}
 
-Yalnızca Python standart kütüphanesini kullanır.
+Uses only the Python standard library.
 """
 from __future__ import annotations
 
@@ -33,10 +33,10 @@ MAX_HEADLINES = 12
 
 
 class ValidationError(Exception):
-    """veri.json beklenen yapıda değil."""
+    """veri.json doesn't have the expected structure."""
 
 
-# ---------------------------------------------------------------- yardımcılar
+# ---------------------------------------------------------------- helpers
 
 def _str(v, path, *, required=False, allow_empty=True):
     if v is None:
@@ -75,10 +75,10 @@ def _is_http_url(u: str) -> bool:
     return p.scheme in ("http", "https") and bool(p.netloc)
 
 
-# ---------------------------------------------------------------- doğrulama
+# ---------------------------------------------------------------- validation
 
 def normalize(raw) -> dict:
-    """veri.json içeriğini doğrular ve temizlenmiş bir sözlük döndürür."""
+    """Validates the contents of veri.json and returns a cleaned-up dict."""
     d = _dict(raw, "kök")
     out = {
         "title": _str(d.get("title"), "title", required=True, allow_empty=False),
@@ -108,7 +108,7 @@ def normalize(raw) -> dict:
         items = []
         for j, it in enumerate(_list(s.get("items"), f"{p}.items")):
             q = f"{p}.items[{j}]"
-            if isinstance(it, str):  # düz metin madde de kabul edilir
+            if isinstance(it, str):  # a plain-text item is accepted too
                 it = {"text": it}
             it = _dict(it, q)
             title = _str(it.get("title"), f"{q}.title")
@@ -116,7 +116,7 @@ def normalize(raw) -> dict:
             if not title and not text:
                 continue
             items.append({"title": title, "text": text})
-        if items:  # boş bölüm yayımlanmaz
+        if items:  # an empty section is not published
             out["sections"].append({"heading": heading, "items": items})
 
     for i, s in enumerate(_list(d.get("sources"), "sources")):
@@ -167,7 +167,7 @@ def issue_path(root: Path, date: str, issue_id: str) -> Path:
 
 
 def write_issue(root: Path, content: dict, kind: str, date: str, time: str, now: datetime | None = None) -> tuple[Path, bool]:
-    """Yayını yazar. (yol, üzerine_yazıldı_mı) döndürür."""
+    """Writes the issue. Returns (path, was_overwritten)."""
     if kind not in TYPES:
         raise ValidationError(f"--type şunlardan biri olmalı: {', '.join(TYPES)}")
     issue_id = f"{kind}-{time.replace(':', '')}"
@@ -207,7 +207,7 @@ def _entry(doc: dict, rel: str) -> dict:
 
 
 def rebuild_index(root: Path, now: datetime | None = None) -> dict:
-    """data/issues altındaki tüm yayınları tarayıp data/index.json'u yeniden yazar."""
+    """Scans every issue under data/issues and rewrites data/index.json."""
     base = root / "data" / "issues"
     entries, problems = [], []
     if base.exists():
@@ -236,7 +236,7 @@ def rebuild_index(root: Path, now: datetime | None = None) -> dict:
     return index
 
 
-# ---------------------------------------------------------------- komut satırı
+# ---------------------------------------------------------------- command line
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Bülten sitesine yayın ekle")

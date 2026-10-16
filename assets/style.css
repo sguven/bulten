@@ -1,6 +1,6 @@
-/* Gündem — Akşam Bülteni & Gün İçi Flaş */
+/* Gündem — Akşam Bülteni & Gün İçi Flaş (evening brief & intraday flash) */
 
-/* Yazı tipleri siteyle birlikte barındırılır (Newsreader, Archivo — SIL Open Font License) */
+/* Fonts are hosted with the site (Newsreader, Archivo — SIL Open Font License) */
 @font-face {
   font-family: "Newsreader"; font-style: normal; font-display: swap; font-weight: 200 800;
   src: url("fonts/newsreader-latin-ext-wght-normal.woff2") format("woff2-variations"), url("fonts/newsreader-latin-ext-wght-normal.woff2") format("woff2");
@@ -28,10 +28,10 @@
   --ink: #15202B;
   --muted: #5B6672;
   --line: #DCE1E7;
-  --accent: #0B3D5C;      /* PDF bültenlerindeki petrol mavisi */
+  --accent: #0B3D5C;      /* the petrol blue from the PDF briefs */
   --accent-soft: #E3ECF2;
   --link: #0F5A86;
-  --signal: #855400;      /* otobüs tabelası kehribarı — metin için koyu ton */
+  --signal: #855400;      /* bus-sign amber — darker shade for text */
   --signal-dot: #E3A21A;
   --signal-soft: #FCF3DE;
   --up: #147A3D;
@@ -108,7 +108,7 @@ button, input { font: inherit; color: inherit; }
   clip: rect(0 0 0 0); white-space: nowrap;
 }
 
-/* ------------------------------------------------------------ üst bant */
+/* ------------------------------------------------------------ top band */
 
 .masthead {
   position: sticky; top: 0; z-index: 20;
@@ -135,7 +135,7 @@ button, input { font: inherit; color: inherit; }
 .tab[aria-current="page"] { color: var(--surface); background: var(--accent); }
 @media (prefers-color-scheme: dark) { .tab[aria-current="page"] { color: var(--bg); } }
 
-/* ------------------------------------------------------------ sayfa */
+/* ------------------------------------------------------------ page */
 
 .page {
   max-width: var(--measure); margin: 0 auto;
@@ -154,7 +154,7 @@ button, input { font: inherit; color: inherit; }
 }
 .dayhead__meta a { color: inherit; }
 
-/* ------------------------------------------------------------ günün rotası */
+/* ------------------------------------------------------------ the day's route */
 
 .route { margin: 0 calc(-1 * var(--gutter)) 22px; padding: 0 var(--gutter); overflow-x: auto; scrollbar-width: none; }
 .route::-webkit-scrollbar { display: none; }
@@ -165,7 +165,7 @@ button, input { font: inherit; color: inherit; }
   position: relative;
 }
 .stop { position: relative; }
-/* durağı bir sonrakine bağlayan hat */
+/* line connecting a stop to the next one */
 .stop:not(:last-child)::after {
   content: ""; position: absolute; top: calc(var(--dot) / 2 + 9px - 1.5px);
   left: calc(50% + var(--dot) / 2 + 3px); right: calc(-50% + var(--dot) / 2 + 3px);
@@ -206,7 +206,7 @@ a.stop__link:hover { background: var(--accent-soft); }
   50% { box-shadow: 0 0 0 3px var(--bg), 0 0 0 9px transparent; }
 }
 
-/* ------------------------------------------------------------ boş günler / bildirimler */
+/* ------------------------------------------------------------ empty days / notices */
 
 .callout {
   border-radius: var(--radius-m); padding: 14px 16px; margin: 0 0 22px;
@@ -225,7 +225,7 @@ a.stop__link:hover { background: var(--accent-soft); }
 @media (prefers-color-scheme: dark) { .button { color: var(--bg); } }
 .button--quiet { background: transparent; color: var(--accent); }
 
-/* ------------------------------------------------------------ yayın */
+/* ------------------------------------------------------------ issue */
 
 .issue {
   background: var(--surface); border-radius: var(--radius-m);
@@ -303,7 +303,7 @@ a.stop__link:hover { background: var(--accent-soft); }
 
 .issue__foot { margin: 22px 0 10px; color: var(--muted); font-size: 0.75rem; line-height: 1.5; }
 
-/* önceki / sonraki */
+/* previous / next */
 .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 0; }
 .pager a {
   display: flex; flex-direction: column; gap: 2px; padding: 12px 14px;
@@ -315,7 +315,7 @@ a.stop__link:hover { background: var(--accent-soft); }
 .pager .what { font-weight: 600; font-size: 0.9375rem; }
 .pager .pager__next { grid-column: 2; text-align: right; align-items: flex-end; }
 
-/* ------------------------------------------------------------ arşiv */
+/* ------------------------------------------------------------ archive */
 
 .archive-tools { display: flex; flex-direction: column; gap: 10px; margin: 0 0 8px; }
 .search { position: relative; }
@@ -374,7 +374,7 @@ a.stop__link:hover { background: var(--accent-soft); }
 .empty { text-align: left; padding: 28px 0; color: var(--muted); }
 .empty strong { display: block; color: var(--ink); font: 600 var(--step-1)/1.3 var(--serif); margin-bottom: 4px; }
 
-/* ------------------------------------------------------------ yeni yayın bildirimi */
+/* ------------------------------------------------------------ new issue notice */
 
 .toast {
   position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom)); transform: translateX(-50%);

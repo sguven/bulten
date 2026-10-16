@@ -1,4 +1,4 @@
-"""scripts/publish.py için testler.  Çalıştır: python3 -m pytest -q tests"""
+"""Tests for scripts/publish.py.  Run: python3 -m pytest -q tests"""
 import json
 import shutil
 import subprocess
@@ -114,7 +114,7 @@ class TestNormalize:
         assert "evil" not in d
 
 
-# ------------------------------------------------------------ tarih/saat
+# ------------------------------------------------------------ date/time
 
 class TestDateTime:
     @pytest.mark.parametrize("raw,exp", [("12:45", "12:45"), ("8:45", "08:45"), ("1857", "18:57"), ("18.57", "18:57"), ("00:00", "00:00")])
@@ -133,7 +133,7 @@ class TestDateTime:
                 publish.parse_date(bad)
 
 
-# ------------------------------------------------------------ yazma ve dizin
+# ------------------------------------------------------------ writing and index
 
 class TestWriteAndIndex:
     def test_write_issue_layout_and_metadata(self, site):
@@ -217,7 +217,7 @@ class TestWriteAndIndex:
         assert not list(site.rglob(".tmp-*"))
 
 
-# ------------------------------------------------------------ komut satırı
+# ------------------------------------------------------------ command line
 
 class TestCli:
     def test_publish_end_to_end(self, site):
@@ -276,7 +276,7 @@ class TestCli:
         assert (site / "data/index.json").exists()
 
     def test_repo_data_is_consistent(self, tmp_path):
-        """Repodaki gerçek data/ klasörü, yeniden üretilen dizinle aynı yayınları içermeli."""
+        """The real data/ folder in the repo must contain the same issues as the rebuilt index."""
         shutil.copytree(ROOT / "data", tmp_path / "data")
         committed = json.loads((ROOT / "data/index.json").read_text(encoding="utf-8"))
         rebuilt = publish.rebuild_index(tmp_path)

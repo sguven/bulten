@@ -1,7 +1,7 @@
 {
-  "name": "gundem-bulten",
+  "name": "daily-brief",
   "version": "1.0.0",
-  "description": "Akşam Bülteni ve Gün İçi Flaş sitesi",
+  "description": "Static site for the Gün İçi Flaş and Akşam Bülteni news briefs",
   "scripts": {
     "test": "npm run test:py && npm run test:unit && npm run test:e2e",
     "test:py": "python3 -m pytest -q tests",
