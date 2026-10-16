@@ -1,33 +1,41 @@
-# Gündem
+# Daily Brief (Gündem)
 
-Akşam Bülteni ve Gün İçi Flaş'ların yayımlandığı site. Zamanlanmış görevler her çalıştığında yeni yayını buraya ekler; site kendiliğinden güncellenir.
+A phone-first static site for my Turkish-language news briefs: the intraday **Gün İçi Flaş**
+updates and the **Akşam Bülteni** evening brief. Scheduled Claude tasks wrote each issue as JSON
+and pushed it here; the site picked it up automatically. The site's content is in Turkish.
 
-- **Bugün** — günün yayınları bir güzergâh gibi duraklarla: 08:45 açılış öncesi, 12:45 öğle, 15:45 kapanışa doğru, 18:57 akşam bülteni. Hazırlanmakta olan yayın kehribar renkte yanıp söner.
-- **Arşiv** — gün gün tüm yayınlar; başlıklarda arama (Türkçe karakter duyarsız: "tutanaklari" → "tutanakları") ve Flaş / Akşam Bülteni filtresi.
-- Açık sayfa her 5 dakikada bir yeni yayın olup olmadığına bakar ve bildirir.
-- Telefona göre tasarlandı; koyu temayı sistemden alır. Ana ekrana eklenebilir.
+> **Status:** archive. New issues are no longer published to this repo; it keeps the issues
+> from 7–9 October 2026.
 
-## Nasıl çalışır
+- **Today** – the day's issues laid out like stops on a route: 08:45 pre-open, 12:45 midday,
+  15:45 into the close, 18:57 evening brief. An issue that is being prepared pulses in amber.
+- **Archive** – every issue by day, with headline search that ignores Turkish diacritics
+  ("tutanaklari" finds "tutanakları") and a Flash / Evening Brief filter.
+- An open page checks for a new issue every 5 minutes and shows a notice.
+- Designed for phones; follows the system dark theme and can be added to the home screen.
+
+## How it works
 
 ```
-zamanlanmış görev ──> veri.json ──> scripts/publish_and_push.sh ──> git push ──> GitHub Pages
-                                      │
-                                      ├─ scripts/publish.py: doğrular, data/issues/<tarih>/<tür>-<SSDD>.json yazar
-                                      └─ data/index.json'u (arşiv dizini) yeniden üretir
+scheduled task ──> veri.json ──> scripts/publish_and_push.sh ──> git push ──> GitHub Pages
+                                   │
+                                   ├─ scripts/publish.py: validates, writes data/issues/<date>/<type>-<HHMM>.json
+                                   └─ rebuilds data/index.json (the archive index)
 ```
 
-Site tamamen statiktir (derleme adımı yok): `index.html` + `assets/` + `data/`.
+The site is fully static (no build step): `index.html` + `assets/` + `data/`.
+Issue types are `flas` (intraday flash) and `aksam` (evening brief).
 
-### Elle yayın eklemek
+### Adding an issue by hand
 
 ```bash
-bash scripts/publish_and_push.sh veri.json flas                      # şimdi (New York saati)
-bash scripts/publish_and_push.sh veri.json aksam 2026-10-10 18:57    # belirli tarih/saat
-python3 scripts/publish.py veri.json --type flas --check             # yalnızca doğrula
-python3 scripts/publish.py --rebuild                                 # dizini yeniden üret
+bash scripts/publish_and_push.sh veri.json flas                      # now (New York time)
+bash scripts/publish_and_push.sh veri.json aksam 2026-10-10 18:57    # specific date/time
+python3 scripts/publish.py veri.json --type flas --check             # validate only
+python3 scripts/publish.py --rebuild                                 # rebuild the index
 ```
 
-`veri.json`, PDF betiğinin kullandığı yapıyla aynıdır:
+`veri.json` uses the same structure as the PDF script:
 
 ```json
 {
@@ -35,29 +43,32 @@ python3 scripts/publish.py --rebuild                                 # dizini ye
   "subtitle": "Öğle · 08:45–12:45 arası",
   "markets": [{ "name": "S&P 500", "level": "6.712,40", "chg": "+0,42%", "note": "12:30 ET" }],
   "market_note": "<b>Ne hareket ettiriyor:</b> …",
-  "sections": [{ "heading": "Son dakika", "items": [{ "title": "Kısa başlık", "text": "…" }] }],
+  "sections": [{ "heading": "Son dakika", "items": [{ "title": "Short headline", "text": "…" }] }],
   "sources": [{ "title": "Reuters", "url": "https://www.reuters.com/…" }],
   "footer": "…"
 }
 ```
 
-Metinlerde yalnızca `<b>`, `<strong>`, `<i>`, `<em>`, `<br>` işlenir; geri kalan her şey düz metin olarak gösterilir. Başlığı `(doğrulanmadı)` ile biten maddeler etiketle işaretlenir.
+Only `<b>`, `<strong>`, `<i>`, `<em>` and `<br>` are rendered in text; everything else is shown as
+plain text. Items whose headline ends with `(doğrulanmadı)` ("unverified") get a label.
 
-### Program
+### Schedule
 
-Bugün sayfasındaki beklenen duraklar `data/site.json` içindedir. Zamanlanmış görevlerin saatini değiştirirsen burayı da güncelle.
+The expected stops on the Today page live in `data/site.json`. If the scheduled tasks' times
+change, update it there too.
 
-## Testler
+## Tests
 
 ```bash
 npm ci && pip install pytest && npx playwright install chromium
-npm test            # hepsi
-npm run test:py     # yayınlama betikleri (doğrulama, dizin, git push ve çakışma çözümü)
-npm run test:unit   # tarih/saat dilimi, arama, güvenlik, durak mantığı
-npm run test:e2e    # gerçek tarayıcı: masaüstü + telefon, açık/koyu tema, erişilebilirlik (axe)
+npm test            # everything
+npm run test:py     # publishing scripts (validation, index, git push and conflict handling)
+npm run test:unit   # dates/time zones, search, security, stop logic
+npm run test:e2e    # real browser: desktop + phone, light/dark theme, accessibility (axe)
 npm run serve       # http://localhost:8080
 ```
 
-GitHub Actions her kod değişikliğinde tüm testleri, her yayından sonra da `data/` klasörünün tutarlılığını kontrol eder.
+GitHub Actions runs all tests on every code change and checks that `data/` is consistent after
+every publish.
 
-Yazı tipleri: Newsreader ve Archivo (SIL Open Font License), siteyle birlikte barındırılır.
+Fonts: Newsreader and Archivo (SIL Open Font License), hosted with the site.

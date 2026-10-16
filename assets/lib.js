@@ -1,4 +1,4 @@
-// Saf yardımcı fonksiyonlar — DOM'a dokunmaz, Node testlerinden doğrudan içe aktarılır.
+// Pure helper functions — don't touch the DOM, imported directly by the Node tests.
 
 export const TZ = 'America/New_York';
 
@@ -9,7 +9,7 @@ const MONTHS = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz'
   'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
 const WEEKDAYS = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'];
 
-// ---------- HTML güvenliği ----------
+// ---------- HTML safety ----------
 
 const ENTITY = { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", apos: "'", nbsp: ' ' };
 
@@ -23,10 +23,10 @@ export function escapeHtml(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
-// Metni güvenli HTML'e çevirir; yalnızca <b>, <strong>, <i>, <em>, <br> etiketlerine izin verir.
+// Turns text into safe HTML; only allows the <b>, <strong>, <i>, <em>, <br> tags.
 export function inlineFormat(s) {
   const safe = escapeHtml(decodeEntities(s)).replace(/&lt;br\s*\/?&gt;/gi, '<br>');
-  // İzin verilen etiketleri geri aç; eşi olmayan kapanışları at, açık kalanları kapat.
+  // Reopen the allowed tags; drop closing tags without a match, close any left open.
   const stack = [];
   const out = safe.replace(/&lt;(\/?)(b|strong|i|em)&gt;/gi, (_, slash, raw) => {
     const tag = raw.toLowerCase();
@@ -34,7 +34,7 @@ export function inlineFormat(s) {
     const at = stack.lastIndexOf(tag);
     if (at === -1) return '';
     const closing = stack.splice(at).reverse().map((t) => `</${t}>`).join('');
-    // iç içe geçmiş açık etiketleri kapatıp yeniden açmak yerine yalnızca kapatırız
+    // instead of closing and reopening nested open tags we only close them
     return closing;
   });
   return out + stack.reverse().map((t) => `</${t}>`).join('');
@@ -44,7 +44,7 @@ export function stripTags(s) {
   return decodeEntities(String(s ?? '').replace(/<[^>]*>/g, ''));
 }
 
-// Yalnızca http(s) bağlantılarına izin ver.
+// Only allow http(s) links.
 export function safeUrl(u) {
   try {
     const url = new URL(String(u));
@@ -59,7 +59,7 @@ export function hostOf(u) {
   return s ? new URL(s).hostname.replace(/^www\./, '') : '';
 }
 
-// ---------- Piyasa değişimi ----------
+// ---------- Market change ----------
 
 // "+0,40%" -> 'up', "-1,2%" / "−1,2%" -> 'down', "0,00%" -> 'flat', "—" -> 'none'
 export function changeDirection(v) {
@@ -72,9 +72,9 @@ export function changeDirection(v) {
   return /\d/.test(s) ? 'up' : 'none';
 }
 
-// ---------- Tarih / saat (New York) ----------
+// ---------- Date / time (New York) ----------
 
-// Verilen anın New York'taki tarih ve saatini döndürür: { date: 'YYYY-MM-DD', time: 'HH:MM', weekday: 0-6 }
+// Returns the date and time in New York for the given moment: { date: 'YYYY-MM-DD', time: 'HH:MM', weekday: 0-6 }
 export function nyParts(now = new Date()) {
   const f = new Intl.DateTimeFormat('en-US', {
     timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit',
@@ -101,7 +101,7 @@ export function addDays(dateStr, n) {
   return t.toISOString().slice(0, 10);
 }
 
-// "10 Ekim 2026, Cumartesi" gibi
+// like "10 Ekim 2026, Cumartesi"
 export function formatDateLong(dateStr, { year = true, weekday = true } = {}) {
   const [y, m, d] = dateStr.split('-').map(Number);
   let s = `${d} ${MONTHS[m - 1]}`;
@@ -125,7 +125,7 @@ export function toMinutes(hhmm) {
   return h * 60 + m;
 }
 
-// "12 dk önce", "3 saat önce", "dün" …
+// "12 dk önce", "3 saat önce", "dün" … (12 min ago, 3 hours ago, yesterday)
 export function relativeTime(iso, now = new Date()) {
   const t = new Date(iso).getTime();
   if (Number.isNaN(t)) return '';
@@ -138,7 +138,7 @@ export function relativeTime(iso, now = new Date()) {
   return d === 1 ? 'dün' : `${d} gün önce`;
 }
 
-// ---------- Yayın etiketleri ----------
+// ---------- Issue labels ----------
 
 export function roundLabel(type, time) {
   if (type === 'aksam') return 'Akşam Bülteni';
@@ -148,7 +148,7 @@ export function roundLabel(type, time) {
   return 'Kapanışa doğru';
 }
 
-// "(doğrulanmadı)" ekini ayırır
+// splits off the "(doğrulanmadı)" (unverified) suffix
 export function splitUnverified(title) {
   const s = String(title ?? '').trim();
   const re = /\s*\((doğrulanmadı|dogrulanmadi|doğrulanmamış)\)\s*\.?$/i;
@@ -157,7 +157,7 @@ export function splitUnverified(title) {
 
 // ---------- Arama ----------
 
-// Türkçe büyük/küçük harf ve aksan farkını yok sayar: "İstanbul" ~ "istanbul" ~ "Istanbul"
+// Ignores Turkish upper/lower case and diacritic differences: "İstanbul" ~ "istanbul" ~ "Istanbul"
 export function fold(s) {
   return String(s ?? '')
     .replace(/İ/g, 'i').replace(/I/g, 'ı')
@@ -178,13 +178,13 @@ export function filterEntries(entries, { query = '', type = 'all' } = {}) {
   return entries.filter((e) => (type === 'all' || e.type === type) && matchesQuery(e, query));
 }
 
-// Eşleşen kısımları <mark> ile işaretler (metin önce kaçışlanır)
+// Marks matching parts with <mark> (the text is escaped first)
 export function highlight(text, query) {
   const raw = String(text ?? '');
   const terms = fold(query).split(/\s+/).filter(Boolean);
   if (!terms.length) return escapeHtml(raw);
   const folded = fold(raw);
-  // fold() karakter sayısını korur mu? Korumadığı durumda işaretlemeden vazgeç.
+  // Does fold() keep the number of characters? If it doesn't, skip highlighting.
   if (folded.length !== raw.length) return escapeHtml(raw);
   const marks = new Array(raw.length).fill(false);
   for (const t of terms) {
@@ -205,7 +205,7 @@ export function highlight(text, query) {
   return out;
 }
 
-// ---------- Sıralama / gruplama ----------
+// ---------- Sorting / grouping ----------
 
 export function sortEntries(entries) {
   return [...entries].sort((a, b) => (a.date === b.date ? b.time.localeCompare(a.time) : b.date.localeCompare(a.date)));
@@ -220,7 +220,7 @@ export function groupByDate(entries) {
   return [...map.entries()].map(([date, items]) => ({ date, items }));
 }
 
-// Kronolojik komşular (önceki = daha eski, sonraki = daha yeni)
+// Chronological neighbours (previous = older, next = newer)
 export function neighbors(entries, id, date) {
   const asc = sortEntries(entries).reverse();
   const i = asc.findIndex((e) => e.id === id && e.date === date);
@@ -228,7 +228,7 @@ export function neighbors(entries, id, date) {
   return { prev: asc[i - 1] || null, next: asc[i + 1] || null };
 }
 
-// ---------- Günün rotası (duraklar) ----------
+// ---------- The day's route (stops) ----------
 
 export const DEFAULT_SCHEDULE = {
   weekday: [
@@ -240,16 +240,16 @@ export const DEFAULT_SCHEDULE = {
   weekend: [{ type: 'aksam', time: '18:57' }],
 };
 
-// Bir yayın, planlanan saatten en fazla 15 dk önce / 120 dk sonra yayımlandıysa o durağa aittir.
+// An issue belongs to a stop if it was published at most 15 min before / 120 min after the planned time.
 const EARLY = 15;
 const LATE = 120;
-// Planlanan saatten sonra bu kadar dakika "hazırlanıyor" gösterilir.
+// For this many minutes after the planned time the stop shows "preparing".
 const PREPARING_WINDOW = 45;
 
 /**
- * Bir günün durak listesini üretir.
- * Her durak: { type, time, label, state: 'published'|'preparing'|'upcoming', entry? }
- * Geçmiş günlerde yalnızca yayımlanmış duraklar gösterilir.
+ * Builds the list of stops for a day.
+ * Each stop: { type, time, label, state: 'published'|'preparing'|'upcoming', entry? }
+ * On past days only published stops are shown.
  */
 export function buildStops(dayEntries, dateStr, { schedule = DEFAULT_SCHEDULE, now = new Date() } = {}) {
   const ny = nyParts(now);
@@ -267,11 +267,11 @@ export function buildStops(dayEntries, dateStr, { schedule = DEFAULT_SCHEDULE, n
         && toMinutes(e.time) >= sm - EARLY && toMinutes(e.time) <= sm + LATE);
       if (match) {
         used.add(match);
-        continue; // yayımlananlar aşağıda eklenecek
+        continue; // published ones are added below
       }
       if (nowMin < sm) stops.push({ type: slot.type, time: slot.time, label: roundLabel(slot.type, slot.time), state: 'upcoming' });
       else if (nowMin <= sm + PREPARING_WINDOW) stops.push({ type: slot.type, time: slot.time, label: roundLabel(slot.type, slot.time), state: 'preparing' });
-      // süresi geçmiş ve yayımlanmamış duraklar gösterilmez
+      // stops whose time has passed without an issue are not shown
     }
   }
   for (const e of entries) {
@@ -280,7 +280,7 @@ export function buildStops(dayEntries, dateStr, { schedule = DEFAULT_SCHEDULE, n
   return stops.sort((a, b) => a.time.localeCompare(b.time));
 }
 
-// ---------- Yönlendirme ----------
+// ---------- Routing ----------
 
 // '#/', '#/arsiv?q=dolar&t=flas', '#/g/2026-10-10', '#/g/2026-10-10/flas-1245'
 export function parseRoute(hash) {

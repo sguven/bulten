@@ -1,5 +1,5 @@
-// E2E testleri için tests/.site altında sahte bir site kurar.
-// Veriler, zamanlanmış görevlerin kullandığı scripts/publish.py ile üretilir — yani boru hattının tamamı test edilir.
+// Builds a fake site under tests/.site for the E2E tests.
+// The data is produced with scripts/publish.py, the same script the scheduled tasks used — so the whole pipeline is tested.
 import { execFileSync } from 'node:child_process';
 import { cpSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
@@ -19,19 +19,19 @@ export default function buildSite() {
   for (const f of ['index.html', 'manifest.webmanifest', 'assets']) cpSync(join(ROOT, f), join(SITE, f), { recursive: true });
   cpSync(join(ROOT, 'data', 'site.json'), join(SITE, 'data', 'site.json'));
 
-  // Eski günler: sayfalama testi için 15 Eylül – 5 Ekim arası her gün bir akşam bülteni
+  // Older days: one evening brief per day from 15 September to 5 October, for the pagination test
   for (let d = 15; d <= 35; d++) {
     const date = d <= 30 ? `2026-09-${String(d).padStart(2, '0')}` : `2026-10-${String(d - 30).padStart(2, '0')}`;
     publish('minimal.json', 'aksam', date, '19:02');
   }
   publish('xss.json', 'flas', '2026-10-06', '12:45');
   publish('aksam.json', 'aksam', '2026-10-07', '19:06');
-  // Perşembe 8 Ekim: tam gün
+  // Thursday 8 October: a full day
   publish('flas_sabah.json', 'flas', '2026-10-08', '08:47');
   publish('flas_ogle.json', 'flas', '2026-10-08', '12:46');
   publish('flas_kapanis.json', 'flas', '2026-10-08', '15:49');
   publish('aksam.json', 'aksam', '2026-10-08', '19:08');
-  // Cuma 9 Ekim: yalnızca sabah flaşı
+  // Friday 9 October: only the morning flash
   publish('flas_sabah.json', 'flas', '2026-10-09', '08:46');
 }
 

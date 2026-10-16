@@ -1,9 +1,9 @@
-// assets/lib.js için birim testleri.  Çalıştır: node --test tests/unit
+// Unit tests for assets/lib.js.  Run: node --test tests/unit/*.test.js
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
 import * as L from '../../assets/lib.js';
 
-const NY = (iso) => new Date(iso); // iso dizesi zaten ofset içeriyor
+const NY = (iso) => new Date(iso); // the iso string already includes an offset
 
 describe('HTML güvenliği', () => {
   test('escapeHtml tüm özel karakterleri kaçışlar', () => {

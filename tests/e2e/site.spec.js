@@ -1,4 +1,4 @@
-// Uçtan uca testler: gerçek tarayıcıda (masaüstü + telefon), publish.py ile üretilmiş veriyle.
+// End-to-end tests: in a real browser (desktop + phone), with data produced by publish.py.
 import { test as base, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
@@ -6,7 +6,7 @@ const at = (iso) => new Date(iso);
 const FRI_1300 = at('2026-10-09T13:00:00-04:00');
 const SAT_1400 = at('2026-10-10T14:00:00-04:00');
 
-// Her testte konsol hatalarını topla.
+// Collect console errors in every test.
 const test = base.extend({
   consoleErrors: async ({ page }, use) => {
     const errors = [];
@@ -29,7 +29,7 @@ test.afterEach(async ({ consoleErrors }, info) => {
   if (!info.annotations.some((a) => a.type === 'allow-errors')) expect(consoleErrors, 'konsol hatası olmamalı').toEqual([]);
 });
 
-// ---------------------------------------------------------------- Bugün
+// ---------------------------------------------------------------- Today
 
 test.describe('Bugün sayfası', () => {
   test('gün ortası: yayımlananlar, hazırlanan ve bekleyen duraklar', async ({ page }) => {
@@ -59,7 +59,7 @@ test.describe('Bugün sayfası', () => {
     await expect(page.locator('.callout')).toContainText('Sıradaki: Akşam Bülteni, 18:57');
     await expect(stops(page)).toHaveCount(1);
     await expect(stops(page).first()).toHaveAttribute('data-state', 'upcoming');
-    // en son yayın: Cuma 08:46 flaşı
+    // latest issue: Friday 08:46 flash
     await expect(page.locator('.issue .kicker')).toContainText('08:46 ET');
     await expect(page.locator('.issue .kicker')).toContainText('9 Ekim, Cuma');
   });
@@ -71,7 +71,7 @@ test.describe('Bugün sayfası', () => {
   });
 });
 
-// ---------------------------------------------------------------- Gün ve yayın
+// ---------------------------------------------------------------- Day and issue
 
 test.describe('Gün görünümü ve yayın', () => {
   test('tam gün: dört durak, varsayılan olarak en son yayın açılır', async ({ page }) => {
@@ -108,7 +108,7 @@ test.describe('Gün görünümü ve yayın', () => {
     const upColor = await rows.nth(0).locator('.chg').evaluate((e) => getComputedStyle(e).color);
     const downColor = await rows.nth(3).locator('.chg').evaluate((e) => getComputedStyle(e).color);
     expect(upColor).not.toEqual(downColor);
-    // <b> etiketi kalın olarak işlenir, metin olarak görünmez
+    // the <b> tag is rendered as bold, not shown as text
     await expect(page.locator('.market-note b')).toHaveText('Ne hareket ettiriyor:');
     await expect(page.locator('.market-note')).not.toContainText('<b>');
   });
@@ -199,7 +199,7 @@ test.describe('Gün görünümü ve yayın', () => {
   });
 });
 
-// ---------------------------------------------------------------- Arşiv
+// ---------------------------------------------------------------- Archive
 
 test.describe('Arşiv', () => {
   test('gün gün listeler, ay başlıkları ve sayfalama', async ({ page }) => {
@@ -209,9 +209,9 @@ test.describe('Arşiv', () => {
     await expect(page.locator('.result-count')).toHaveText('28 yayın, 25 gün');
     await expect(page.locator('section.day')).toHaveCount(10);
     await expect(page.locator('section.day h3').first()).toHaveText('9 Ekim, Cuma');
-    // ilk 10 gün: 9 Ekim … 30 Eylül
+    // first 10 days: 9 October … 30 September
     await expect(page.locator('h2.month')).toHaveText(['Ekim 2026', 'Eylül 2026']);
-    // 8 Ekim satırları en yeniden eskiye
+    // 8 October rows from newest to oldest
     const thu = page.locator('section.day').nth(1);
     await expect(thu.locator('.row .t')).toHaveText(['19:08', '15:49', '12:46', '08:47']);
     await expect(thu.locator('.row').first().locator('.pill')).toHaveText('Akşam');
@@ -245,7 +245,7 @@ test.describe('Arşiv', () => {
     await expect(page.locator('.result-count')).toHaveText('2 yayın, 2 gün');
     await expect(page.locator('.row mark').first()).toHaveText('tutanakları');
     await expect(page).toHaveURL(/#\/arsiv\?q=tutanaklari$/);
-    // odak arama kutusunda kalır
+    // focus stays in the search box
     await expect(q).toBeFocused();
     await q.fill('SECAUCUS');
     await expect(page.locator('.result-count')).toHaveText('2 yayın, 2 gün');
@@ -286,7 +286,7 @@ test.describe('Arşiv', () => {
   });
 });
 
-// ---------------------------------------------------------------- Güvenlik
+// ---------------------------------------------------------------- Security
 
 test.describe('Güvenlik', () => {
   test('yayın içeriğindeki HTML/JS çalıştırılmaz', async ({ page }) => {
@@ -297,7 +297,7 @@ test.describe('Güvenlik', () => {
     const issue = page.locator('.issue');
     await expect(issue.locator('script, img, iframe, svg[onload], [onerror], [onclick], [onload]')).toHaveCount(0);
     await expect(issue.locator('a[href^="javascript"]')).toHaveCount(0);
-    // varlık adı düz metindir: etiketler olduğu gibi yazı olarak görünür
+    // the asset name is plain text: tags show up as literal text
     await expect(issue.locator('.asset').first()).toContainText('<b>Kalın</b><img src=x');
     await expect(issue.locator('.market-note')).toContainText('<a href="javascript:window.__xss=3">tıkla</a>');
     await expect(issue.locator('.item__text em')).toHaveText('vurgu');
@@ -313,7 +313,7 @@ test.describe('Güvenlik', () => {
   });
 });
 
-// ---------------------------------------------------------------- Hata ve boş durumlar
+// ---------------------------------------------------------------- Errors and empty states
 
 test.describe('Hata ve boş durumlar', () => {
   test('dizin yüklenemezse hata ve "Yeniden dene"', async ({ page }) => {
@@ -343,7 +343,7 @@ test.describe('Hata ve boş durumlar', () => {
     await page.route('**/data/index.json*', (r) => r.fulfill({ json: { version: 1, generated_at: '2026-10-09T17:00:00+00:00', count: 0, latest: null, entries: [] } }));
     await open(page, '#/', FRI_1300);
     await expect(page.locator('.empty')).toContainText('Henüz yayın yok');
-    // 13:00'te 08:45 durağı geçmiş ve boş -> gizli; 12:45 hazırlanıyor
+    // at 13:00 the 08:45 stop has passed and is empty -> hidden; 12:45 is preparing
     await expect(stops(page)).toHaveCount(3);
     await expect(stops(page).first()).toHaveAttribute('data-state', 'preparing');
     await page.locator('.tab[data-tab="archive"]').click();
@@ -377,7 +377,7 @@ test('yeni yayın gelince bildirim çıkar ve tek dokunuşla açılır', async (
   await page.clock.runFor('05:01');
   await expect(page.locator('#toast')).toBeVisible();
   await expect(page.locator('#toast')).toContainText('Yeni yayın: Gün İçi Flaş, 12:51');
-  // okunan yayın değişmedi, ama rota yeni durağı gösteriyor
+  // the issue being read didn't change, but the route shows the new stop
   await expect(page.locator('.issue .kicker')).toContainText('08:46 ET');
   await expect(page.locator('.route .stop[data-state="published"]')).toHaveCount(2);
   await page.locator('#toast .toast__action').click();
@@ -386,7 +386,7 @@ test('yeni yayın gelince bildirim çıkar ve tek dokunuşla açılır', async (
   await expect(page.locator('#toast')).toBeHidden();
 });
 
-// ---------------------------------------------------------------- Yerleşim ve erişilebilirlik
+// ---------------------------------------------------------------- Layout and accessibility
 
 test.describe('Yerleşim ve erişilebilirlik', () => {
   for (const [name, hash, now] of [

@@ -1,9 +1,9 @@
-name: Testler
+name: Tests
 
 on:
   push:
     branches: [main]
-    paths-ignore: ['data/**']   # her yayın commit'inde değil, kod değişince çalışır
+    paths-ignore: ['data/**']   # runs when code changes, not on every issue commit
   pull_request:
   workflow_dispatch:
 
