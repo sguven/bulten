@@ -1,8 +1,8 @@
 {
-  "name": "Gündem — Akşam Bülteni ve Gün İçi Flaş",
-  "short_name": "Gündem",
-  "lang": "tr",
-  "start_url": "./#/",
+  "name": "World Brief — daily world news",
+  "short_name": "World Brief",
+  "lang": "en",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#F1F3F6",

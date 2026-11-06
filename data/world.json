@@ -1,0 +1,242 @@
+{
+ "latest": "2026-11-05_aksam-1900",
+ "count": 4,
+ "issues": [
+  {
+   "id": "2026-11-05_aksam-1900",
+   "data": {
+    "date": "2026-11-05",
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims.",
+    "key": "2026-11-05T19:00",
+    "published_at": "2026-11-05T19:00:00-05:00",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "text": "Roughly $2 trillion was wiped off the Nasdaq. According to Reuters, hedge funds locked in profits on 2026's AI winners ahead of year-end, while retail investors were the biggest net sellers since 2020. The break in volatility and risk appetite could shape pricing and liquidity into year-end.",
+        "title": "AI sell-off hits Wall Street"
+       },
+       {
+        "text": "CBS projects Democrats at 54 or more Senate seats, with a comfortable House majority expected. Trump said he would accept the results and use his veto; Speaker Johnson will not run again for the GOP leadership. On the agenda for markets: debt-ceiling talks, investigations and limits on Iran policy.",
+        "title": "Democrats win both chambers of Congress"
+       },
+       {
+        "text": "Brent rebounded 3.9% to near $98 after a roughly 9% drop the day before. Trump said there are no new strike plans but the US is ready to escalate; the NYT reports Iran is reviewing nuclear proposals brokered by Qatar. The risk of tanker attacks in the Gulf remains.",
+        "title": "Iran war and oil"
+       },
+       {
+        "text": "The Bank of England raised rates for the first time since 2023 and, with a hawkish vote split, left the door open to more. Markets pushed the Fed's next hike to March, pricing about 40 bp of further tightening over the cycle. Brazil paused its cuts; Mexico delivered a surprise cut.",
+        "title": "Central banks tighten"
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "Trading Day: A November 5 market bonfire (Reuters/Investing.com)",
+      "url": "https://www.investing.com/news/economy-news/trading-day-a-november-5-market-bonfire-5005919"
+     },
+     {
+      "title": "Stock market today: Dow plunges 1,800 points (Yahoo Finance)",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-5-dow-sp-500-nasdaq-oil-rises-chip-stocks-141439950.html"
+     },
+     {
+      "title": "Oil Rebounds After Sharp Iran War Selloff (Rigzone)",
+      "url": "https://www.rigzone.com/news/wire/oil_rebounds_after_sharp_iran_war_selloff-05-nov-2026-185023-article/"
+     },
+     {
+      "title": "2026 midterm election updates (CBS News)",
+      "url": "https://www.cbsnews.com/live-updates/election-day-2026-midterms/"
+     }
+    ],
+    "subtitle": "Prepared 19:00 ET",
+    "time": "19:00",
+    "title": "World Brief · Thursday, November 5, 2026",
+    "type": "aksam"
+   }
+  },
+  {
+   "id": "2026-11-04_aksam-1902",
+   "data": {
+    "date": "2026-11-04",
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims.",
+    "key": "2026-11-04T19:02",
+    "published_at": "2026-11-04T19:02:00-05:00",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "text": "According to CBS, Democrats reached at least 54 Senate seats (with many seats flipping, including Texas, Ohio, Maine and North Carolina) and also won the House. Hakeem Jeffries will become the first Black Speaker of the House. Trump accepted the result but said he may veto legislation, which in practice means two years of divided government.",
+        "title": "Democrats take Congress"
+       },
+       {
+        "text": "In Qatar-brokered talks, Iran called the US reply to its terms for reopening the Strait of Hormuz insufficient. Trump confirmed Tuesday's limited strike; US media report plans for broader post-election strikes. The direction of oil prices hinges on this.",
+        "title": "Iran–US: Hormuz still closed"
+       },
+       {
+        "text": "Brent is down about 16% so far this week; defense (Lockheed -7%) and energy stocks were the biggest losers. With oil the main driver of inflation this year, the move also shifts Fed and ECB expectations.",
+        "title": "Oil slump, energy stocks lag"
+       },
+       {
+        "text": "Euro-area inflation rose to 4.0% in October; Bundesbank President Nagel said a December hike will probably be needed. Helped by this and a weaker dollar, the euro is at its strongest since early October.",
+        "title": "Rate-hike signal in Europe"
+       },
+       {
+        "text": "CVS announced a plan to split in two; Microsoft rose 7% and McDonald's about 6%. Goldman said Democratic gains in the states make data-center moratoriums more likely, which could affect about 45% of planned capacity; CoreWeave fell 10%.",
+        "title": "Corporate news"
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "CBS News — Senate election results 2026",
+      "url": "https://www.cbsnews.com/live-updates/senate-election-results-2026/"
+     },
+     {
+      "title": "Al Jazeera — Iran says US reply to Hormuz plan unconvincing",
+      "url": "https://www.aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes"
+     },
+     {
+      "title": "Yahoo Finance — Stock market today live",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-dow-rallies-1500-points-sp-500-nasdaq-midterm-elections-democrats-sweep-201207340.html"
+     },
+     {
+      "title": "TheStreet — Stock Market Today (Nov. 4, 2026)",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-04-2026"
+     },
+     {
+      "title": "Trading Economics — Brent",
+      "url": "https://tradingeconomics.com/commodity/brent-crude-oil"
+     }
+    ],
+    "subtitle": "Prepared 19:02 ET",
+    "time": "19:02",
+    "title": "World Brief · Wednesday, November 4, 2026",
+    "type": "aksam"
+   }
+  },
+  {
+   "id": "2026-11-03_aksam-1905",
+   "data": {
+    "date": "2026-11-03",
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims.",
+    "key": "2026-11-03T19:05",
+    "published_at": "2026-11-03T19:05:00-05:00",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "text": "Control of the House and Senate is on the ballot; polls are starting to close and results will become clear overnight and tomorrow. As of the morning, prediction markets gave Democrats about a 76% chance of winning both chambers; JPMorgan warned of short-term volatility depending on the outcome.",
+        "title": "US midterm elections today"
+       },
+       {
+        "text": "Iran said it could reopen the strait within 48 hours if its terms are met, and otherwise it stays closed; the sides remain far apart on the Qatar-brokered draft deal. The US carried out a limited \"defensive\" strike on Qeshm island overnight. This is the number-one risk for oil and inflation expectations.",
+        "title": "US–Iran: Hormuz still closed"
+       },
+       {
+        "text": "The US 10-year yield rose to 4.95%. September JOLTS job openings beat expectations at 7.52 million, but hiring is weak; Wednesday's Treasury quarterly refunding announcement is key for auction sizes.",
+        "title": "Yields climb"
+       },
+       {
+        "text": "The US, Russia and Ukraine are scheduled to meet in Abu Dhabi on November 10–11. Meanwhile, a Russian strike on an aid distribution point killed at least 29 people, and Ukrainian drones hit the Yaroslavl refinery.",
+        "title": "Ukraine peace talks"
+       },
+       {
+        "text": "AMD beat expectations with data-center revenue up about 97% and rose about 7% after the close. Apple and Palantir fell despite beating; Shopify dropped sharply after missing on revenue.",
+        "title": "Earnings"
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "BusinessDay (Reuters) — Iran says Hormuz closure to remain",
+      "url": "https://www.businessday.co.za/world/middle-east/2026-11-03-iran-says-hormuz-closure-to-remain-until-us-meets-terms/"
+     },
+     {
+      "title": "Just Security — Early Edition, November 3",
+      "url": "https://www.justsecurity.org/163177/early-edition-november-3-2026/"
+     },
+     {
+      "title": "Yahoo Finance — Stock market today, November 3",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-3-dow-sp-500-nasdaq-midterms-amd-earnings-141143244.html"
+     },
+     {
+      "title": "TradingKey — US stocks close, Nasdaq rises",
+      "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262269485-us-stocks-today-close-nasdaq-rises-midterm-elections-tradingkey"
+     },
+     {
+      "title": "FatTail — Week Ahead Nov 2–6",
+      "url": "https://fattail.ai/fattail-week-ahead-nov-2-6-2026/"
+     }
+    ],
+    "subtitle": "Prepared 19:05 ET",
+    "time": "19:05",
+    "title": "World Brief · Tuesday, November 3, 2026",
+    "type": "aksam"
+   }
+  },
+  {
+   "id": "2026-11-02_aksam-1902",
+   "data": {
+    "date": "2026-11-02",
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims.",
+    "key": "2026-11-02T19:02",
+    "published_at": "2026-11-02T19:02:00-05:00",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "text": "Supreme Leader Mojtaba Khamenei authorized the government to negotiate with the US; Tehran says it has compressed a seven-step ceasefire plan into two days and demands the reopening of Hormuz and the lifting of the blockade and sanctions. Trump says talks are \"going well\" but keeps a post-election strike option on the table; this is the main risk for oil and inflation expectations.",
+        "title": "Iran moves closer to the negotiating table"
+       },
+       {
+        "text": "The entire House and 35 Senate seats are up on Tuesday; final polls show Democrats ahead in both chambers. The outcome could move markets through the tax and spending agenda and Treasury yields.",
+        "title": "US midterms tomorrow"
+       },
+       {
+        "text": "Marvell announced it will buy Lumentum in an all-stock deal worth about $115 billion; both shares fell 12–19%. Oracle's $10 billion stock and bond sale and Nvidia's 1.3% decline added to worries about the cost of AI investment.",
+        "title": "Tech sell-off"
+       },
+       {
+        "text": "The ISM manufacturing index rose to 55.5 in October (September: 54.5), above expectations, while September construction spending fell. A strong PMI could narrow the Fed's room to cut.",
+        "title": "US manufacturing strong"
+       },
+       {
+        "text": "Last week's roughly $6.3 billion Binance hack has gone on record as the largest crypto theft ever; Bitcoin is trading in a tight range around $78,000.",
+        "title": "Binance heist weighs on crypto"
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "Al Jazeera — Iran pushing accelerated plan for ceasefire talks",
+      "url": "https://www.aljazeera.com/news/2026/11/2/iran-pushing-accelerated-plan-for-ceasefire-talks-with-us"
+     },
+     {
+      "title": "Bloomberg/Swissinfo — Stocks, bonds rise as oil tumbles on US-Iran hopes",
+      "url": "https://swissinfo.ch/eng/stocks,-bonds-rise-as-oil-tumbles-on-us-iran-hopes:-markets-wrap/92310840"
+     },
+     {
+      "title": "TheStreet — Stock Market Today (Nov. 2, 2026)",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-02-2026"
+     },
+     {
+      "title": "STL.News — Stock Market Today, Nov 2 2026",
+      "url": "https://www.stl.news/stock-market-today-monday-november-2-2026/"
+     }
+    ],
+    "subtitle": "Prepared 19:02 ET",
+    "time": "19:02",
+    "title": "World Brief · Monday, November 2, 2026",
+    "type": "aksam"
+   }
+  }
+ ]
+}
