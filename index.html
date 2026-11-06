@@ -744,7 +744,7 @@ function buildStops(dayEntries, dateStr, { schedule = DEFAULT_SCHEDULE, now = ne
 function parseRoute(hash) {
   const h = String(hash || '').replace(/^#/, '');
   if (h === 'archive' || h === 'arsiv') return { view: 'archive' };
-  const m = h.match(/^g-(\d{4}-\d{2}-\d{2})(?:-((?:flas|aksam)-\d{4}))?$/);
+  const m = h.match(/^g-(\d{4}-\d{2}-\d{2})(?:-((?:flas|aksam)-\d{4}))?$/) || h.match(/^(\d{4}-\d{2}-\d{2})(?:\/((?:flas|aksam)-\d{4}))?$/);
   if (m) return { view: 'day', date: m[1], id: m[2] || null };
   return { view: 'today' };
 }
