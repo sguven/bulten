@@ -1,7 +1,69 @@
 {
- "latest": "2026-11-06_aksam-1859",
- "count": 5,
+ "latest": "2026-11-07_aksam-1905",
+ "count": 6,
  "issues": [
+  {
+   "id": "2026-11-07_aksam-1905",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-07",
+    "time": "19:05",
+    "key": "2026-11-07T19:05",
+    "published_at": "2026-11-07T19:05:00-05:00",
+    "title": "World Brief · Saturday, November 7, 2026",
+    "subtitle": "Prepared 19:05 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "Democrats take both chambers of Congress",
+        "text": "Democrats won both the House and the Senate in the midterms; the new Congress takes office in January. Vice President Vance largely blamed the defeat on the Iran war, while Trump signaled he is ready to fight the new majority. The risk of gridlock in 2027 over the budget, the debt ceiling and investigations is rising."
+       },
+       {
+        "title": "US strikes Iran's Qeshm island again",
+        "text": "Two missiles hit Qeshm, at the entrance to the Strait of Hormuz, on Friday night; Trump called it a \"small\" operation targeting an air-defense asset. According to UKMTO, 11 ships were attacked in the area last week and 3 sank; transits are ~65% below pre-war levels. Qatari mediation continues, and Iran has set 7 conditions for reopening the strait. This is the main risk for oil pricing."
+       },
+       {
+        "title": "Jobs surprise: +165,000 in October",
+        "text": "Nonfarm payrolls rose 165,000 against expectations of ~59,000-65,000, and unemployment fell from 4.2% to 4.1%. The strong data reinforced expectations that the Fed will not rush to cut rates; yields and the dollar rose. Michigan consumer sentiment rose to 51, and 1-year inflation expectations eased to 4.3%."
+       },
+       {
+        "title": "AI/chip sell-off: Nasdaq's worst week since June",
+        "text": "The Nasdaq fell ~5.5% and the chip index ~12% on Thursday; despite Friday's rebound (AMD +11%), the Nasdaq ended the week down 3.4%. Concerns that new restrictions on data-center construction could follow the Democratic win weighed on AI investment expectations; the VIX is around 25.6."
+       },
+       {
+        "title": "Shooting in Krakow, Poland",
+        "text": "On Saturday afternoon an attacker drove into the Main Market Square and opened fire at random: at least 6 people were killed and 15 wounded. The suspect, a Polish citizen, was shot and detained by police; no motive has been announced yet."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "The Closing Print: Post-Market & Weekly Summary (Nov 6)",
+      "url": "https://www.theclosingprint.net/2026/11/post-market-and-weekly-summary-2026-11-06/"
+     },
+     {
+      "title": "NBC News: Midterms 2026, Democrats win control of Congress",
+      "url": "https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763"
+     },
+     {
+      "title": "Yahoo/AFP: Qeshm island and Hormuz hit",
+      "url": "https://www.yahoo.com/news/world/articles/qeshm-island-hormuz-hit-mediators-122218244.html"
+     },
+     {
+      "title": "Times of Israel: Liveblog, November 7, 2026",
+      "url": "https://www.timesofisrael.com/liveblog-november-07-2026/"
+     },
+     {
+      "title": "Al Jazeera: Shooting in Poland's Krakow",
+      "url": "https://aljazeera.com/news/2026/11/7/casualties-reported-after-shooting-in-polands-krakow"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
   {
    "id": "2026-11-06_aksam-1859",
    "data": {
