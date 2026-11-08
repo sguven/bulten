@@ -1,0 +1,59 @@
+{
+ "type": "aksam",
+ "date": "2026-11-06",
+ "time": "18:59",
+ "key": "2026-11-06T18:59",
+ "published_at": "2026-11-06T18:59:00-05:00",
+ "title": "World Brief · Friday, November 6, 2026",
+ "subtitle": "Prepared 18:59 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "US jobs crush expectations",
+     "text": "Nonfarm payrolls rose 165,000 in October (consensus ~59,000) and unemployment came in at 4.1%. Markets now price a higher chance of a Fed rate hike in December, which feeds directly into short-term rates and currency risk."
+    },
+    {
+     "title": "Partial rebound after the AI sell-off",
+     "text": "After the Nasdaq fell more than 5.5% on Thursday and entered correction territory, it recovered 1.1% today, led by chipmakers. In Asia, the Kospi and Nikkei plunged about 6%. The sell-off was triggered by fears of tighter regulation after AI-critical candidates won in the midterms."
+    },
+    {
+     "title": "Midterms: Congress flips to the Democrats",
+     "text": "According to CBS and NBC, Democrats won majorities in both the House and the Senate; some races are still being counted. Jeffries expects at least 255 seats. Trump's 2027 agenda (taxes, budget, regulation) now has to pass a divided Congress."
+    },
+    {
+     "title": "Iran war: threats and diplomacy side by side",
+     "text": "Trump said the US may have to destroy the rest of Iran; meanwhile, Iran has reportedly sent a nuclear proposal via Qatar that Washington is reviewing. Two tankers hit mines and caught fire in the Strait of Hormuz; Brent is holding near $98."
+    },
+    {
+     "title": "Corporate front",
+     "text": "Oracle fell on reports that Microsoft ended a computing contract; Tesla will end Cybertruck production in Texas by mid-next year to make room for the Cybercab. Moderna beat third-quarter expectations and raised its 2026 revenue target."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet: Stock Market Today (Nov. 6, 2026)",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-06-2026"
+  },
+  {
+   "title": "Capp Notes: Closing Look, Nov 6, 2026",
+   "url": "https://cappnotes.substack.com/p/closing-look-friday-november-6-2026"
+  },
+  {
+   "title": "CBS News: House election results 2026",
+   "url": "https://www.cbsnews.com/live-updates/house-election-results-2026/"
+  },
+  {
+   "title": "NBC News: Senate results 2026",
+   "url": "https://www.nbcnews.com/politics/2026-elections/senate-results"
+  },
+  {
+   "title": "Al Jazeera: Iran war live, Nov 6",
+   "url": "https://www.aljazeera.com/news/liveblog/2026/11/6/iran-war-live-trump-warns-us-may-have-to-destroy-rest-of-iran"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}
