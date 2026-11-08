@@ -17,9 +17,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "data" / "world"
 TURKISH = re.compile(r"[ğĞşŞıİ]")
+# Turkish-only letters in proper names (Erdoğan, Qeşm, İstanbul) are transliterated
+# automatically instead of rejecting the whole issue.
+TRANSLIT = str.maketrans({"ğ": "g", "Ğ": "G", "ş": "s", "Ş": "S", "ı": "i", "İ": "I"})
+
+
+def translit(x):
+    if isinstance(x, str):
+        return x.translate(TRANSLIT)
+    if isinstance(x, list):
+        return [translit(v) for v in x]
+    if isinstance(x, dict):
+        return {k: translit(v) for k, v in x.items()}
+    return x
 
 
 def validate(d):
+    d = translit(d)
     errs = []
     for k in ("date", "time", "title"):
         if not isinstance(d.get(k), str) or not d[k].strip():
