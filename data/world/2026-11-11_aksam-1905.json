@@ -1,0 +1,67 @@
+{
+ "type": "aksam",
+ "date": "2026-11-11",
+ "time": "19:05",
+ "key": "2026-11-11T19:05",
+ "published_at": "2026-11-11T19:05:00-05:00",
+ "title": "World Brief · Wednesday, November 11, 2026",
+ "subtitle": "Prepared 19:05 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "A Fed hike is on the table",
+     "text": "October CPI came in at 0.35% month over month and core at 0.30%; the 10-year yield rose ~12 bp on Tuesday back to 5% and the 2-year jumped ~20 bp. Markets almost fully price a hike at the December meeting, and a Fed official said inflation is broadening. A critical week for rate volatility."
+    },
+    {
+     "title": "Leadership crisis at Nvidia",
+     "text": "According to the WSJ, the board is preparing to oust Jensen Huang; Huang admitted infidelity in a note to employees on Sunday, and the board is investigating with outside counsel whether he was a foreign-intelligence target. The stock closed up 2.9% and fell ~8% after hours; Baird cut it to Neutral. Given its index weight, this directly affects the S&P and the Nasdaq."
+    },
+    {
+     "title": "Anthropic IPO approaches",
+     "text": "The company set a price range of $70-78; the top end implies a valuation of ~$1.4 trillion. Reports say trading could begin around November 19 and the range could be raised if demand is strong. One of the largest IPOs in history and a litmus test for AI valuations."
+    },
+    {
+     "title": "Washington after the midterms",
+     "text": "Democrats took control of the House and the Senate (Senate 54-44, with Mississippi and Alaska still counting). Republicans elected Jim Jordan minority leader from January; the impeachment resolution against Defense Secretary Hegseth was sent back to committee by 211-204. Divided government will complicate budget and fiscal fights."
+    },
+    {
+     "title": "Iran and Ukraine fronts",
+     "text": "Iran-linked tanker attacks and Hormuz disruptions are supporting oil; France blamed the Revolutionary Guards for cyberattacks on supermarket refrigerators. US-Ukraine-Russia talks in Abu Dhabi ended with agreement on a large prisoner swap; stray drones over the Baltic scrambled NATO jets."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet: Stock Market Today, Nov 11, 2026",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"
+  },
+  {
+   "title": "Wolf Street: 10-year yield spikes after October CPI",
+   "url": "https://wolfstreet.com/2026/11/10/10-year-treasury-yield-spikes-as-inflation-spreads-across-economy-driven-by-ugly-core-services-cpi/"
+  },
+  {
+   "title": "Reuters/Investing.com: Nvidia preparing to oust CEO, WSJ reports",
+   "url": "https://www.investing.com/news/stock-market-news/nvidia-is-preparing-to-oust-ceo-jensen-huang-wsj-reports-5019991"
+  },
+  {
+   "title": "CNN: Anthropic IPO",
+   "url": "https://www.cnn.com/2026/11/10/investing/weve-never-seen-anything-like-anthropic-ipo"
+  },
+  {
+   "title": "Yahoo News: Midterm election results",
+   "url": "https://www.yahoo.com/news/politics/live/midterms-2026-election-results-and-latest-updates-mississippi-votes-still-being-counted-in-senate-nail-biter-after-democrats-take-control-of-congress-200037541.html"
+  },
+  {
+   "title": "Just Security: Early Edition, Nov 11, 2026",
+   "url": "https://www.justsecurity.org/164111/early-edition-november-11-2026/"
+  },
+  {
+   "title": "The Record: France blames Iran for fridge cyberattacks",
+   "url": "https://therecord.media/france-blames-iran-for-fridge-cyberattacks"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}

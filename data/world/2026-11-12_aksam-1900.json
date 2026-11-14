@@ -1,0 +1,67 @@
+{
+ "type": "aksam",
+ "date": "2026-11-12",
+ "time": "19:00",
+ "key": "2026-11-12T19:00",
+ "published_at": "2026-11-12T19:00:00-05:00",
+ "title": "World Brief · Thursday, November 12, 2026",
+ "subtitle": "Prepared 19:00 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "Jensen Huang resigns from Nvidia",
+     "text": "Huang, under a board investigation over his relationship with an executive suspected of working for China, left as CEO and board member effective immediately. The stock fell 14% at the open and closed down 4.34%; Semafor reported the Justice Department is separately running an antitrust review. The leadership vacuum at the stock carrying the AI rally adds uncertainty before earnings on November 17."
+    },
+    {
+     "title": "Bond sell-off: 10-year above 5%, December hike nearly priced in",
+     "text": "Tuesday's October CPI beat expectations at 0.4% month over month (core 0.3%); per CME FedWatch, the odds of a 25 bp hike in December are ~90% and of 50 bp ~9%. Waller putting 50 bp on the table pushed the short end sharply higher (2-year +15 bp). Direct pressure on mortgage and credit costs."
+    },
+    {
+     "title": "Trump: \"We don't need a deal with Iran\"",
+     "text": "As US overnight strikes on Iran entered their 12th day, the Houthis said they hit two Saudi tankers in the Red Sea; Trump threatened Iran and the Houthis with heavy military punishment if it happens again. Bab el-Mandeb carries ~12% of world trade, a new risk front for oil and inflation expectations."
+    },
+    {
+     "title": "Dollar at a 19-month high, euro weak",
+     "text": "The dollar index rose above 103, its highest since April 2025; the euro fell below 1.11 and USD/JPY approached 160. The Fed-ECB rate gap is expected to widen, and Japan keeps up its warnings on the yen."
+    },
+    {
+     "title": "Europe at a record, Anthropic IPO nears",
+     "text": "The Stoxx 600, light on tech, closed at a record 664.01 despite the Nvidia shock. Renaissance Capital expects the Anthropic IPO to price in the week of November 16; however, Reuters reported the company withdrew the $70-80 range it had given banks and that new pricing will be announced soon."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "PBS/AP: Sharp swings for Nvidia and oil prices weigh on Wall Street",
+   "url": "https://pbs.org/newshour/economy/sharp-swings-for-nvidia-and-oil-prices-weigh-on-wall-street"
+  },
+  {
+   "title": "CNBC: 10-year Treasury yield jumps back above 5%",
+   "url": "https://cnbc.com/2026/11/12/us-treasurys-bonds-yields.html"
+  },
+  {
+   "title": "WHDH/AP: Trump threatens major military punishment over Houthi attacks",
+   "url": "https://whdh.com/news/trump-threatens-major-military-punishment-if-yemens-houthis-keep-attacking-ships/"
+  },
+  {
+   "title": "Reuters (Yahoo): Dollar drops slightly from 19-month highs",
+   "url": "https://finance.yahoo.com/markets/currencies/articles/dollar-near-one-month-high-000930713.html"
+  },
+  {
+   "title": "Reuters (Yahoo): European stocks hit record high after Nvidia storm",
+   "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-fragile-nvidia-plummets-015524144.html"
+  },
+  {
+   "title": "Renaissance Capital: Anthropic sets terms for IPO",
+   "url": "https://www.renaissancecapital.com/IPO-Center/News/122657/anthropic-sets-terms-for-61-billion-ipo-targeting-a-1.2-trillion-market-cap"
+  },
+  {
+   "title": "Stocktwits: Anthropic retracts reported IPO price range",
+   "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-retracts-reported-70-80-ipo-price-range-says-pricing-update-is-coming-listing-expected-next-week/cNGud3sR970"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}

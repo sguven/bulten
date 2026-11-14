@@ -1,0 +1,59 @@
+{
+ "type": "aksam",
+ "date": "2026-11-10",
+ "time": "19:02",
+ "key": "2026-11-10T19:02",
+ "published_at": "2026-11-10T19:02:00-05:00",
+ "title": "World Brief · Tuesday, November 10, 2026",
+ "subtitle": "Prepared 19:02 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "Odds of a Fed hike are firming",
+     "text": "After hotter-than-expected core inflation (October CPI +0.4% month over month vs 0.3% expected; core +0.3% vs 0.2%), Governor Waller said he leans toward at least a 25 basis point hike in December and that 50 should be considered; Dallas Fed's Logan argued two more hikes are needed. The Fed meets December 8-9, and short-term yields (2-year +17 bp) are pricing it in."
+    },
+    {
+     "title": "Trump: Iran war is \"effectively over\"; Tehran denies talks",
+     "text": "Trump said new strikes are unlikely but the naval blockade will continue; Iran said no meeting is planned in Qatar. Brent fell below $92, which matters for energy prices and the inflation outlook."
+    },
+    {
+     "title": "Russia and Ukraine at the table in Abu Dhabi",
+     "text": "In the first US-mediated meeting since February, Kushner said the sides narrowed the gap between them; the White House is \"cautiously optimistic\". A headline to watch for European risk and energy."
+    },
+    {
+     "title": "Nvidia board investigation",
+     "text": "The board opened an independent investigation into allegations that CEO Jensen Huang was a target of foreign intelligence; Huang acknowledged a mistake in his private life in an email to employees. The stock fell 5.5% and its market value dipped below $4 trillion intraday."
+    },
+    {
+     "title": "US politics: post-election tension",
+     "text": "After the midterms in which Democrats won Congress, Trump posted messages questioning the integrity of the results; Republican Rep. Massie filed eight articles of impeachment against Defense Secretary Hegseth."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "TheStreet: Stock Market Today, Nov 10, 2026",
+   "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
+  },
+  {
+   "title": "Euronews: Trump says Iran war effectively over",
+   "url": "https://www.euronews.com/2026/11/10/trump-says-iran-war-effectively-over-as-tehran-denies-planned-talks"
+  },
+  {
+   "title": "Just Security: Early Edition, Nov 10, 2026",
+   "url": "https://www.justsecurity.org/163937/early-edition-november-10-2026/"
+  },
+  {
+   "title": "blue News: Nvidia investigating espionage reports",
+   "url": "https://www.bluewin.ch/en/news/nvidia-is-investigating-reports-of-foreign-espionage-targeting-its-ceo-li.3666565"
+  },
+  {
+   "title": "Closing Look: Tuesday, Nov 10, 2026",
+   "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-10"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}

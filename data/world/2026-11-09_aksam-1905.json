@@ -1,0 +1,59 @@
+{
+ "type": "aksam",
+ "date": "2026-11-09",
+ "time": "19:05",
+ "key": "2026-11-09T19:05",
+ "published_at": "2026-11-09T19:05:00-05:00",
+ "title": "World Brief · Monday, November 9, 2026",
+ "subtitle": "Prepared 19:05 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "Trump: Iran war is militarily \"effectively over\"",
+     "text": "After meeting Qatar's prime minister, Trump said a new strike is very unlikely while talks continue; Brent fell 5.5% to below $93. But attacks on ships around Hormuz continue and the Houthis claimed an attack on Aramco offices in Riyadh, so the drop in oil is fragile."
+    },
+    {
+     "title": "Nvidia board opens probe into Jensen Huang",
+     "text": "The board launched an independent review over allegations about Huang's relationship with a businessperson suspected of gathering information for China; Trump said the FBI is looking into it but that Huang \"will be fine\". The stock fell 4.6% (~$200 billion in value). The company said it sees no sign of leaked secrets and China rejected the claims; the allegations are not proven."
+    },
+    {
+     "title": "Washington wakes up to a new balance",
+     "text": "Congress convened this week after Democrats won both chambers in the midterms; Trump made Stephen Miller White House chief of staff, replacing Susie Wiles. Republican Thomas Massie filed impeachment articles against Defense Secretary Hegseth over the Iran war, and a House vote may be forced."
+    },
+    {
+     "title": "Fed: a December hike is being priced in",
+     "text": "The Fed raised rates 25 basis points in September and held at 3.75-4.00% in October; futures put the odds of another hike in December at ~80%. Tuesday's October CPI at 08:30 ET is critical; because of the 2025 shutdown, no annual rate will be published this time."
+    },
+    {
+     "title": "Race to succeed Lagarde at the ECB",
+     "text": "Euro area finance ministers (Eurogroup) reviewed candidates for when Lagarde leaves on February 7, 2027; Klaas Knot and BIS chief Pablo Hernandez de Cos are the front-runners. The choice matters for the euro and Europe's rate path; the euro approached 1.12."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Insurance Journal (Bloomberg): Oil falls as Trump signals restraint on Iran",
+   "url": "https://www.insurancejournal.com/news/international/2026/11/09/892091.htm"
+  },
+  {
+   "title": "AP News Summary, Nov 9",
+   "url": "https://www.clintonherald.com/news/national_news/ap-news-summary-at-5-00-p-m-est/article_439e231e-a832-5569-bcef-edb5908f47e6.html"
+  },
+  {
+   "title": "Tech Startups: Top tech news roundup, Nov 9, 2026",
+   "url": "https://techstartups.com/2026/11/09/top-tech-news-roundup-for-today-november-9-2026-nvidias-200b-wipeout-googles-tpu-8tx-anthropic-ipo-tesla-refunds-more"
+  },
+  {
+   "title": "OPB/AP: Stephen Miller to replace Wiles as chief of staff",
+   "url": "https://opb.org/article/2026/11/06/stephen-miller-chief-of-staff-trump"
+  },
+  {
+   "title": "Kuwait Times: EU ministers to discuss ECB candidates",
+   "url": "https://kuwaittimes.com/article/52917/world/eu-ministers-to-discuss-ecb-candidates-monday/"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}

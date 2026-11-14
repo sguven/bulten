@@ -1,7 +1,399 @@
 {
- "latest": "2026-11-07_aksam-1905",
- "count": 6,
+ "latest": "2026-11-13_aksam-1905",
+ "count": 12,
  "issues": [
+  {
+   "id": "2026-11-13_aksam-1905",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-13",
+    "time": "19:05",
+    "key": "2026-11-13T19:05",
+    "published_at": "2026-11-13T19:05:00-05:00",
+    "title": "World Brief · Friday, November 13, 2026",
+    "subtitle": "Prepared 19:05 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "Expectations of a Fed rate hike are strengthening",
+        "text": "October PPI came in slightly below expectations at 0.3% month over month, but at 6.5% year over year it is the highest since 2022. After the hot CPI, markets are pricing a hike at the December 9 meeting; the 10-year yield settling above 5% directly pushes up mortgage and credit costs."
+       },
+       {
+        "title": "Jensen Huang resigns at Nvidia",
+        "text": "The founder and CEO stepped down on Thursday after allegations about workplace relationships and a link to a person suspected of spying for China; CFO Colette Kress is interim CEO. Support is growing in Congress for tighter chip export restrictions, and the company's market value fell below $4 trillion."
+       },
+       {
+        "title": "US-Iran tension is escalating",
+        "text": "The Revolutionary Guards said they struck a US early-warning radar in Bahrain; the US denied it. Trump said there is no need for a deal with Iran; supply and shipping risk in the region is the main reason Brent is holding around $96."
+       },
+       {
+        "title": "Russia-Ukraine: diplomacy and strikes side by side",
+        "text": "While US envoys met with Putin and Zelensky, the two sides traded strikes through the night. Even so, agreement was reached on a prisoner swap that Zelensky called the largest of the war."
+       },
+       {
+        "title": "Politics in Washington",
+        "text": "An attempt in the House to impeach Defense Secretary Hegseth failed for lack of Republican support. In the midterms, Mississippi elected a Democratic senator (Scott Colom) for the first time since 1982."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "AP/KRMG: How major US stock indexes fared Friday 11/13/2026",
+      "url": "https://krmg.com/2026/11/13/how-major-us-stock-indexes-fared-friday-11-13-2026/"
+     },
+     {
+      "title": "Yahoo Finance: Stock market today, Nov 13",
+      "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html"
+     },
+     {
+      "title": "CNBC: 10-year Treasury yield moves to 5.15%",
+      "url": "https://www.cnbc.com/amp/2026/11/13/treasury-yields-fed-rates.html"
+     },
+     {
+      "title": "Democracy Now: Headlines, Nov 13, 2026",
+      "url": "https://www.democracynow.org/2026/11/13/headlines"
+     },
+     {
+      "title": "NPR 1A: The News Roundup, Nov 13, 2026",
+      "url": "https://www.npr.org/2026/11/13/nx-s1-6040038/the-news-roundup-for-november-13-2026"
+     },
+     {
+      "title": "US News (Reuters): World News",
+      "url": "https://www.usnews.com/news/world"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
+  {
+   "id": "2026-11-12_aksam-1900",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-12",
+    "time": "19:00",
+    "key": "2026-11-12T19:00",
+    "published_at": "2026-11-12T19:00:00-05:00",
+    "title": "World Brief · Thursday, November 12, 2026",
+    "subtitle": "Prepared 19:00 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "Jensen Huang resigns from Nvidia",
+        "text": "Huang, under a board investigation over his relationship with an executive suspected of working for China, left as CEO and board member effective immediately. The stock fell 14% at the open and closed down 4.34%; Semafor reported the Justice Department is separately running an antitrust review. The leadership vacuum at the stock carrying the AI rally adds uncertainty before earnings on November 17."
+       },
+       {
+        "title": "Bond sell-off: 10-year above 5%, December hike nearly priced in",
+        "text": "Tuesday's October CPI beat expectations at 0.4% month over month (core 0.3%); per CME FedWatch, the odds of a 25 bp hike in December are ~90% and of 50 bp ~9%. Waller putting 50 bp on the table pushed the short end sharply higher (2-year +15 bp). Direct pressure on mortgage and credit costs."
+       },
+       {
+        "title": "Trump: \"We don't need a deal with Iran\"",
+        "text": "As US overnight strikes on Iran entered their 12th day, the Houthis said they hit two Saudi tankers in the Red Sea; Trump threatened Iran and the Houthis with heavy military punishment if it happens again. Bab el-Mandeb carries ~12% of world trade, a new risk front for oil and inflation expectations."
+       },
+       {
+        "title": "Dollar at a 19-month high, euro weak",
+        "text": "The dollar index rose above 103, its highest since April 2025; the euro fell below 1.11 and USD/JPY approached 160. The Fed-ECB rate gap is expected to widen, and Japan keeps up its warnings on the yen."
+       },
+       {
+        "title": "Europe at a record, Anthropic IPO nears",
+        "text": "The Stoxx 600, light on tech, closed at a record 664.01 despite the Nvidia shock. Renaissance Capital expects the Anthropic IPO to price in the week of November 16; however, Reuters reported the company withdrew the $70-80 range it had given banks and that new pricing will be announced soon."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "PBS/AP: Sharp swings for Nvidia and oil prices weigh on Wall Street",
+      "url": "https://pbs.org/newshour/economy/sharp-swings-for-nvidia-and-oil-prices-weigh-on-wall-street"
+     },
+     {
+      "title": "CNBC: 10-year Treasury yield jumps back above 5%",
+      "url": "https://cnbc.com/2026/11/12/us-treasurys-bonds-yields.html"
+     },
+     {
+      "title": "WHDH/AP: Trump threatens major military punishment over Houthi attacks",
+      "url": "https://whdh.com/news/trump-threatens-major-military-punishment-if-yemens-houthis-keep-attacking-ships/"
+     },
+     {
+      "title": "Reuters (Yahoo): Dollar drops slightly from 19-month highs",
+      "url": "https://finance.yahoo.com/markets/currencies/articles/dollar-near-one-month-high-000930713.html"
+     },
+     {
+      "title": "Reuters (Yahoo): European stocks hit record high after Nvidia storm",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/asian-stocks-fragile-nvidia-plummets-015524144.html"
+     },
+     {
+      "title": "Renaissance Capital: Anthropic sets terms for IPO",
+      "url": "https://www.renaissancecapital.com/IPO-Center/News/122657/anthropic-sets-terms-for-61-billion-ipo-targeting-a-1.2-trillion-market-cap"
+     },
+     {
+      "title": "Stocktwits: Anthropic retracts reported IPO price range",
+      "url": "https://stocktwits.com/news-articles/markets/equity/anthropic-retracts-reported-70-80-ipo-price-range-says-pricing-update-is-coming-listing-expected-next-week/cNGud3sR970"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
+  {
+   "id": "2026-11-11_aksam-1905",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-11",
+    "time": "19:05",
+    "key": "2026-11-11T19:05",
+    "published_at": "2026-11-11T19:05:00-05:00",
+    "title": "World Brief · Wednesday, November 11, 2026",
+    "subtitle": "Prepared 19:05 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "A Fed hike is on the table",
+        "text": "October CPI came in at 0.35% month over month and core at 0.30%; the 10-year yield rose ~12 bp on Tuesday back to 5% and the 2-year jumped ~20 bp. Markets almost fully price a hike at the December meeting, and a Fed official said inflation is broadening. A critical week for rate volatility."
+       },
+       {
+        "title": "Leadership crisis at Nvidia",
+        "text": "According to the WSJ, the board is preparing to oust Jensen Huang; Huang admitted infidelity in a note to employees on Sunday, and the board is investigating with outside counsel whether he was a foreign-intelligence target. The stock closed up 2.9% and fell ~8% after hours; Baird cut it to Neutral. Given its index weight, this directly affects the S&P and the Nasdaq."
+       },
+       {
+        "title": "Anthropic IPO approaches",
+        "text": "The company set a price range of $70-78; the top end implies a valuation of ~$1.4 trillion. Reports say trading could begin around November 19 and the range could be raised if demand is strong. One of the largest IPOs in history and a litmus test for AI valuations."
+       },
+       {
+        "title": "Washington after the midterms",
+        "text": "Democrats took control of the House and the Senate (Senate 54-44, with Mississippi and Alaska still counting). Republicans elected Jim Jordan minority leader from January; the impeachment resolution against Defense Secretary Hegseth was sent back to committee by 211-204. Divided government will complicate budget and fiscal fights."
+       },
+       {
+        "title": "Iran and Ukraine fronts",
+        "text": "Iran-linked tanker attacks and Hormuz disruptions are supporting oil; France blamed the Revolutionary Guards for cyberattacks on supermarket refrigerators. US-Ukraine-Russia talks in Abu Dhabi ended with agreement on a large prisoner swap; stray drones over the Baltic scrambled NATO jets."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "TheStreet: Stock Market Today, Nov 11, 2026",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-11-2026"
+     },
+     {
+      "title": "Wolf Street: 10-year yield spikes after October CPI",
+      "url": "https://wolfstreet.com/2026/11/10/10-year-treasury-yield-spikes-as-inflation-spreads-across-economy-driven-by-ugly-core-services-cpi/"
+     },
+     {
+      "title": "Reuters/Investing.com: Nvidia preparing to oust CEO, WSJ reports",
+      "url": "https://www.investing.com/news/stock-market-news/nvidia-is-preparing-to-oust-ceo-jensen-huang-wsj-reports-5019991"
+     },
+     {
+      "title": "CNN: Anthropic IPO",
+      "url": "https://www.cnn.com/2026/11/10/investing/weve-never-seen-anything-like-anthropic-ipo"
+     },
+     {
+      "title": "Yahoo News: Midterm election results",
+      "url": "https://www.yahoo.com/news/politics/live/midterms-2026-election-results-and-latest-updates-mississippi-votes-still-being-counted-in-senate-nail-biter-after-democrats-take-control-of-congress-200037541.html"
+     },
+     {
+      "title": "Just Security: Early Edition, Nov 11, 2026",
+      "url": "https://www.justsecurity.org/164111/early-edition-november-11-2026/"
+     },
+     {
+      "title": "The Record: France blames Iran for fridge cyberattacks",
+      "url": "https://therecord.media/france-blames-iran-for-fridge-cyberattacks"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
+  {
+   "id": "2026-11-10_aksam-1902",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-10",
+    "time": "19:02",
+    "key": "2026-11-10T19:02",
+    "published_at": "2026-11-10T19:02:00-05:00",
+    "title": "World Brief · Tuesday, November 10, 2026",
+    "subtitle": "Prepared 19:02 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "Odds of a Fed hike are firming",
+        "text": "After hotter-than-expected core inflation (October CPI +0.4% month over month vs 0.3% expected; core +0.3% vs 0.2%), Governor Waller said he leans toward at least a 25 basis point hike in December and that 50 should be considered; Dallas Fed's Logan argued two more hikes are needed. The Fed meets December 8-9, and short-term yields (2-year +17 bp) are pricing it in."
+       },
+       {
+        "title": "Trump: Iran war is \"effectively over\"; Tehran denies talks",
+        "text": "Trump said new strikes are unlikely but the naval blockade will continue; Iran said no meeting is planned in Qatar. Brent fell below $92, which matters for energy prices and the inflation outlook."
+       },
+       {
+        "title": "Russia and Ukraine at the table in Abu Dhabi",
+        "text": "In the first US-mediated meeting since February, Kushner said the sides narrowed the gap between them; the White House is \"cautiously optimistic\". A headline to watch for European risk and energy."
+       },
+       {
+        "title": "Nvidia board investigation",
+        "text": "The board opened an independent investigation into allegations that CEO Jensen Huang was a target of foreign intelligence; Huang acknowledged a mistake in his private life in an email to employees. The stock fell 5.5% and its market value dipped below $4 trillion intraday."
+       },
+       {
+        "title": "US politics: post-election tension",
+        "text": "After the midterms in which Democrats won Congress, Trump posted messages questioning the integrity of the results; Republican Rep. Massie filed eight articles of impeachment against Defense Secretary Hegseth."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "TheStreet: Stock Market Today, Nov 10, 2026",
+      "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-10-2026"
+     },
+     {
+      "title": "Euronews: Trump says Iran war effectively over",
+      "url": "https://www.euronews.com/2026/11/10/trump-says-iran-war-effectively-over-as-tehran-denies-planned-talks"
+     },
+     {
+      "title": "Just Security: Early Edition, Nov 10, 2026",
+      "url": "https://www.justsecurity.org/163937/early-edition-november-10-2026/"
+     },
+     {
+      "title": "blue News: Nvidia investigating espionage reports",
+      "url": "https://www.bluewin.ch/en/news/nvidia-is-investigating-reports-of-foreign-espionage-targeting-its-ceo-li.3666565"
+     },
+     {
+      "title": "Closing Look: Tuesday, Nov 10, 2026",
+      "url": "https://cappnotes.substack.com/p/closing-look-tuesday-november-10"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
+  {
+   "id": "2026-11-09_aksam-1905",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-09",
+    "time": "19:05",
+    "key": "2026-11-09T19:05",
+    "published_at": "2026-11-09T19:05:00-05:00",
+    "title": "World Brief · Monday, November 9, 2026",
+    "subtitle": "Prepared 19:05 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "Trump: Iran war is militarily \"effectively over\"",
+        "text": "After meeting Qatar's prime minister, Trump said a new strike is very unlikely while talks continue; Brent fell 5.5% to below $93. But attacks on ships around Hormuz continue and the Houthis claimed an attack on Aramco offices in Riyadh, so the drop in oil is fragile."
+       },
+       {
+        "title": "Nvidia board opens probe into Jensen Huang",
+        "text": "The board launched an independent review over allegations about Huang's relationship with a businessperson suspected of gathering information for China; Trump said the FBI is looking into it but that Huang \"will be fine\". The stock fell 4.6% (~$200 billion in value). The company said it sees no sign of leaked secrets and China rejected the claims; the allegations are not proven."
+       },
+       {
+        "title": "Washington wakes up to a new balance",
+        "text": "Congress convened this week after Democrats won both chambers in the midterms; Trump made Stephen Miller White House chief of staff, replacing Susie Wiles. Republican Thomas Massie filed impeachment articles against Defense Secretary Hegseth over the Iran war, and a House vote may be forced."
+       },
+       {
+        "title": "Fed: a December hike is being priced in",
+        "text": "The Fed raised rates 25 basis points in September and held at 3.75-4.00% in October; futures put the odds of another hike in December at ~80%. Tuesday's October CPI at 08:30 ET is critical; because of the 2025 shutdown, no annual rate will be published this time."
+       },
+       {
+        "title": "Race to succeed Lagarde at the ECB",
+        "text": "Euro area finance ministers (Eurogroup) reviewed candidates for when Lagarde leaves on February 7, 2027; Klaas Knot and BIS chief Pablo Hernandez de Cos are the front-runners. The choice matters for the euro and Europe's rate path; the euro approached 1.12."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "Insurance Journal (Bloomberg): Oil falls as Trump signals restraint on Iran",
+      "url": "https://www.insurancejournal.com/news/international/2026/11/09/892091.htm"
+     },
+     {
+      "title": "AP News Summary, Nov 9",
+      "url": "https://www.clintonherald.com/news/national_news/ap-news-summary-at-5-00-p-m-est/article_439e231e-a832-5569-bcef-edb5908f47e6.html"
+     },
+     {
+      "title": "Tech Startups: Top tech news roundup, Nov 9, 2026",
+      "url": "https://techstartups.com/2026/11/09/top-tech-news-roundup-for-today-november-9-2026-nvidias-200b-wipeout-googles-tpu-8tx-anthropic-ipo-tesla-refunds-more"
+     },
+     {
+      "title": "OPB/AP: Stephen Miller to replace Wiles as chief of staff",
+      "url": "https://opb.org/article/2026/11/06/stephen-miller-chief-of-staff-trump"
+     },
+     {
+      "title": "Kuwait Times: EU ministers to discuss ECB candidates",
+      "url": "https://kuwaittimes.com/article/52917/world/eu-ministers-to-discuss-ecb-candidates-monday/"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
+  {
+   "id": "2026-11-08_aksam-1902",
+   "data": {
+    "type": "aksam",
+    "date": "2026-11-08",
+    "time": "19:02",
+    "key": "2026-11-08T19:02",
+    "published_at": "2026-11-08T19:02:00-05:00",
+    "title": "World Brief · Sunday, November 8, 2026",
+    "subtitle": "Prepared 19:02 ET",
+    "sections": [
+     {
+      "heading": "World",
+      "items": [
+       {
+        "title": "US extends Iran blockade to land routes",
+        "text": "CENTCOM set up the \"Iron Gate\" task force to track Iran's overland transfers of weapons and sanctioned goods; on Saturday a cargo ship trying to run the blockade in the Gulf of Oman was disabled. Trump said \"small-scale\" strikes hit Qeshm island but there will be no return to full war, while Rubio said a deal may not be possible. This risk is the main reason Brent is holding near $98."
+       },
+       {
+        "title": "Strong jobs data lifts Fed rate-hike expectations",
+        "text": "Nonfarm payrolls rose 165,000 in October (expected ~60,000) and unemployment fell to 4.1%. Markets put ~80% odds on a 25 basis point hike at the December 9 FOMC; Tuesday's CPI (expected 0.3% month over month) can confirm or upset that pricing."
+       },
+       {
+        "title": "Congress goes to the Democrats; AI stocks under pressure",
+        "text": "Democrats took control of the House and the Senate in the midterms, so Trump's last two years will be spent under divided government. Expectations of AI regulation, driven by worries over data centers and electricity bills, were one of the triggers of Thursday's chip sell-off."
+       },
+       {
+        "title": "Russia-Ukraine: talks in Abu Dhabi, strikes on Kyiv",
+        "text": "US, Russian and Ukrainian delegations will meet in Abu Dhabi on November 10-11; the EU rejected the security deal with Russia proposed by Trump. Zelensky said North Korean missiles were used in overnight strikes on the Kyiv region."
+       },
+       {
+        "title": "Israel: Eisenkot to be asked to form a government",
+        "text": "President Herzog will task Yashar leader Gadi Eisenkot with forming a government after the election; the transition to a post-Netanyahu era could reshape regional diplomacy. Separately, 6 people were killed in a shooting in Krakow, Poland."
+       }
+      ]
+     }
+    ],
+    "sources": [
+     {
+      "title": "Fox News: Iran war live updates, Nov 8",
+      "url": "https://www.foxnews.com/live-news/iran-war-news-trump-saudi-houthi-november-8"
+     },
+     {
+      "title": "Anadolu Agency: Morning Briefing, Nov 8, 2026",
+      "url": "https://www.aa.com.tr/en/world/morning-briefing-nov-8-2026/4115649"
+     },
+     {
+      "title": "Fox 5 NY: Democrats win control of Congress",
+      "url": "https://www.fox5ny.com/news/democrats-win-control-congress-2026-midterm-elections"
+     },
+     {
+      "title": "Fox Carolina/AP: AI sell-off, Nov 5",
+      "url": "https://www.foxcarolina.com/2026/11/05/brutal-sell-off-ai-stocks-sends-wall-street-reeling-sp-500-sees-worst-day-since-2025-liberation-day-tariffs/"
+     },
+     {
+      "title": "Topstep: Weekly Market Kickoff, Nov 8, 2026",
+      "url": "https://www.topstep.com/blog/weekly-market-kickoff"
+     }
+    ],
+    "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+   }
+  },
   {
    "id": "2026-11-07_aksam-1905",
    "data": {

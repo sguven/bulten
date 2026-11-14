@@ -1,0 +1,59 @@
+{
+ "type": "aksam",
+ "date": "2026-11-08",
+ "time": "19:02",
+ "key": "2026-11-08T19:02",
+ "published_at": "2026-11-08T19:02:00-05:00",
+ "title": "World Brief · Sunday, November 8, 2026",
+ "subtitle": "Prepared 19:02 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "US extends Iran blockade to land routes",
+     "text": "CENTCOM set up the \"Iron Gate\" task force to track Iran's overland transfers of weapons and sanctioned goods; on Saturday a cargo ship trying to run the blockade in the Gulf of Oman was disabled. Trump said \"small-scale\" strikes hit Qeshm island but there will be no return to full war, while Rubio said a deal may not be possible. This risk is the main reason Brent is holding near $98."
+    },
+    {
+     "title": "Strong jobs data lifts Fed rate-hike expectations",
+     "text": "Nonfarm payrolls rose 165,000 in October (expected ~60,000) and unemployment fell to 4.1%. Markets put ~80% odds on a 25 basis point hike at the December 9 FOMC; Tuesday's CPI (expected 0.3% month over month) can confirm or upset that pricing."
+    },
+    {
+     "title": "Congress goes to the Democrats; AI stocks under pressure",
+     "text": "Democrats took control of the House and the Senate in the midterms, so Trump's last two years will be spent under divided government. Expectations of AI regulation, driven by worries over data centers and electricity bills, were one of the triggers of Thursday's chip sell-off."
+    },
+    {
+     "title": "Russia-Ukraine: talks in Abu Dhabi, strikes on Kyiv",
+     "text": "US, Russian and Ukrainian delegations will meet in Abu Dhabi on November 10-11; the EU rejected the security deal with Russia proposed by Trump. Zelensky said North Korean missiles were used in overnight strikes on the Kyiv region."
+    },
+    {
+     "title": "Israel: Eisenkot to be asked to form a government",
+     "text": "President Herzog will task Yashar leader Gadi Eisenkot with forming a government after the election; the transition to a post-Netanyahu era could reshape regional diplomacy. Separately, 6 people were killed in a shooting in Krakow, Poland."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "Fox News: Iran war live updates, Nov 8",
+   "url": "https://www.foxnews.com/live-news/iran-war-news-trump-saudi-houthi-november-8"
+  },
+  {
+   "title": "Anadolu Agency: Morning Briefing, Nov 8, 2026",
+   "url": "https://www.aa.com.tr/en/world/morning-briefing-nov-8-2026/4115649"
+  },
+  {
+   "title": "Fox 5 NY: Democrats win control of Congress",
+   "url": "https://www.fox5ny.com/news/democrats-win-control-congress-2026-midterm-elections"
+  },
+  {
+   "title": "Fox Carolina/AP: AI sell-off, Nov 5",
+   "url": "https://www.foxcarolina.com/2026/11/05/brutal-sell-off-ai-stocks-sends-wall-street-reeling-sp-500-sees-worst-day-since-2025-liberation-day-tariffs/"
+  },
+  {
+   "title": "Topstep: Weekly Market Kickoff, Nov 8, 2026",
+   "url": "https://www.topstep.com/blog/weekly-market-kickoff"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}

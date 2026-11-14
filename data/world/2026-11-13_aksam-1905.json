@@ -1,0 +1,63 @@
+{
+ "type": "aksam",
+ "date": "2026-11-13",
+ "time": "19:05",
+ "key": "2026-11-13T19:05",
+ "published_at": "2026-11-13T19:05:00-05:00",
+ "title": "World Brief · Friday, November 13, 2026",
+ "subtitle": "Prepared 19:05 ET",
+ "sections": [
+  {
+   "heading": "World",
+   "items": [
+    {
+     "title": "Expectations of a Fed rate hike are strengthening",
+     "text": "October PPI came in slightly below expectations at 0.3% month over month, but at 6.5% year over year it is the highest since 2022. After the hot CPI, markets are pricing a hike at the December 9 meeting; the 10-year yield settling above 5% directly pushes up mortgage and credit costs."
+    },
+    {
+     "title": "Jensen Huang resigns at Nvidia",
+     "text": "The founder and CEO stepped down on Thursday after allegations about workplace relationships and a link to a person suspected of spying for China; CFO Colette Kress is interim CEO. Support is growing in Congress for tighter chip export restrictions, and the company's market value fell below $4 trillion."
+    },
+    {
+     "title": "US-Iran tension is escalating",
+     "text": "The Revolutionary Guards said they struck a US early-warning radar in Bahrain; the US denied it. Trump said there is no need for a deal with Iran; supply and shipping risk in the region is the main reason Brent is holding around $96."
+    },
+    {
+     "title": "Russia-Ukraine: diplomacy and strikes side by side",
+     "text": "While US envoys met with Putin and Zelensky, the two sides traded strikes through the night. Even so, agreement was reached on a prisoner swap that Zelensky called the largest of the war."
+    },
+    {
+     "title": "Politics in Washington",
+     "text": "An attempt in the House to impeach Defense Secretary Hegseth failed for lack of Republican support. In the midterms, Mississippi elected a Democratic senator (Scott Colom) for the first time since 1982."
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "title": "AP/KRMG: How major US stock indexes fared Friday 11/13/2026",
+   "url": "https://krmg.com/2026/11/13/how-major-us-stock-indexes-fared-friday-11-13-2026/"
+  },
+  {
+   "title": "Yahoo Finance: Stock market today, Nov 13",
+   "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html"
+  },
+  {
+   "title": "CNBC: 10-year Treasury yield moves to 5.15%",
+   "url": "https://www.cnbc.com/amp/2026/11/13/treasury-yields-fed-rates.html"
+  },
+  {
+   "title": "Democracy Now: Headlines, Nov 13, 2026",
+   "url": "https://www.democracynow.org/2026/11/13/headlines"
+  },
+  {
+   "title": "NPR 1A: The News Roundup, Nov 13, 2026",
+   "url": "https://www.npr.org/2026/11/13/nx-s1-6040038/the-news-roundup-for-november-13-2026"
+  },
+  {
+   "title": "US News (Reuters): World News",
+   "url": "https://www.usnews.com/news/world"
+  }
+ ],
+ "footer": "Prepared automatically by Claude. Not investment advice. Items marked \"(unverified)\" are unconfirmed claims."
+}
